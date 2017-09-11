@@ -82,7 +82,7 @@ _Multiagent COORDINATION: RATIONAL INTERACTION_
     *   avoid deadlock
     *   maintain safety conditions
 *   **Cooperation** is coordination among non-antagonistic agents
-*   **Collaboration** is cooperative work on a joint goal, task, or
+*   **Collaboration** is cooperative work on a joint goal, task, or object
 
 
 ---
@@ -214,15 +214,22 @@ However...
 ---
 ## Two decision problems (2)
 
-*   Traffic planners: Should we build a new clearway to reduce overall travel times from S to E?
 
 ![image](slides/sociotechnicalsystems2/image_026.png#centering)
+
+*   Traffic planners: Should we build a new clearway to reduce overall travel times from S to E?
+
+
 
 
 --- 
 ## Braess Paradox: New roads not always help ...
 
-*   Adding a new road with high capacity <span>![image](slides/sociotechnicalsystems2/image_029.png)</span>
+*   Adding a new road with high capacity
+
+![image](slides/sociotechnicalsystems2/image_029.png)
+
+
 *   Consider optimal "equal split" solution (SAE/SBE)
 *   There is a route with shorter travel time: SABE
 *   Drivers that have information about travel times change to route SABE ?  destroy optimal flow
@@ -235,8 +242,8 @@ _**By adding a road, travel time increases!!!**_
 
 *   Assume that the cars agree to avoid the new road and to distribute equally over the old routes
 *   We did already show that faster route exists (travel time 70 instead of 83)
-    * ? <span class="p">There is a huge incentive for agents to defect</span>
-    * ? <span class="p">This solution is unstable for egoistic agents</span>
+    * -> There is a huge incentive for agents to defect
+    * -> This solution is unstable for egoistic agents
 *   What can be done?
 
 
@@ -263,7 +270,7 @@ of neighbouring countries Clausland and Zellerreich have agreed to route passeng
 
 *   _C, S_ are boundary nodes through which traffic must go
 *   Traffic streams to be routed: 
-
+	
 $$o_1 \rightarrow d_1$$ 
 
 $$o_2 \rightarrow d_2$$
@@ -287,7 +294,6 @@ $$TC_1$$
 and 
 $$TC_2$$
 route their traffic streams?
-
 
 --- 
 ## Game theory
@@ -354,7 +360,7 @@ We need a model of the environment in which these agents will act...
 *   agents simultaneously choose an action to perform, and as a result of the actions they select, an outcome in W will result
 *   the actual outcome depends on the combination of actions
 *   assume each agent has just two possible actions that it can perform, C ("cooperate") and D ("defect") Environment behaviour given by state transformer function:
-*   
+   
 ![image](slides/sociotechnicalsystems2/image_040.jpg)
 
 ---
@@ -422,12 +428,19 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 
 *   Given any particular strategy (either _C_ or _D_) of agent _i_, there will be a number of possible outcomes
 *   We say 
+
 $$s_1$$ 
-**_dominates_** 
+
+_**dominates**_
+
 $$s_2$$
+
 if every outcome possible by _i_ playing 
+
 $$s_1$$ 
+
 is preferred over every outcome possible by _i_ playing 
+
 $$s_2$$
 
 ---
@@ -449,12 +462,12 @@ $$s_2$$
 ---
 ## Analysis of the routing game
 
-![image](slides/sociotechnicalsystems2/image_055.png#floatright)
+![image](slides/sociotechnicalsystems2/image_055.png)
 
 *   Are there dominant strategies for any player?
 *   Is there a (collectively) optimal strategy pair?
 *   What strategy would a rational player choose?
-*   Is there a stable setting, where no player has an incentive to change their strategies?
+*   Is there a stable setting, where no player has an incentive to change their strategies? 
 
 
 
@@ -462,13 +475,19 @@ $$s_2$$
 ## Nash Equilibrium (1)
 
 *   In general, we will say that two strategies 
+
 $$s_1 \ and \ s_2$$
+
 are in Nash equilibrium if
     1.    under the assumption that agent _i_ plays 
+
 $$s_1,$$
+
 agent _j_ can do no better than play 
+
 $$s_2;$$
-and ...
+
+and ... 
 
 
 --- 
@@ -532,20 +551,21 @@ $$s_1.$$
 
 * N countries need to decide on whether or not to take extra efforts by passing a legislation to reduce pollution
 
-* Doing so will cost the country 3 billion 
+* Doing so will cost the country 3 billion €
 
-* Not doing so will cause cost of 1 billion  to each country (because of pollution)
+* Not doing so will cause cost of 1 billion € to each country (because of pollution)
 
 ---
 ## N-player game: Investment in pollution reduction (2)
 
 *   What should the governments of the countries do?
 
-<span>![image](slides/sociotechnicalsystems2/image_059.gif)</span>
+![image](slides/sociotechnicalsystems2/image_059.gif)
+</span>
 <sup><sup>    [http://www.worldatlas.com/webimage/countrys/eunewneb.gif](http://www.worldatlas.com/webimage/countrys/eunewneb.gif)</sup></sup>
-Is there a rational solution?
-Is there an optimal solution?
-Is there a stable solution?
+*   Is there a rational solution?
+*   Is there an optimal solution?
+*   Is there a stable solution?
  
 
 ---
@@ -580,7 +600,9 @@ Is there a stable solution?
 *   Infinite number of strategies for each player: 
 
 **_Use_** 
+
 $$x_i$$
+
 _**fragment of road capacity,**_
 $$x_i \in [0,1]$$ 
 
@@ -632,9 +654,13 @@ $$x=(1-t)/2$$
 ## Tragedy of the commons game: stable strategies (1)
 *   A set of strategies is stable if all players are playing their optimal-- selfish strategy, given the strategies of all other players
 *   For our case, that means:
+
 $$x_i = (1-\Sigma_(j \neq i)x_j)/2 $$ 
+
 which has as unique solution:
+
 $$x_i = 1/(n+1)$$
+
 for all i
 
 
@@ -642,9 +668,12 @@ for all i
 ## But why is it called _tragedy_? (1)
 
 *   It is a tragedy, because the resulting total payoff is extremely    low
-With 
+*   With 
+
 $$ x_i = 1/(n+1)$$
-we can calculate each player's payoff as 
+
+*    we can calculate each player's payoff as 
+
 $$x_i \cdot (1-\Sigma_(j \neq i)  x_j  = \frac{1}{(n+1)^2} $$
 
 
@@ -668,8 +697,7 @@ times bigger
 ---
 ## But why is it called _tragedy_? (4)
 
-*	In this game, the n users sharing the common resource _overuse it so that the total value of the shared resource decreases quite dramatically_
-
+*	In this game, the n users sharing the common resource _overuse it so that the total value of the shared resource decreases quite dramatically_  
 
 ---  
 ## The "price of anarchy"
@@ -691,7 +719,7 @@ times bigger
 *   Up to know, we have seen "pure" strategies, i.e. a strategy was always to pick one alternative deterministically
 *   Now look at the game theory version of Rock, Paper, Scissors
 *   Analysis
-    *   Dominant Strategy?
+    *   Dominant strategy?
     *   Nash equilibrium?
 *   What strategy should a player play in this game?
 
@@ -714,11 +742,11 @@ $$P_i=\left [  p_{i1}, p_{i2}, ..., p_{ik}\right ]  over S$$
 ## Mixed strategy (Wooldridge 2009, 260f) (2)
 
 Meaning: i plays s1 with probability 
-$$p_11, s_2$$
+$$p_{11}, s_2$$
 
 with probability 
 
-$$p_12,$$
+$$p_{12},$$
  etc.
  
 *   Apply to rock, stone, scissors
@@ -729,13 +757,12 @@ $$p_12,$$
 ---
 ## Nash equilibria for mixed strategies
 
-![image](slides/sociotechnicalsystems2/image_091.jpg#floatright  max-height: 20em)
-<sup>Peter Badge/Typos 1</sup> 
-
 Theorem(w/o. proof):
 *   Each game, in which each player has a finite set of possible strategies, has a mixed-strategy Nash equilibrium
 *   For this insight, John Forbes Nash Jr. won the Nobel prize in economic sciences in 1994 (with Reinhard Selten and John Harsanyi)
+![image](slides/sociotechnicalsystems2/image_091.jpg#floatright  max-height: 15em)
 
+<sup>Peter Badge/Typos 1</sup> 
 
 ---
 ## Game theory - possibilities and limitations
