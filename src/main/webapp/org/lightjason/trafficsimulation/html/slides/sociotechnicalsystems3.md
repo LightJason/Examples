@@ -58,6 +58,7 @@ _MECHANISMS FOR COLLECTIVE DECISION-MAKING_
 ![image](slides/sociotechnicalsystems3/image_003.png#centering)
 
 
+
 --- 
 ## Mechanism design
 
@@ -104,8 +105,11 @@ _MECHANISMS FOR COLLECTIVE DECISION-MAKING_
 <sup>Adapted from (Wooldridge, 2009, p. 285)</sup>
 
 $$Ag={1,...,n}$$ 
+
 set of agents
+
 $$\Omega = { \omega , \omega ' , ... }$$
+
 possible outcomes
 
 ---
@@ -141,9 +145,11 @@ $$\omega_2 \succ  \omega_1 \succ  \omega_3$$
 ## Plurality voting: Political elections example I (1)
 
 *   Consider elections with three parties 
+
 $$c(du), \ s(pd), \ and \ f(dp)$$
 
 Candidates 
+
 $$\omega_c, \omega_s, \omega_f$$
 
 
@@ -154,10 +160,15 @@ $$\omega_c, \omega_s, \omega_f$$
 *   We consider three voter groups with similar preferences:
 
 Conventionally left-wing (38%): 
+
 $$\omega_s \succ  \omega_f \succ  \omega_c$$
+
 Social liberal (18%): 
+
 $$\omega_f \succ  \omega_s \succ  \omega_c$$
+
 Conservative right-wing (44%): 
+
 $$\omega_c \succ  \omega_f \succ  \omega_s$$
 
 
