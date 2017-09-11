@@ -478,30 +478,7 @@ phase( duration(60), program(morning) ).
 -->
 
 ---
-### Theory - Closed-World vs. Open-World Assumption
-
-
----
-### Theory - Closed-World vs. Open-World Assumption - Example
-
-Consider the belief base
-```prolog
-light(red).
-```
-
-What does this imply for 
-* traffic light states
-	* `red`
-	* `green`
-	* `yellow`
-* belief `duration(90)`
-
-under _Closed World-Assumption_ and  _Open-World Assumption_, respectively?
-
-
----
 ### For Developers (Optional) - LightJason Architecture
-
 
 ![image](slides/lightjasonagentspeak/agenthouse.png#floatright)
 
