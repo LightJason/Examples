@@ -207,7 +207,7 @@ public enum ERuntime implements IRuntime
                 new CAgentDefinition(
                     CConfiguration.INSTANCE.getOrDefault( true, "agent", l_id, "visible" ),
                     CConfiguration.baseagents().noneMatch( l_id::equals ),
-                    CConfiguration.activatableagents().anyMatch( l_id::equals ),
+                    CConfiguration.activatableagents().findFirst().orElse( "" ).equals( l_id ),
                     l_id,
                     IOUtils.toString( l_stream, "UTF-8" )
                 )
