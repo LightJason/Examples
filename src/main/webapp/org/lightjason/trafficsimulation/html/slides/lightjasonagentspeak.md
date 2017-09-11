@@ -201,12 +201,12 @@ To transform the imperative method to a logical plan, proceed as follows:
 
 ```prolog
 +!phaseduration(NewDuration)
-  : NewDuration < 1     // path 1: plan condition to always fail
- <- fail                // fail simply marks the plan as failed.
+    : NewDuration < 1 <-    // path 1: plan condition to always fail
+        fail                // fail simply marks the plan as failed.
 
-  : NewDuration >= 1    // path 2: plan condition to change light and succeed
- <- generic/print( "For safety, changing light to RED" );
-    generic/print( "Changing phase duration to", NewDuration )
+    : NewDuration >= 1 <-   // path 2: plan condition to change light and succeed
+        generic/print( "For safety, changing light to RED" );
+        generic/print( "Changing phase duration to", NewDuration )
 .
 ```
 
@@ -228,18 +228,18 @@ To transform the imperative method to a logical plan, proceed as follows:
 ```prolog
 !main.
 
-+!main
- <- generic/print("Hello World!");
++!main <-
+    generic/print("Hello World!");
     !phaseduration(90)    // add a goal to be executed in the next cycle
 .
 
 +!phaseduration(NewDuration)
-  : NewDuration < 1
- <- fail
+    : NewDuration < 1 <-
+        fail
  
-  : NewDuration >= 1
- <- generic/print( "For safety, changing light to RED" );
-    generic/print( "Changing phase duration to", NewDuration )
+    : NewDuration >= 1 <-
+        generic/print( "For safety, changing light to RED" );
+        generic/print( "Changing phase duration to", NewDuration )
 .
 ```
 
@@ -267,6 +267,8 @@ will result in two plans for `90` and `60` to be run in *parallel* in the next c
 ```
 
 will execute the two plans immediately in the given order, i.e. `+!phaseduration(90)` -> `+!phaseduration(60)`.
+
+For more details and examples see [Plan Triggering Techniques](https://lightjason.github.io/knowledgebase/triggering/) in our knowledge base.
 
 ---
 ### Beliefs and Facts
@@ -303,22 +305,22 @@ phase( duration(60), program(morning) ).
 
 !main.
 
-+!main
- <- generic/print("Hello World!");
++!main <-
+    generic/print("Hello World!");
     -light(red); +light(green);
     !phaseduration(90)
 .
 
 +!phaseduration(NewDuration)
-  : NewDuration < 1
- <- fail
+    : NewDuration < 1 <-
+        fail
 
-  : NewDuration >= 1
- <- generic/print( "For safety, changing light to RED" );
-    -light(green); +light(red);
-    generic/print( "Changing phase duration to", NewDuration );
-    -phase( duration(CurrentDuration), program(Program) );
-    +phase( duration(NewDuration), program(Program) )
+    : NewDuration >= 1 <-
+        generic/print( "For safety, changing light to RED" );
+        -light(green); +light(red);
+        generic/print( "Changing phase duration to", NewDuration );
+        -phase( duration(CurrentDuration), program(Program) );
+        +phase( duration(NewDuration), program(Program) )
 .
 ```
 
@@ -407,24 +409,24 @@ phase( duration(60), program(morning) ).
 
 !main.
 
-+!main
- <- generic/print("Hello World!");
++!main <-
+    generic/print("Hello World!");
     -light(red); +light(green);
     !phaseduration(90)
 .
 
 +!phaseduration(NewDuration)
-  : NewDuration < 1
- <- fail
+    : NewDuration < 1 <-
+        fail
 
-  : NewDuration >= 1 && >>light(Colour) &&
-    >>phase( duration(CurrentDuration), program(Program) )
- <- generic/print( "For safety, changing light", Colour, "to RED" );
-    -light(Colour);
-    +light(red);
-    generic/print( "Changing phase duration to", NewDuration );
-    -phase( duration(CurrentDuration), program(Program) );
-    +phase( duration(NewDuration), program(Program) )
+    : NewDuration >= 1 && >>light(Colour) &&
+      >>phase( duration(CurrentDuration), program(Program) ) <-
+        generic/print( "For safety, changing light", Colour, "to RED" );
+        -light(Colour);
+        +light(red);
+        generic/print( "Changing phase duration to", NewDuration );
+        -phase( duration(CurrentDuration), program(Program) );
+        +phase( duration(NewDuration), program(Program) )
 .
 ```
 
@@ -444,8 +446,8 @@ phase( duration(60), program(morning) ).
   light( red ).                             // initial traffic light state
   !main.
 
-  +!main
-   <- >>light( Colour );
+  +!main <-
+      >>light( Colour );
       generic/print( "initial state", Colour );
       !!changelight;   // use !! to sequentially trigger changelight in THIS agent cycle
       // ...
