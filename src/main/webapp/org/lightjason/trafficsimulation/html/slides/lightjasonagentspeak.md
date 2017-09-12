@@ -193,9 +193,9 @@ NewDuration = 90
 To transform the imperative method to a logical plan, proceed as follows:
 
 * Consider every execution path! For the method `phaseduration` this would be
-  1. If the phase duration is less than one second, the plan always fails (-> early exit).
+  1. If the phase duration is less than one second, the plan always fails ($\to$ early exit).
   2. If the phase duration is equal to or greater than one second, set the traffic light to `red` and the phase duration to the value of variable `newduration`.
-* Variables have to start with a capital letter, e.g. `newduration` => `NewDuration`.
+* Variables have to start with a capital letter, e.g. `newduration` $\Rightarrow$ `NewDuration`.
 * Statements have to be separated by a semicolon `;`, except the last one!
 * A plan has to be terminated by a full stop symbol `.`
 
@@ -220,7 +220,7 @@ To transform the imperative method to a logical plan, proceed as follows:
     * [the initial goal](http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#12a3e79ad1f2c67d5cd687d1277a51b1), i.e. by convention `!main.` or 
     * [achievement goals inside plans](http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#a6ff3b47279b01ca106287f45227661c), e.g. `!phaseduration(90)`, which means _"try to instantiate and execute a plan `phaseduration(NewDuration)` (with parameter variable `NewDuration` set to `90`) in the next cycle"_.
   
-  (-> see example on the next slide)
+  ($\to$ see example on the next slide)
 
 ---
 ### Goals - Example
@@ -266,7 +266,7 @@ will result in two plans for `90` and `60` to be run in *parallel* in the next c
 !!phaseduration(90); !!phaseduration(60)
 ```
 
-will execute the two plans immediately in the given order, i.e. `+!phaseduration(90)` -> `+!phaseduration(60)`.
+will execute the two plans immediately in the given order, i.e. `+!phaseduration(90)` $\to$ `+!phaseduration(60)`.
 
 For more details and examples see [Plan Triggering Techniques](https://lightjason.github.io/knowledgebase/triggering/) in our knowledge base.
 
@@ -435,7 +435,7 @@ phase( duration(60), program(morning) ).
 
 **Exercise to the reader:** 
 
-* Write a plan `+!changelight` which changes the traffic light to the next logical state (depending on the current), i.e. `light(red)` -> `light(redyellow)` -> `light(green)` -> `light(yellow)` -> `light(red)` -> ... each time the plan gets triggered.
+* Write a plan `+!changelight` which changes the traffic light to the next logical state (depending on the current), i.e. `light(red)` $\to$ `light(redyellow)` $\to$ `light(green)` $\to$ `light(yellow)` $\to$ `light(red)` $\to$ ... each time the plan gets triggered.
 * Hints:
   * Encode all possible states in an initial belief.
   * You will have to trigger the plan **sequentially** (a traffic light would not switch states in parallel, would it?). So you should use `!!changelight` in the `+!main` plan.
