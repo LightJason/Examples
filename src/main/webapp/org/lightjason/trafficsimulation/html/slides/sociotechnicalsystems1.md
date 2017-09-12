@@ -171,10 +171,10 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 	* based on cellular automata
 	* car behaviour determined by state of preceding car
 * Use four rules in each step
-	1. Increase $\overrightarrow{v}$ by 1 if possible
-	2. Reduce $\overrightarrow{v}$ by 1 if not enough free cells in front 
-	3. Reduce $\overrightarrow{v}$ by 1 with probability $p$
-	4. Drive with new $\overrightarrow{v}$ (all vehicles)
+	1. Increase `\overrightarrow{v}` by 1 if possible
+	2. Reduce `\overrightarrow{v}` by 1 if not enough free cells in front 
+	3. Reduce `\overrightarrow{v}` by 1 with probability `p`
+	4. Drive with new `\overrightarrow{v}` (all vehicles)
 * Simple, homogeneous, not very realistic (but useful)
 
 
@@ -188,7 +188,7 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 *   Interaction of human and automated actors
 *   Flexible, changing regulatory regimes (rules, norms)
 
-<video width="320" height="240" controls>  <source src="mas-lecture1/video_001.mp4" type="video/mp4">![image](slides/sociotechnicalsystems1/image_019.png) Your browser does not support the video tag.</video> 
+<video width="320" height="240" controls>  <source src="slides/sociotechnicalsystems1/video_001.mp4" type="video/mp4">![image](slides/sociotechnicalsystems1/image_019.png) Your browser does not support the video tag.</video> 
 
 
 ---
@@ -206,20 +206,20 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 ---
 
 ## (Multi-)agent-based modelling and simulation
+<img alt="" height="280" src="slides/sociotechnicalsystems1/image_022.png" width="516">
+
 *   Abstraction: <u>Multiagent system</u>
 
 		… a (computer) system that is designed and implemented 
         as several interacting agents
 		… types of interactions including: 
         cooperation …; coordination …; and negotiation 
-     <sup><sup><sup>[Jennings et al, 1998]
+     <sup><sup><sup>[Jennings et al, 1998]</sup></sup></sup>
 
-<img alt="" height="280" src="slides/sociotechnicalsystems1/image_022.png" width="516">
 
 
 ---
 ## Example: Vehicle agent
-<span>![image](slides/sociotechnicalsystems1/image_026.png)</span> <span>![image](slides/sociotechnicalsystems1/image_027.png)</span> <span>![image](slides/sociotechnicalsystems1/image_028.png)</span>
 
 *   Perceives the environment via sensors
 *   Maintains a model of the state of the environment
@@ -228,33 +228,37 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 *   Executes actions that affect the environment
 *   Communicates with driver/passenger, cars, infrastructure
 *   Reacts to changes in the environment
-
+<span>![image](slides/sociotechnicalsystems1/image_026.png)</span> <span>![image](slides/sociotechnicalsystems1/image_027.png)</span> <span>![image](slides/sociotechnicalsystems1/image_028.png)</span>
 
 ---
 ## Key challenges in agent’s research (Wooldridge, 2009) 
 
 *   Construct intelligent agents that can carry out actions autonomously on behalf of their users/owners
--> Represent knowledge & semantics of knowledge and action
--> Behave flexibly and adaptively
--> Embedded in environment (sensing & acting)
+	* -> Represent knowledge & semantics of knowledge and action
+	* -> Behave flexibly and adaptively
+	* -> Embedded in environment (sensing & acting)
 *   Construct multiagent systems, i.e., systems consisting of agents that can interact with other agents to perform the tasks we delegate to them, and to resolve emerging goal conflicts
--> User/agent modelling, personalization</span>
--> Communication, coordination, cooperation, and negotiation</span>
--> Representing and dealing with semantic interoperability</span>
+	* -> User/agent modelling, personalization</span>
+	* -> Communication, coordination, cooperation, and negotiation</span>
+	* -> Representing and dealing with semantic interoperability</span>
 
 
 ---
 ## Micro- and macro perspective of Agents/MAS
 
-![image](slides/sociotechnicalsystems1/image_029.png#centering)
+<img alt="" height="480" src="slides/sociotechnicalsystems1/image_029.png" >
+
     
  
 ---
-## History of intelligent agents
+## History of intelligent agents (1)
 *   1930ies: Cybernetics - mathematical model for analogue control
 *   1950ies: Physical symbol systems hypothesis (Simon and Newell)
     The ability to symbolically represent aspects of the world is a prerequisite for intelligent behaviour (use explicit logical reasoning in order to decide what to do) 
     -> <u>deliberative agents</u>
+
+---
+## History of intelligent agents (2)    
 *   Since mid 1980s: Problems with symbolic reasoning lead to <u>reactive agents/</u>emergent behaviour (since 1985)
 *   Since 1990ies
     *   hybrid/layered architectures reconciling deliberation and reactivity
@@ -274,9 +278,9 @@ Let
    *   A possible output (actions) of system
 
 Let
-   *   s(t) state of environment at time $t \in T$
-   *   p(t) input to system at time $t \in T$
-   *   a(t) output of system at time $t \in T$
+   *   s(t) state of environment at time `t \in T`
+   *   p(t) input to system at time `t \in T`
+   *   a(t) output of system at time `t \in T`
 
 
 ---
@@ -289,8 +293,8 @@ Let
 ## Describing the environment
 
 *   The behaviour of the environment in dynamic systems is described by two functions
-*   Actions performed by the system modify the state of the environment: $s(t+1) = f(s(t), a(t))$
-*   Outputs of the environment (signals) are considered as inputs and result directly from the current state of the environment $s(t): _p(t) = g(s(t))$
+*   Actions performed by the system modify the state of the environment: `s(t+1) = f(s(t), a(t))`
+*   Outputs of the environment (signals) are considered as inputs and result directly from the current state of the environment `s(t): _p(t) = g(s(t))`
 
  
 ---
@@ -301,8 +305,8 @@ Let
 *   The _state estimation problem_ determines the current state of the environment from the current input into the system
 *   The _regulation problem_ determines an appropriate system response (action) given a recognized state of the environment
 *   Functions:
-    *   State recognition:  est: $P \rightarrow S$
-    *   Regulator: 		    reg: $S \rightarrow A$
+    *   State recognition:  est: `P \rightarrow S`
+    *   Regulator: 		    reg: `S \rightarrow A`
 
 
 ---
@@ -373,11 +377,10 @@ But: useful as a basic mathematical model
 ---
 ## Control: suppression and inhibition
 
-![image](slides/sociotechnicalsystems1/image_035.png#floatright)
-
-*   S: signal from module (layer k) suppresses (and replaces) input into module (layer k-1) for some pre-determined time
-*   I: signal from layer k inhibits output from module (at layer k-1) for some pre-determined time
+*   `S`: signal from module (layer `k`) suppresses (and replaces) input into module (layer `k-1`) for some pre-determined time
+*   `I`: signal from layer k inhibits output from module (at layer `k-1`) for some pre-determined time
 *   This control is hard-wired
+![image](slides/sociotechnicalsystems1/image_035.png#floatright)
 
 ---
 ## Example: Ant-based routing <sup><sup>(Dorigo et al., 2000)
@@ -385,9 +388,10 @@ But: useful as a basic mathematical model
 *   Ants = simple agents that can traverse a graph
 *   Ants look for food
 *   Ants leave pheromone on the edges they traverse
-*   Decision algorithm: Choose the edge with the highest pheromone concentration ![image](slides/sociotechnicalsystems1/image_038.png)
+*   Decision algorithm: Choose the edge with the highest pheromone concentration 
 *   Ant-based algorithms have been successfully used to solve routing and scheduling problems
-    
+   
+![image](slides/sociotechnicalsystems1/image_038.png)    
     
 ---
 ## Practical reasoning
