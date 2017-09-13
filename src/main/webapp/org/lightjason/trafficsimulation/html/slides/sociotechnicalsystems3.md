@@ -98,13 +98,20 @@ _MECHANISMS FOR COLLECTIVE DECISION-MAKING_
 
 
 ---
-## Social choice rule vs. Social choice function
-
+## Social choice rule vs. Social choice function (1)
 
 <img alt="" height="380" src="slides/sociotechnicalsystems3/image_004.png" >
+
+
 <sup>Adapted from (Wooldridge, 2009, p. 285)</sup>
 
- `\(Ag={1,...,n}\)`  set of agents `\( \Omega = { \omega , \omega ' , ... }\)`  possible outcomes Preference ordering for each voter i, e.g.
+---
+## Social choice rule vs. Social choice function (2)
+
+ $$Ag={1,...,n}$$  
+ set of agents 
+ $$ \Omega = { \omega , \omega ' , ... }$$ 
+ possible outcomes Preference ordering for each voter i, e.g.
 $$\omega_2 \succ  \omega_1 \succ  \omega_3$$
 
 
@@ -134,7 +141,8 @@ $$\omega_2 \succ  \omega_1 \succ  \omega_3$$
 ---
 ## Plurality voting: Political elections example I
 
-*   Consider elections with three parties `\( c(du), \ s(pd), \ and \ f(dp)\)`  Candidates `\( \omega_c, \omega_s, \omega_f\)` 
+*   Consider elections with three parties c(du), s(pd), and f(dp) Candidates 
+$$ \omega_c, \omega_s, \omega_f$$ 
 *   We consider three voter groups with similar preferences:
 
 Conventionally left-wing (38%): 
@@ -156,7 +164,9 @@ $$\omega_c \succ  \omega_f \succ  \omega_s$$
 *   Plurality voting
     *   CDU wins
 
-But: For 56% of the voters, `\( \omega_c\)`  was the least preferred candidate
+But: For 56% of the voters, 
+$$ \omega_c$$  
+was the least preferred candidate
 
 *   Consequence:
 	*   FDP voters are likely to vote for SPD candidate
@@ -176,16 +186,45 @@ $$\omega_2 \succ_3  \omega_3 \succ_3  \omega_1$$
  
 
 ---
-## Plurality voting: Condorcet paradox II 
+## Plurality voting: Condorcet paradox II (1)
 
 *   Observations for plurality voting
     *   outcome is tied - no winner
-    *   Suppose, we select: `\( \omega_1 frac{2}{3}\)`  of the voters would prefer  `\( \omega_3 \ over \ \omega_1!\)` 
-*   Suppose, we select: `\( \omega_3 \ frac{2}{3}\)`  of the voters would prefer `\( \omega_2 \ \omega_1 \ !\)` 
-*   Suppose, we select: `\( \omega_2 frac{2}{3}\)`  of the voters would prefer `\( \omega_1 \ over \ \omega_2 \!\)` 
-*   For every outcome, there is another candidate that is preferred by at least `\( frac{2}{3}\)`  of the candidates!
+    *   Suppose, we select: 
 
-*   *   Paradox of the cyclic majorities
+$$ \omega_1: \ \frac{2}{3}$$ 
+
+of the voters would prefer  
+
+$$ \omega_3 \ over \ \omega_1!$$ 
+
+---
+## Plurality voting: Condorcet paradox II (2)
+
+*   Suppose, we select: 
+$$ \omega_3: \ \frac{2}{3}$$  
+
+of the voters would prefer 
+
+$$ \omega_2 \ over \ \omega_1 \ !$$ 
+
+*   Suppose, we select: 
+
+$$ \omega_2: \ \frac{2}{3}$$  
+
+of the voters would prefer 
+
+$$ \omega_1 \ over \ \omega_2 \!$$ 
+
+---
+## Plurality voting: Condorcet paradox II (3)
+*   For every outcome, there is another candidate that is preferred by at least 
+   
+$$\frac{2}{3}$$  
+
+of the candidates!
+
+*   Paradox of the cyclic majorities
 
 
 ---
@@ -198,24 +237,61 @@ $$\omega_2 \succ_3  \omega_3 \succ_3  \omega_1$$
 
 
 ---
-## Analysing preference structures: majority graph
+## Analysing preference structures: majority graph (1)
 
 Directed graph
-*   Nodes correspond to outcomes `\( \omega \in \Omega\)` 
-*   Edge from outcome `\( \omega \ to \ \omega'\)` if a majority of voters rank `\( \omega \ above \ \omega'\)`  (in a direct competition)
+*   Nodes correspond to outcomes 
+$$ \omega \in \Omega$$ 
+*   Edge from outcome 
+$$ \omega \ to \ \omega'$$ 
+if a majority of voters rank  (in a direct competition)
+$$ \omega \ above \ \omega'$$ 
 *   Properties of majority graph 
-*   Complete: For any two outcomes `\( \omega_i \ and \ \omega_j\)`  either `\( \omega_i\)`  defeats `\( \omega_j\)`  or `\( \omega_j\)`  defeats `\( \omega_i\)` 
-*   Asymmetric: if `\( \omega_i\)`  defeats `\( \omega_j, \omega_j\)`  must not defeat `\( \omega_i\)` 
+
+---
+## Analysing preference structures: majority graph (2)
+*   Complete: 
+
+For any two outcomes 
+$$ \omega_i \ and \ \omega_j$$  
+either 
+$$ \omega_i \  defeats \ \omega_j$$  
+or 
+$$ \omega_j \  defeats \ \omega_i$$ 
+
+
+---
+## Analysing preference structures: majority graph (3)
+*   Asymmetric: 
+
+if 
+$$ \omega_i \  defeats \ \omega_j, \omega_j$$  
+must not defeat 
+$$ \omega_i$$ 
 *   Irreflexive: An outcome will never defeat itself
 *   A graph with these properties is called "tournament"
 
 ---
-## Majority graph: Usage and Examples
+## Majority graph: Usage and Examples (1)
 
-*   A candidate `\( \omega_i\)`  is a possible winner, if for every other outcome `\( \omega_j\)`  there is an path from `\( \omega_i \ to \ \omega_j\)` 
-*   A candidate `\( \omega_i\)`  is a Condorcet winner, if there is an edge `\( \omega_i\)`  to every other edge in the graph
+A candidate 
+$$ \omega_i$$  
+is a possible winner, if for every other outcome 
+$$ \omega_j$$  
+there is an path from 
+$$ \omega_i \ to \ \omega_j$$ 
+
+---
+## Majority graph: Usage and Examples (1)
+*   A candidate 
+$$ \omega_i$$  
+is a Condorcet winner, if there is an edge 
+$$ \omega_i$$  
+to every other edge in the graph
 *   Left: Every outcome is a possible winner
-*   Right: Outcome `\( \omega_1\)`  is a Condorcet winner
+*   Right: Outcome 
+$$ \omega_1$$  
+is a Condorcet winner
 
 ![image](slides/sociotechnicalsystems3/image_006.png#centering)
 
@@ -233,9 +309,9 @@ Directed graph
 
 *   Let x, y, z be possible outcomes of the voting
 *   Let the group of agents be divided in three subgroups
-    * Group 1: `\( x > z > y\)`  (35% of overall group size)
-    * <span style=" color: #000;">Group 2: `\( y > x > z\)`  (33%)
-    * <span style=" color: #000;">Group 3: `\( z > y > x\)`  (32%)
+    * Group 1: x > z > y  (35% of overall group size)
+    * <span style=" color: #000;">Group 2: y > x > z  (33%)
+    * <span style=" color: #000;">Group 3: z > y > x  (32%)
 *   Consider the following three variants of the tournament schedule:
 
 a) ![image](slides/sociotechnicalsystems3/image_008.png)
@@ -248,68 +324,69 @@ The result depends on how the schedule is designed
 ---
 ## In the binary protocol, irrelevant alternatives may cause problems
 
-*   Assumption: Alternative z is irrelevant for the decision
-*   By adding z as an alternative, the outcome may change
-*   Consider cases b) and c) in the example on the previous slide
-*   `\( Z\)`  is irrelevant, because it wins in neither of the two cases
-*   But:
+* Assumption: Alternative z is irrelevant for the decision
+* By adding z as an alternative, the outcome may change
+* Consider cases b) and c) in the example on the previous slide
+* Z is irrelevant, because it wins in neither of the two cases
+* But:
 
-If z first plays against `\( x \rightarrow y\)`  wins If `\( z\)`  first plays against `\( y \rightarrow x `\( wins
+If z first plays against x -> y wins If z first plays against y -> x wins
 
 
 ---
 ## The pareto-dominated winner paradox
 
-*   Let `\( a, b, x, y\)`  be possible outcomes
-*   Let the group of agents be divided into three (equally sized) subgroups:
-    *   Group `\( 1\)` : `\( x > y > b > a\)` 
-    *   Group `\( 2\)` : `\( a > x > y > b\)` 
-    *   Group `\( 3\)` : `\( b > a > x > y\)` 
-    
+* Let a, b, x, y be possible outcomes
+* Let the group of agents be divided into three (equally sized) subgroups:
+ * Group 1 : x > y > b > a 
+ * Group 2 : a > x > y > b 
+ * Group 3 : b > a > x > y 
+ 
 ![image](slides/sociotechnicalsystems3/image_011.png)
-*   y wins even though everyone prefers x to y
+* y wins even though everyone prefers x to y
 
 
 ---
 ## Borda Voting 1
 
-*   The Borda mechanism attempts to resolve the problems observed for binary voting
-*   Let `\( x_1, ..., x_n\)` 
+* The Borda mechanism attempts to resolve the problems observed for binary voting
+* Let 
+$$x_1, ..., x_n $$
 be the possible outcomes, then each agent scores its most-preferred outcomes n points, its second- most preferred outcome n-1 points, etc., and its least preferred outcome 1 point.
-*   The sum of scores is calculated for all outcomes/agents
-*   The outcome with the highest aggregated score wins
+* The sum of scores is calculated for all outcomes/agents
+* The outcome with the highest aggregated score wins
 
 Example above:
-    * `\( X\)`  receives score of `\( 3 * 0.35 + 2 * 0.33 + 1 * 0.32 = 2.03\)` 
-    * `\( Y\)`  receives score of `\( 1.98\)` 
-    * `\( Z\)`  receives score of `\( 1.99\)`  -> _**Using Borda Voting, x wins**_
+ * X receives score of 3 * 0.35 + 2 * 0.33 + 1 * 0.32 = 2.03 
+ * Y receives score of 1.98 
+ * Z receives score of 1.99 -> _**Using Borda Voting, x wins**_
 
 
 ---
 ## Reversed-order paradox
 
-*   Let `\( a, b, c, x\)`  be possible outcomes
+*   Let  a, b, c, x  be possible outcomes
 *   Let the agents be divided into the following (equally sized) groups:
-    *   Group `\( 1\)` : `\( x > c > b > a\)` 
-    *   Group `\( 2\)` : `\( a > x > c > b\)` 
-    *   Group `\( 3\)` : `\( b > a > x > c\)` 
-    *   Group `\( 4\)` : `\( x > c > b > a\)` 
-    *   Group `\( 5\)` : `\( a > x > c > b\)` 
-    *   Group `\( 6\)` : `\( b > a > x > c\)` 
-    *   Group `\( 7\)` : `\( x > c > b > a\)` 
-*   Borda values are: x=22, a=17, b=16, c=15
-*   If we remove outcome x, we get: c=15, b=14, a=13
-    *   As c is always behind x, it doesn't lose points by removal of x
+    *   Group 1: x > c > b > a 
+    *   Group 2: a > x > c > b 
+    *   Group 3: b > a > x > c 
+    *   Group 4: x > c > b > a 
+    *   Group 5: a > x > c > b 
+    *   Group 6: b > a > x > c 
+    *   Group 7: x > c > b > a 
+*   Borda values are: x=22, a=17, b=16, c=15 
+*   If we remove outcome   x , we get:   c=15, b=14, a=13 
+    *   As c is always behind   x , it doesn't lose points by removal of   x 
 
 
 ---
 ## Borda Voting is also sensitive to irrelevant alternatives
 
-*   Let `\( x, y, z\)`  be possible outcomes
+*   Let  x, y, z  be possible outcomes
 *   Three groups of agents
-    * <span style=" color: #000;">Group `\( 1\)` : `\( x > z > y (35%)\)` </span>
-    * <span style=" color: #000;">Group `\( 2\)` : `\( y > x > z (33%)\)` </span>
-    * <span style=" color: #000;">Group `\( 3\)` : `\( z > y > x (32%)\)` </span>
+    * <span style=" color: #000;">Group  1: x > z > y (35%) </span>
+    * <span style=" color: #000;">Group  2: y > x > z (33%) </span>
+    * <span style=" color: #000;">Group  3: z > y > x (32%) </span>
 *   As described before, the winner using Borda Voting is x, i.e. z can be considered an irrelevant alternative
 *   By removing z from the voting, y becomes the winner
 
@@ -317,46 +394,84 @@ Example above:
 ---
 ## The majority winner's paradox
 
-*   In some cases, Borda Voting violates the principle of the majority winner
-*   Example: Consider seven groups of agents:
-    *   Group `\( 1\)` : `\( a > b > c\)` 
-    *   Group `\( 2\)` : `\( a > b > c\)` 
-    *   Group `\( 3\)` : `\( a > b > c\)` 
-    *   Group `\( 4\)` : `\( b > c > a\)` 
-    *   Group `\( 5\)` : `\( b > c > a\)` 
-    *   Group `\( 6\)` : `\( b > a > c\)` 
-    *   Group `\( 7\)` : `\( c > a > b\)` 
-*   Winner according to the majority rule for every binary protocol: <span class="s11">**_a_**</span>
-*   Borda values: `\( b=16\)` , `\( a=15\)` , `\( c=11\)` 
+*  In some cases, Borda Voting violates the principle of the majority winner
+*  Example: Consider seven groups of agents:
+   *  Group 1: a > b > c 
+   *  Group 2: a > b > c 
+   *  Group 3: a > b > c 
+   *  Group 4: b > c > a 
+   *  Group 5: b > c > a 
+   *  Group 6: b > a > c 
+   *  Group 7: c > a > b 
+*  Winner according to the majority rule for every binary protocol: <span class="s11">**_a_**</span>
+*  Borda values: b=16 , a=15 , c=11 
 
 
 ---
-## Is there a desirable way of aggregating preferences of multiple agents?
+## Is there a desirable way of aggregating preferences of multiple agents? (1)
 
-Let `\( \Omega\)`  be a set of outcomes and let _A_ be a set of agents
+Let 
+$$ \Omega$$  
+be a set of outcomes and let _A_ be a set of agents;
 
-Each agent `\( \in A\)`  has a (total) preference ordering `\( R_i\)`  over `\( \Omega  \)`
-*    Let `\( R = (R_i,...,R_(|A|))\)` 
-*   Let `\( G(R,\Omega)\)`  be the social choice function
+Each agent 
+$$ \in A$$
+has a (total) preference ordering 
+$$ R_i \ over \ \Omega  $$
+
+---
+## Is there a desirable way of aggregating preferences of multiple agents? (2)
+
+*    Let 
+
+$$ R = (R_i,...,R_(|A|))$$ 
+
+*   Let 
+$$ G(R,\Omega)$$  
+be the social choice function
 
 
 ---
-## Desiderata for G 
+## Desiderata for G (1)
 
-G should:
+G should: 
 
-*   _**satisfy the Pareto principle:**_
-	*	if each agent prefers x over y, then `\( G(R, \Omega)\)`  also prefers `\( x\)`  over `\( y\)` 
-*   **_be independent of irrelevant alternatives:_**
-    *   **if** `\( G(R,\Omega)\)`  prefers `\( x\)`  over `\( y\)`  AND `\( R'\)`  is another preference profile
-    *   such that the preference value between x and y is the same in `\( R'\)` as in `\( R\)` for each agent **then**   `\( G(R ',  \Omega)\)`  also prefers `\( x\)`  over `\( y\)` 
-*   _**be non-dictatorial**_: No single agent in A determines the preferences for every pair `\( x,y\)`  in `\( \Omega\)` 
+_**satisfy the Pareto principle**_
+
+if each agent prefers x over y, then 
+$$ G(R, \Omega)$$  
+also prefers x over y
+
+---
+## Desiderata for G (2)
+
+**_be independent of irrelevant alternatives:_**
+
+if
+$$ G(R,\Omega)$$  
+prefers x  over y  AND R  is another preference profile such that the preference value between x and y is the same in R' as in R for each agent 
+
+**then**   
+
+$$ G(R ',  \Omega)$$  
+also prefers x  over y
+
+
+---
+## Desiderata for G (3)
+_**be non-dictatorial**_
+
+No single agent in A determines the preferences for every pair 
+
+$$x,y  \in \Omega$$ 
 
 
 ---
 ## Arrow's impossibility theorem (in a nutshell)
 
-For `\( |\Omega| \geq 3,\)` there exists no social choice function G that satisfies all desiderata `\( 1-3\)` 
+For 
+$$ |\Omega| \geq 3,$$ 
+there exists no social choice function G that satisfies all desiderata 1-3
 
 *   Implication: every social choice function that satisfies 1\. and 2\. is dictatorial
 *   What can we do? Which property can we do compromise on more easily? 1\. or 2.?
@@ -419,7 +534,7 @@ For `\( |\Omega| \geq 3,\)` there exists no social choice function G that satisf
 ---
 ## Vehicle platoon formation for inner-city ride-sharing: Example scenario
 
-![image](slides/sociotechnicalsystems3/image_048.png#centering)
+![image](slides/sociotechnicalsystems3/image_049.png#centering)
 
 
 ---
@@ -444,8 +559,7 @@ For `\( |\Omega| \geq 3,\)` there exists no social choice function G that satisf
 
 
 ---
-## Results: 
-### Voting architecture and simulation testbed <sup><sup><sup><sup>(Dennisen & Müller, MATES 2015)
+## Results: Voting architecture and simulation testbed <sup><sup><sup><sup>(Dennisen & Müller, MATES 2015)
 
 *   Requirements for traffic voting identified
 *   Formal model and voting architecture

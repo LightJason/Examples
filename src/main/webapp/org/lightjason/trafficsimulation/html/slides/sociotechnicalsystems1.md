@@ -171,10 +171,10 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 	* based on cellular automata
 	* car behaviour determined by state of preceding car
 * Use four rules in each step
-	1. Increase`\(\overrightarrow{v}\)` by 1 if possible
-	2. Reduce`\(\overrightarrow{v}\)` by 1 if not enough free cells in front 
-	3. Reduce`\(\overrightarrow{v}\)` by 1 with probability`\(p\)`
-	4. Drive with new`\(\overrightarrow{v}\)` (all vehicles)
+	1. Increase v by 1 if possible
+	2. Reduce v by 1 if not enough free cells in front 
+	3. Reduce v by 1 with probability _p_
+	4. Drive with new_\overrightarrow{v}_ (all vehicles)
 * Simple, homogeneous, not very realistic (but useful)
 
 
@@ -267,21 +267,32 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 
 
 ---
-## Agents and dynamic systems
+## Agents and dynamic systems (1)
 Dynamic systems (control theory) consists of
    *   System (Controller)
    *   Environment
 
 Let
-   *   T points in time
-   *   S possible environmental states
-   *   P possible inputs (perception) to system
-   *   A possible output (actions) of system
+   *   _T_ points in time
+   *   _S_ possible environmental states
+   *   _P_ possible inputs (perception) to system
+   *   _A_ possible output (actions) of system
+
+---
+## Agents and dynamic systems (2)
 
 Let
-   *   s(t) state of environment at time`\(t \in T\)`
-   *   p(t) input to system at time`\(t \in T\)`
-   *   a(t) output of system at time`\(t \in T\)`
+   *   _s(t)_ state of environment at time
+   
+   $$t \in T$$
+   
+   *   _p(t)_ input to system at time
+   
+   $$t \in T$$
+   
+   *   _a(t)_ output of system at time
+   
+   $$t \in T$$
 
 
 ---
@@ -294,8 +305,8 @@ Let
 ## Describing the environment
 
 *   The behaviour of the environment in dynamic systems is described by two functions
-*   Actions performed by the system modify the state of the environment:`\(s(t+1) = f(s(t), a(t))\)`
-*   Outputs of the environment (signals) are considered as inputs and result directly from the current state of the environment`\(s(t): p(t) = g(s(t))\)`
+*   Actions performed by the system modify the state of the environment: _s(t+1) = f(s(t), a(t))_
+*   Outputs of the environment (signals) are considered as inputs and result directly from the current state of the environment _s(t): p(t) = g(s(t))_
 
  
 ---
@@ -306,8 +317,8 @@ Let
 *   The _state estimation problem_ determines the current state of the environment from the current input into the system
 *   The _regulation problem_ determines an appropriate system response (action) given a recognized state of the environment
 *   Functions:
-    *   State recognition:  est:`\(P \rightarrow S\)`
-    *   Regulator: 		    reg:`\(S \rightarrow A\)`
+    *   State recognition:  est: _P -> S_
+    *   Regulator: 		    reg: _S -> A_
 
 
 ---
@@ -378,8 +389,8 @@ But: useful as a basic mathematical model
 ---
 ## Control: suppression and inhibition
 
-*  `\(S\)`: signal from module (layer`\(k\)`) suppresses (and replaces) input into module (layer`\(k-1\)`) for some pre-determined time
-*  `\(I\)`: signal from layer k inhibits output from module (at layer`\(k-1\)`) for some pre-determined time
+*  _S_: signal from module (layer_k_) suppresses (and replaces) input into module (layer _k-1_) for some pre-determined time
+*  _I_: signal from layer _k_ inhibits output from module (at layer _k-1_) for some pre-determined time
 *   This control is hard-wired
 ![image](slides/sociotechnicalsystems1/image_035.png#floatright)
 

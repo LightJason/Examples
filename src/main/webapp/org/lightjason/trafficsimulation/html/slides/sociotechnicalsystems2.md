@@ -173,16 +173,12 @@ Sender of a message is always saved by the recipient as an annotation to the con
 
 
 ---
-## Multiagent system types (1)
-
+## Multiagent system types
 The literature often distinguishes two types of systems in the area of MAS **Self-interested agents**
 *   Existence of a global goal/problem is not required
 *   Agents co-exist and pursue local goals in a self-interested fashion, independent from each other
 *   Often: assumption of _(bounded) individual rationality_
 *   Interaction/coordination occurs through a shared environment: Avoid/resolve resource conflicts; exploit synergies
-
----
-## Multiagent system types (2)
 
 Benevolent agents: Distributed Problem Solving
 *   A global, shared problem; often: global utility function
@@ -246,7 +242,7 @@ _**By adding a road, travel time increases!!!**_
 ---
 ## Example: Traffic routing (1)
 
-Public transport companies `\(TC_1,  TC_2\)`
+Public transport companies TC1,  TC2
 of neighbouring countries Clausland and Zellerreich have agreed to route passengers "seamlessly"
 <img alt="" height="280" src="slides/sociotechnicalsystems2/image_032.png" >
 
@@ -276,9 +272,9 @@ $$o_2 \rightarrow d_2$$
 
 *   Assume each edge has cost 1 associated
 *   Each TC pays for cost occurring on its own network
-*   Cost from `\(C\ to\  d_1\)` and `\(d_2\)` is assumed to be  `\(0 \)`
+*   Cost from _C_ to  _d1_ and _d2_ is assumed to be 0
 
-* How should `\(TC_1\)` and `\(TC_2\)` route their traffic streams?
+* How should TC1 and TC2 route their traffic streams?
 
 ---
 ## Game theory
@@ -318,7 +314,16 @@ $$u_j: \Omega  \rightarrow  \mathfrak{R}$$
 
 Utility functions induce preference orderings over the result states of interactions
     
-`\(\Omega \ge_i \Omega'\)` means `\(u_i(\omega) \ge u_i(\Omega')\)` and `\(\Omega >_i \Omega'\)` means `\(u_i(\Omega) > u_i(\Omega')\)`
+---
+## Utility and preferences (2)
+
+$$\Omega \ge_i \Omega'$$ 
+means 
+$$u_i(\omega) \ge u_i(\Omega')$$ 
+and 
+$$\Omega >_i \Omega'$$ 
+means 
+$$u_i(\Omega) > u_i(\Omega')$$
 
 *   Interpretation of utility
 	*   Not the same as money
@@ -399,7 +404,7 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 ## Dominant strategies (1)
 
 *   Given any particular strategy (either _C_ or _D_) of agent _i_, there will be a number of possible outcomes
-*   We say `\(s_1\)` _**dominates**_ `\(s_2\)` if every outcome possible by _i_ playing `\(s_1\)` is preferred over every outcome possible by _i_ playing `\(s_2\)`
+*   We say s1 _**dominates**_ s2 if every outcome possible by _i_ playing s1 is preferred over every outcome possible by _i_ playing s2
 *   A rational agent will never play a dominated strategy
 *   So, in deciding what to do, we can **_delete dominated strategies_**
 *   Unfortunately, there isn't always a unique undominated strategy
@@ -429,10 +434,10 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 ---
 ## Nash Equilibrium
 
-*   In general, we will say that two strategies `\(s_1 \ and \ s_2\)` are in Nash equilibrium if
-1.    under the assumption that agent _i_ plays `\(s_1,\)` agent _j_ can do no better than play `\(s_2;\)` and 
+*   In general, we will say that two strategies s1 and s2 are in Nash equilibrium if
+1.    under the assumption that agent _i_ plays s1, agent _j_ can do no better than play s2; 
 
-2.    under the assumption that agent _j_ plays `\(s_2,\)` agent i can do no better than play `\(s_1.\)`
+2.    under the assumption that agent _j_ plays s2, agent i can do no better than play s1.
 
 *    _Neither agent has any incentive to deviate from a Nash equilibrium_
 *    This is desirable as modifying strategies requires effort (cost!) and can endanger system stability
@@ -511,8 +516,8 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 *   Players: the n countries simultaneously decide on whether to pass policy to reduce pollution
 *   Strategies: YES = Cooperate, NO = Defect
 *   Assume k out of n countries choose not to control pollution
-    * -> The cost incurred by each of the defecting countries is `\(k\)`
-    * -> The cost incurred by each of the n-k cooperating countries is `\(k+3\)`
+    * -> The cost incurred by each of the defecting countries is k
+    * -> The cost incurred by each of the n-k cooperating countries is k+3
 *   _Does the game have Nash equilibria?_
 *   _(How) does this game relate to any of the games we have previously seem?_
 
@@ -528,18 +533,32 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 ![image](slides/sociotechnicalsystems2/image_065.png)
 
 ---
-## Tragedy of the commons: formulation as a game
+## Tragedy of the commons: formulation as a game (1)
 
 *   Each players' optimal selfish strategy depends on what other players do
 *   Infinite number of strategies for each player: 
 
-**_Use_** `\(x_i\)` _**fragment of road capacity,**_ `\(x_i \in [0,1]\)`
+**_Use_** 
+$$x_i$$ 
+_**fragment of road capacity,**_ 
+
+$$x_i \in [0,1]$$
+    
+---
+## Tragedy of the commons: formulation as a game (2)    
     
 *	Define players' payoff:
 
-If (total traffic exceeds capacity): 	`\(\Sigma_j x_j \geq 1\)`payoff for all players `\(j\)` is `\(0\)`
+If (total traffic exceeds capacity): 	
+$$\Sigma_j x_j \geq 1$$
+
+payoff for all players j is 0
 	
-`\(Sigma_j x_j < 1\)` payoff for player i is `\(x_i  \cdot (1-\Sigma_j x_j)\)`
+$$Sigma_j \ x_j < 1$$ 
+
+payoff for player i is 
+
+$$x_i  \cdot (1-\Sigma_j x_j)$$
 
 *   This definition reflects the intended trade-off
     *  Players want to use as much of the resource as possible
@@ -548,23 +567,71 @@ If (total traffic exceeds capacity): 	`\(\Sigma_j x_j \geq 1\)`payoff for all pl
 
 
 ---
-## Tragedy of the commons game: stable strategies 
+## Tragedy of the commons game: stable strategies (1)
 
 *   We consider player i
-*   Assume: other players j use `\(t=\Sigma_(j \neq i)  x_j < 1\)`
-*   Optimization problem for player i: `\(x \cdot (1-t-x)\rightarrow max)\)`
-*   Solving it reveals (see next slide for some high school maths) `\(x=(1-t)/2\)`
-*   A set of strategies is stable if all players are playing their optimal-- selfish strategy, given the strategies of all other players
-*   For our case, that means: `\(x_i = (1-\Sigma_(j \neq i)x_j)/2\)` which has as unique solution `\(x_i = 1/(n+1)\)` for all `\(i\)`
+*   Assume: other players j use 
+
+$$t=\Sigma_(j \neq i)  x_j < 1$$
+
+*   Optimization problem for player i: 
+
+$$x \cdot (1-t-x)\rightarrow max)$$
+
+*   Solving it reveals (see next slide for some high school maths) 
+
+$$x=(1-t)/2$$
 
 
 ---
-## But why is it called _tragedy_?
+## Tragedy of the commons game: stable strategies (1)
+
+*   A set of strategies is stable if all players are playing their optimal-- selfish strategy, given the strategies of all other players
+*   For our case, that means: 
+
+$$x_i = (1-\Sigma_(j \neq i)x_j)/2$$ 
+
+which has as unique solution 
+
+$$x_i = 1/(n+1)$$ 
+for all i.
+
+
+---
+## But why is it called _tragedy_? (1)
 
 *   It is a tragedy, because the resulting total payoff is extremely    low
-*   With `\( x_i = 1/(n+1)\)` we can calculate each player's payoff as `\(x_i \cdot (1-\Sigma_(j \neq i)  x_j  = \frac{1}{(n+1)^2}\)`
-*	This means that the sum of all players' payoffs is `\(\frac{1}{(n+1)^2} \approx \frac{1}{n}\)`
-Compare if the overall used fraction of the resource capacity was `\(\Sigma_j x_j = \frac{1}{2}\)` the sum of all players' payoffs were `\(\frac{1}{4}\)` and hence approximately  `\(\frac{n}{4}\)` times bigger
+*   With 
+   
+   $$ x_i = 1/(n+1)$$ 
+   
+we can calculate each player's payoff as 
+
+$$x_i \cdot (1-\Sigma_(j \neq i)  x_j  = \frac{1}{(n+1)^2}$$
+
+---
+## But why is it called _tragedy_? (2)
+
+*	This means that the sum of all players' payoffs is 
+	
+	$$\frac{1}{(n+1)^2} \approx \frac{1}{n}$$
+    
+Compare if the overall used fraction of the resource capacity was 
+
+$$\Sigma_j x_j = \frac{1}{2}$$ 
+
+the sum of all players' payoffs were 
+
+$$\frac{1}{4}$$ 
+
+---
+## But why is it called _tragedy_? (2)
+
+... and hence approximately  
+
+$$\frac{n}{4}$$ 
+
+times bigger
 
 *	In this game, the n users sharing the common resource _overuse it so that the total value of the shared resource decreases quite dramatically_  
 
@@ -599,11 +666,20 @@ Compare if the overall used fraction of the resource capacity was `\(\Sigma_j x_
 *   Mixed strategy
     *   Choice of actions based on probabilities
 *   Formally:
-Let `\(S = \{ s_1, s_2, ... , s_k \}\)`be possible actions
+   
+Let 
 
-A mixed strategy for player i is a probability distribution `\(P_i=\left [  p_{i1}, p_{i2}, ..., p_{ik}\right ]\)`  over `\(S\)`
+$$S = \{ s_1, s_2, ... , s_k \}$$
 
-Meaning: `\(i\)` plays `\(s1\)` with probability `\(p_{11}, s_2\)` with probability `\(p_{12},\)` etc.
+be possible actions
+
+---
+## Mixed strategy (Wooldridge 2009, 260f) (2)
+
+A mixed strategy for player i is a probability distribution 
+$$P_i=\left [  p_{i1}, p_{i2}, ..., p_{ik}\right ]  \ over \ S$$
+
+Meaning: i plays s1 with probability p11, s2 with probability p12 etc.
  
 *   Apply to rock, stone, scissors
     *   "Choose randomly between rock, stone, scissors, where each alternative is chosen with equal probability"
