@@ -503,9 +503,13 @@ MathJax.Hub.Config({
     tex2jax:{
         inlineMath: [["$","$"]],
         displayMath: [["$$","$$"]],
-        processEscapes: !0,
-        processEnvironments: !1,
+        processEscapes: true,
+        processEnvironments: false,
         skipTags: ["script","noscript","style","textarea","pre","code"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        "HTML-CSS": {
+            availableFonts: ["TeX"]
+        },
         TeX: {
             equationNumbers: {
                 autoNumber:"AMS"

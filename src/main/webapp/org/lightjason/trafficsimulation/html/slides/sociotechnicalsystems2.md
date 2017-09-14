@@ -39,6 +39,8 @@ _MULTIAGENT COORDINATION: RATIONAL INTERACTION_
 ---
 ## Multiagent system (MAS)
 
+![image](slides/sociotechnicalsystems2/image_006.jpg#floatright)
+
 A system, in which a number of agents ...
 
 *   interact via communication
@@ -48,7 +50,6 @@ A system, in which a number of agents ...
 *   Successful interaction requires the capability to cooperate with each other, to coordinate, or to negotiate
 *   Transferring this statement to the traffic domain is obvious
 
-<img alt="" height="280" src="slides/sociotechnicalsystems2/image_006.jpg" >
    
 ---
 ## MAS Context
@@ -91,7 +92,7 @@ A system, in which a number of agents ...
 ## Coordination, cooperation, collaboration?
 
 ![image](slides/sociotechnicalsystems2/image_012.png#centering)
-<sup><sup>[Source: Picture 1.-3\. http://www.utdallas.edu/~mspong/Presentations/Montreal06.ppt](http://www.utdallas.edu/%7Emspong/Presentations/Montreal06.ppt), Picture 4. JP Müller, 1996</sup></sup>
+<sup>[Source: Picture 1.-3\. http://www.utdallas.edu/~mspong/Presentations/Montreal06.ppt](http://www.utdallas.edu/%7Emspong/Presentations/Montreal06.ppt), Picture 4. JP Müller, 1996</sup>
 
 ---
 ## Interaction often involves communication
@@ -209,10 +210,11 @@ However...
 
 ---
 ## Two decision problems (2)
-
-<img alt="" height="200" src="slides/sociotechnicalsystems2/image_026.png" >
-
 *   Traffic planners: Should we build a new clearway to reduce overall travel times from S to E?
+
+
+![image](slides/sociotechnicalsystems2/image_026.png#centering)
+
 
 ---
 ## Braess Paradox: New roads not always help ...
@@ -234,8 +236,8 @@ _**By adding a road, travel time increases!!!**_
 
 *   Assume that the cars agree to avoid the new road and to distribute equally over the old routes
 *   We did already show that faster route exists (travel time 70 instead of 83)
-    * -> There is a huge incentive for agents to defect
-    * -> This solution is unstable for egoistic agents
+    * $\rightarrow$ There is a huge incentive for agents to defect
+    * $\rightarrow$ This solution is unstable for egoistic agents
 *   What can be done?
 
 
@@ -245,7 +247,7 @@ _**By adding a road, travel time increases!!!**_
 Public transport companies TC1,  TC2
 of neighbouring countries Clausland and Zellerreich have agreed to route passengers "seamlessly"
 
-<img alt="" height="280" src="slides/sociotechnicalsystems2/image_032.png" >
+<img src="slides/sociotechnicalsystems2/image_032.png#centering"/>
 
 
 ---
@@ -283,8 +285,7 @@ $$o_2 \rightarrow d_2$$
 *   The examples describe scenarios of interaction between self-interested players ("agents")
 *   Game theory "aims to model situations in which multiple participants interact or affect each other's outcomes" <sup><sup>(Nisan et al., 2007, p.3)
 *   In particular, game theory deals with the formulation of optimal strategies for solving conflicts
-*   Seminal work on game theory
-    <sup><sup> J.  von Neumann und O. Morgenstern. The Theory of Games and Economic Behaviour. Princeton University Press, Princeton, NJ (1944).</sup>
+*   Seminal work on game theory J.  von Neumann und O. Morgenstern. The Theory of Games and Economic Behaviour. Princeton University Press, Princeton, NJ (1944).</sup>
 *   All the examples described above can be modelled as one-shot simultaneous move games
 *   Before we show that, we introduce the basic concepts
  
@@ -295,9 +296,9 @@ $$o_2 \rightarrow d_2$$
 
 *   Simple case: two agents only 
 
-$$(|Ag| = 2, Ag = (  i, j )$$
+$$|Ag| = 2, Ag = (  i, j )$$
 
-*   *   Interaction of agents produce results
+*   Interaction of agents produce results
 *   The environment in our MAS is described through a set of result states
 
 $$\Omega = (  \omega_1, \omega_2, ... ) $$
@@ -318,13 +319,8 @@ Utility functions induce preference orderings over the result states of interact
 ---
 ## Utility and preferences (2)
 
-$$\Omega \ge_i \Omega'$$ 
-means 
-$$u_i(\omega) \ge u_i(\Omega')$$ 
-and 
-$$\Omega >_i \Omega'$$ 
-means 
-$$u_i(\Omega) > u_i(\Omega')$$
+$\Omega \ge_i \Omega'$ means $u_i(\omega) \ge u_i(\Omega')$
+and $\Omega >_i \Omega'$ means $u_i(\Omega) > u_i(\Omega')$
 
 *   Interpretation of utility
 	*   Not the same as money
@@ -341,7 +337,7 @@ We need a model of the environment in which these agents will act...
 
 $$\tau: Ac_i  \times  Ac_j \rightarrow \Omega  $$
 
-Ac -> Agent's action
+Ac $\rightarrow$ Agent's action
    
 
 
@@ -439,16 +435,14 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 ---
 ## Nash Equilibrium
 
-*   In general, we will say that two strategies s1 and s2 are in Nash equilibrium if
-1.    under the assumption that agent _i_ plays s1, agent _j_ can do no better than play s2; 
-
-2.    under the assumption that agent _j_ plays s2, agent i can do no better than play s1.
-
-*    _Neither agent has any incentive to deviate from a Nash equilibrium_
-*    This is desirable as modifying strategies requires effort (cost!) and can endanger system stability
-*    Unfortunately:
-1.   _Not every interaction scenario has a Nash equilibrium_
-2.   _Some interaction scenarios have more than one Nash equilibrium_
+* In general, we will say that two strategies $s_1$ and $s_2$ are in Nash equilibrium if
+    1. under the assumption that agent $i$ plays $s_1$, agent $j$ can do no better than play $s_2$; 
+    2. under the assumption that agent $j$ plays $s_2$, agent $i$ can do no better than play $s_1$.
+*   _Neither agent has any incentive to deviate from a Nash equilibrium_
+*   This is desirable as modifying strategies requires effort (cost!) and can endanger system stability
+*   Unfortunately:
+    1. _Not every interaction scenario has a Nash equilibrium_
+    2. _Some interaction scenarios have more than one Nash equilibrium_
 
 
 ---
@@ -508,7 +502,6 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 *   What should the governments of the countries do?
 
 ![image](slides/sociotechnicalsystems2/image_059.gif)
-</span>
 <sup><sup>    [http://www.worldatlas.com/webimage/countrys/eunewneb.gif](http://www.worldatlas.com/webimage/countrys/eunewneb.gif)</sup></sup>
 *   Is there a rational solution?
 *   Is there an optimal solution?
@@ -521,8 +514,8 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 *   Players: the n countries simultaneously decide on whether to pass policy to reduce pollution
 *   Strategies: YES = Cooperate, NO = Defect
 *   Assume k out of n countries choose not to control pollution
-    * -> The cost incurred by each of the defecting countries is k
-    * -> The cost incurred by each of the n-k cooperating countries is k+3
+    * $\rightarrow$ The cost incurred by each of the defecting countries is k
+    * $\rightarrow$ The cost incurred by each of the n-k cooperating countries is k+3
 *   _Does the game have Nash equilibria?_
 *   _(How) does this game relate to any of the games we have previously seem?_
 
@@ -554,19 +547,11 @@ $$x_i \in [0,1]$$
 ---
 ## Tragedy of the commons: formulation as a game (2)    
     
-*	Define players' payoff:
+Define players' payoff:
 
-If (total traffic exceeds capacity): 	
-$$\Sigma_j x_j \geq 1$$
-
-payoff for all players j is 0
-	
-$$Sigma_j \ x_j < 1$$ 
-
-payoff for player i is 
-
-$$x_i  \cdot (1-\Sigma_j x_j)$$
-
+* If (total traffic exceeds capacity): $\sum_j x_j \geq 1$
+* payoff for all players $j$ is $0$ $\sum_j \ x_j < 1$
+* payoff for player $i$ is $x_i \cdot (1-\sum_j x_j)$
 *   This definition reflects the intended trade-off
     *  Players want to use as much of the resource as possible
     *  Over-usage is bad for everyone
@@ -576,48 +561,30 @@ $$x_i  \cdot (1-\Sigma_j x_j)$$
 ---
 ## Tragedy of the commons game: stable strategies (1)
 
-*   We consider player i
-*   Assume: other players j use 
-
-$$t=\Sigma_(j \neq i)  x_j < 1$$
-
-*   Optimization problem for player i: 
-
-$$x \cdot (1-t-x)\rightarrow max)$$
-
-*   Solving it reveals (see next slide for some high school maths) 
-
-$$x=(1-t)/2$$
+*   We consider player $i$
+*   Assume: other players $j$ use $t=\sum_{j \neq i}  x_j < 1$
+*   Optimization problem for player i: $x \cdot (1-t-x)\rightarrow max)$
+*   Solving it reveals (see next slide for some high school maths) $x=\frac{1-t}{2}$
 
 
 ---
 ## Tragedy of the commons game: stable strategies (2)
 
-*   A set of strategies is stable if all players are playing their optimal-- selfish strategy, given the strategies of all other players
+* A set of strategies is stable if all players are playing their optimal - selfish strategy, given the strategies of all other players
 
-For our case, that means: 
+* For our case, that means: $x_i = \frac{1 - \sum_{j \neq i} x_j}{2}$
 
-
- $$x_i = (1-\Sigma_(j \neq i)x_j)/2$$ 
-
-which has as unique solution 
-
-$$x_i = 1/(n+1)$$ 
-
-for all i.
-
+* which has as unique solution: $x_i = \frac{1}{n+1}$ $\forall i$
 
 ---
 ## But why is it called _tragedy_? (1)
 
-*   It is a tragedy, because the resulting total payoff is extremely    low
-*   With 
-   
-   $$ x_i = 1/(n+1)$$ 
+*   It is a tragedy, because the resulting total payoff is extremely low
+*   With $x_i = \frac{1}{n+1}$ 
    
 we can calculate each player's payoff as 
 
-   $$ x_i \cdot (1-\Sigma_(j \neq i)  x_j  = \frac{1}{(n+1)^2} $$
+$$x_i \cdot (1 - \sum_(j \neq i) x_j = \frac{1}{(n+1)^2}$$
 
 ---
 ## But why is it called _tragedy_? (2)
@@ -628,7 +595,7 @@ we can calculate each player's payoff as
     
 Compare if the overall used fraction of the resource capacity was 
 
-$$\Sigma_j x_j = \frac{1}{2}$$ 
+$$\sum_j x_j = \frac{1}{2}$$ 
 
 the sum of all players' payoffs were 
 
