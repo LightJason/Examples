@@ -45,7 +45,7 @@ While doing all this, keep at a level which can be understood and mastered by no
 ---
 ## Lecture 1
 
-_INTELLIGENT AGENTS AND Multiagent SYSTEMS: AN INTRODUCTION_
+_INTELLIGENT AGENTS AND MULTIAGENT SYSTEMS: AN INTRODUCTION_
 
 *   Motivation and basic definitions
 *   Socio-technical systems
@@ -147,6 +147,7 @@ Traditional pedestrian models:
 *   physical (fluid) dynamics models to describe flows
 
 Social behaviour: repelling forces between molecules
+
 E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 
 
@@ -174,7 +175,7 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 	1. Increase v by 1 if possible
 	2. Reduce v by 1 if not enough free cells in front 
 	3. Reduce v by 1 with probability _p_
-	4. Drive with new_\overrightarrow{v}_ (all vehicles)
+	4. Drive with new v (all vehicles)
 * Simple, homogeneous, not very realistic (but useful)
 
 
@@ -252,14 +253,13 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
     
  
 ---
-## History of intelligent agents (1)
+## History of intelligent agents
 *   1930ies: Cybernetics - mathematical model for analogue control
 *   1950ies: Physical symbol systems hypothesis (Simon and Newell)
     The ability to symbolically represent aspects of the world is a prerequisite for intelligent behaviour (use explicit logical reasoning in order to decide what to do) 
+    
     -> <u>deliberative agents</u>
-
----
-## History of intelligent agents (2)    
+  
 *   Since mid 1980s: Problems with symbolic reasoning lead to <u>reactive agents/</u>emergent behaviour (since 1985)
 *   Since 1990ies
     *   hybrid/layered architectures reconciling deliberation and reactivity
@@ -505,7 +505,7 @@ end repeat
     *   Programming/modelling languages
     *   Runtime execution platforms
     *   Modelling and development tools
-*   First practically usable implemented BDI system: Procedural Reasoning System PRS (Georgeff and Lansky, 1987)
+*   First practically usable implemented BDI system: Procedural Reasoning System PRS <sup><sup>(Georgeff and Lansky, 1987)</sup></sup>
 *   Since then: numerous extensions and re-implementations
 *   In this course, we shall investigate as an example:
     *   Programming/modelling language: AgentSpeak

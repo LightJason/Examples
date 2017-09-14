@@ -293,6 +293,10 @@ to every other edge in the graph
 $$ \omega_1$$  
 is a Condorcet winner
 
+
+
+---
+## Majority graph: Usage and Examples (2)
 ![image](slides/sociotechnicalsystems3/image_006.png#centering)
 
 
@@ -422,12 +426,14 @@ $$ R_i \ over \ \Omega  $$
 ---
 ## Is there a desirable way of aggregating preferences of multiple agents? (2)
 
-*    Let 
+Let 
 
 $$ R = (R_i,...,R_(|A|))$$ 
 
-*   Let 
+Let 
+
 $$ G(R,\Omega)$$  
+
 be the social choice function
 
 
@@ -445,6 +451,8 @@ also prefers x over y
 ---
 ## Desiderata for G (2)
 
+G should: 
+
 **_be independent of irrelevant alternatives:_**
 
 if
@@ -459,6 +467,8 @@ also prefers x  over y
 
 ---
 ## Desiderata for G (3)
+G should: 
+
 _**be non-dictatorial**_
 
 No single agent in A determines the preferences for every pair 
@@ -486,15 +496,18 @@ there exists no social choice function G that satisfies all desiderata 1-3
 *   We end this lecture by looking at a voting-based approach for vehicle platoon formation and routing in traffic applications
 *   This work was done by Sophie Dennisen in the 1st cohort of SocialCars. For details, contact Sophie or look at the publications:
 
-<sup><sup><sup> **Baumeister, D.; Dennisen, S.; Rey, L. (2015)**. Winner Determination and Manipulation in Minisum and Minimax Committee Elections. In Proc. 4th International Conference on Algorithmic Decision Theory (ADT 2015), vol. 9346 of Lecture Notes in Artificial Intelligence, 469-485, Springer-Verlag.
-**Dennisen S.; MĂźller, J.P. (2016)**. Iterative committee elections for collective decision- making in a ride-sharing application. In A. L. C. Bazzan, F KlĂźgl, S. Ossowski, G. Vizzari, eds., Proc. 9th International Workshop on Agents in Traffic and Transport (ATT 2016) at IJCAI 2016, 1-8\. New York, USA, CEUR. Electronic proceedings.
-**Dennisen, S.; MĂźller, J.P. (2015)**. Agent-based voting architecture for traffic applications. In Proceedings of the 13th German Conference of Multiagent System Technologies (MATES 2015), volume 9433 of Lecture Notes in Artificial Intelligence, 200-217\. Springer-Verlag.
+<sup> **Baumeister, D.; Dennisen, S.; Rey, L. (2015)**. _Winner Determination and Manipulation in Minisum and Minimax Committee Elections._ In Proc. 4th International Conference on Algorithmic Decision Theory (ADT 2015), vol. 9346 of Lecture Notes in Artificial Intelligence, 469-485, Springer-Verlag.</sup>
+
+<sup>**Dennisen S.; Mueller, J.P. (2016)**. _Iterative committee elections for collective decision- making in a ride-sharing application._ In A. L. C. Bazzan, F Kluegl, S. Ossowski, G. Vizzari, eds., Proc. 9th International Workshop on Agents in Traffic and Transport (ATT 2016) at IJCAI 2016, 1-8\. New York, USA, CEUR. Electronic proceedings.</sup>
+
+<sup>**Dennisen, S.; Mueller, J.P. (2015)**. _Agent-based voting architecture for traffic applications._ In Proceedings of the 13th German Conference of Multiagent System Technologies (MATES 2015), volume 9433 of Lecture Notes in Artificial Intelligence, 200-217\. Springer-Verlag.</sup>
 
 
 ---
 ## A (Near?) Future Scenario: Ridesharing with PATs I
 
 ![image](slides/sociotechnicalsystems3/image_013.jpg)
+
 <sup>[Source: NEXT Transportation Systems, https://www.youtube.com/watch?v=IDgh29SqZzE](http://www.youtube.com/watch?v=IDgh29SqZzE)<sup>
 
 *   2030: _Personalized Autonomous Transportation_ Cells (PATs)
@@ -538,14 +551,16 @@ there exists no social choice function G that satisfies all desiderata 1-3
 
 
 ---
-## Ridesharing Scenario: Scheduling city group tour <sup><sup><sup>(Dennisen and Müller, ATT 2016)
+## Ridesharing Scenario: Scheduling city group tour 
+<sup><sup><sup>(Dennisen and Müller, ATT 2016)
 
 *   Travellers in 1-PATs join into N-PATs
 *   Different preferences on POIs to visit
 *   Committee elections within N-PATs: which POIs to visit?
 *   Iterative algorithm, allows dissatisfied voters to leave
 
-![image](slides/sociotechnicalsystems3/image_071.png#centering)
+<img alt="" height="280" src="slides/sociotechnicalsystems3/image_071.png" width="516">
+
 
 
 ---
@@ -563,7 +578,9 @@ there exists no social choice function G that satisfies all desiderata 1-3
 
 *   Requirements for traffic voting identified
 *   Formal model and voting architecture
-    <span>![image](slides/sociotechnicalsystems3/image_072.jpg)</span>
+    
+    <img alt="" height="280" src="slides/sociotechnicalsystems3/image_072.jpg" width="516">
+    
 *   J-VOTING evaluation testbed based on <sup><sup>(Grimaldo et al, 2012)
 
 

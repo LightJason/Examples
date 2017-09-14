@@ -25,7 +25,7 @@
 ---
 ## Lecture 2
 
-_Multiagent COORDINATION: RATIONAL INTERACTION_
+_MULTIAGENT COORDINATION: RATIONAL INTERACTION_
 
 *   Basic concepts: Communication, Interaction, Coordination, Cooperation
 *   Speech act theory
@@ -244,6 +244,7 @@ _**By adding a road, travel time increases!!!**_
 
 Public transport companies TC1,  TC2
 of neighbouring countries Clausland and Zellerreich have agreed to route passengers "seamlessly"
+
 <img alt="" height="280" src="slides/sociotechnicalsystems2/image_032.png" >
 
 
@@ -294,12 +295,12 @@ $$o_2 \rightarrow d_2$$
 
 *   Simple case: two agents only 
 
-$$(|Ag| = 2, Ag = \left\{  i, j \right\})$$
+$$(|Ag| = 2, Ag = (  i, j )$$
 
 *   *   Interaction of agents produce results
 *   The environment in our MAS is described through a set of result states
 
-$$\Omega = \left\{  \omega_1, \omega_2, ... \right\} $$
+$$\Omega = (  \omega_1, \omega_2, ... ) $$
 
 *   Assumption: Agents are self-interested, i.e., they have (individual) preferences over result states
 *   Preferences can be represented by assigning utility (payoff) values to states
@@ -337,8 +338,12 @@ We need a model of the environment in which these agents will act...
 *   agents simultaneously choose an action to perform, and as a result of the actions they select, an outcome in W will result
 *   the actual outcome depends on the combination of actions
 *   assume each agent has just two possible actions that it can perform, C ("cooperate") and D ("defect") Environment behaviour given by state transformer function:
+
+$$\tau: Ac_i  \times  Ac_j \rightarrow \Omega  $$
+
+Ac -> Agent's action
    
-![image](slides/sociotechnicalsystems2/image_040.jpg)
+
 
 ---
 ## State transformer functions - Some examples
@@ -539,7 +544,9 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 *   Infinite number of strategies for each player: 
 
 **_Use_** 
+
 $$x_i$$ 
+
 _**fragment of road capacity,**_ 
 
 $$x_i \in [0,1]$$
@@ -584,16 +591,19 @@ $$x=(1-t)/2$$
 
 
 ---
-## Tragedy of the commons game: stable strategies (1)
+## Tragedy of the commons game: stable strategies (2)
 
 *   A set of strategies is stable if all players are playing their optimal-- selfish strategy, given the strategies of all other players
-*   For our case, that means: 
 
-$$x_i = (1-\Sigma_(j \neq i)x_j)/2$$ 
+For our case, that means: 
+
+
+ $$x_i = (1-\Sigma_(j \neq i)x_j)/2$$ 
 
 which has as unique solution 
 
 $$x_i = 1/(n+1)$$ 
+
 for all i.
 
 
@@ -607,7 +617,7 @@ for all i.
    
 we can calculate each player's payoff as 
 
-$$x_i \cdot (1-\Sigma_(j \neq i)  x_j  = \frac{1}{(n+1)^2}$$
+   $$ x_i \cdot (1-\Sigma_(j \neq i)  x_j  = \frac{1}{(n+1)^2} $$
 
 ---
 ## But why is it called _tragedy_? (2)
@@ -639,7 +649,7 @@ times bigger
 ## The "price of anarchy"
 
 *   How much do we lose by selfish behaviour?
-*   How inefficient are equilibria reached by selfish rational agents ?
+*   How inefficient are equilibria reached by selfish rational agents?
     _"in comparison to an idealized situation in which the agents would strive to collaborate selflessly with the common goal of minimizing total cost"?_ <sup><sup> (Nisan et al, 2007, p. xiv)</sup></sup>
 *   The price of anarchy depends on the design of the game
 *   Examples: Tragedy of Commons, prisoner's dilemma
@@ -677,6 +687,7 @@ be possible actions
 ## Mixed strategy (Wooldridge 2009, 260f) (2)
 
 A mixed strategy for player i is a probability distribution 
+
 $$P_i=\left [  p_{i1}, p_{i2}, ..., p_{ik}\right ]  \ over \ S$$
 
 Meaning: i plays s1 with probability p11, s2 with probability p12 etc.
@@ -693,7 +704,8 @@ Theorem (w/o. proof):
 *   Each game, in which each player has a finite set of possible strategies, has a mixed-strategy Nash equilibrium
 *   For this insight, John Forbes Nash Jr. won the Nobel prize in economic sciences in 1994 (with Reinhard Selten and John Harsanyi)
 
-![image](slides/sociotechnicalsystems2/image_091.jpg#floatright  max-height: 15em)
+
+<img alt="" height="280" src="slides/sociotechnicalsystems2/image_091.jpg" >
 
 <sup>Peter Badge/Typos 1</sup> 
 
@@ -723,9 +735,9 @@ Theorem (w/o. proof):
 
 **N.R. Jennings, K. Sycara, and M.J.Wooldridge (1998).** _A Roadmap of Agent Research and Development._ In Journal of Autonomous Agents and Multiagent Systems. 1(1), pages 7-36\. July 1998.
 
-**C. Lemke and J. Howson (1964).** Equilibrium points of bimatrix games. Journal of the Society for Industrial and Applied Mathematics, 12, 1964.
+**C. Lemke and J. Howson (1964).** _Equilibrium points of bimatrix games_. Journal of the Society for Industrial and Applied Mathematics, 12, 1964.
 
-**N. Nisan, T. Roughgarden, E. Tardos, V. V. Vazirani, eds (2007).** _Algorithmic Game_Theory<span class="s81">. Cambridge University Press: Cambridge, England.</span>
+**N. Nisan, T. Roughgarden, E. Tardos, V. V. Vazirani, eds (2007).** _Algorithmic Game Theory_. Cambridge University Press: Cambridge, England.
 
 
 ---
