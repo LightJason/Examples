@@ -536,13 +536,9 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 *   Each players' optimal selfish strategy depends on what other players do
 *   Infinite number of strategies for each player: 
 
-**_Use_** 
+**_Use_** $x_i$
 
-$$x_i$$ 
-
-_**fragment of road capacity,**_ 
-
-$$x_i \in [0,1]$$
+_**fragment of road capacity,**_ $x_i \in [0,1]$
     
 ---
 ## Tragedy of the commons: formulation as a game (2)    

@@ -359,7 +359,7 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
     @Override
     public final IVehicle call() throws Exception
     {
-        // @bug in perceiving
+        // update beliefbase
         m_backwardview.run();
         m_forwardview.run();
 
