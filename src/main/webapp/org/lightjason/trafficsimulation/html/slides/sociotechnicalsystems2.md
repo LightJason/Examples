@@ -122,7 +122,7 @@ A system, in which a number of agents ...
 
 
 ---
-## Theoretical approach: Speech act theory <sup>(Austin 61, Searle 69)</sup>
+## Theoretical approach: Speech act theory <sup>Austin 61, Searle 69</sup>
 
 *   Basic assumption: communication = action
 
@@ -168,7 +168,7 @@ Sender of a message is always saved by the recipient as an annotation to the con
     *   Agent Management<span class="s7">: runtime architecture of multiagent systems</span> (MAS) including components and services
     *   Agent communication<span class="s7">: Interaction protocols, speech acts, content</span> languages
     *   Agent Message Transport<span class="s7">: Low-level message transport</span>
-? FIPA Agent Communication Language (ACL),influenced by KQML <sup>[(http://www.fipa.org/repository/aclspecs.html)](http://www.fipa.org/repository/aclspecs.html))</sup>
+? FIPA Agent Communication Language (ACL),influenced by KQML <sup>(http://www.fipa.org/repository/aclspecs.html)](http://www.fipa.org/repository/aclspecs.html)</sup>
         
 
 ---
@@ -248,7 +248,7 @@ However...
 
 
 ---
-## Braess Paradox: New roads not always help ...
+## Braess Paradox: New roads not always help...
 
 *   Adding a new road with high capacity
 *   Consider optimal "equal split" solution (SAE/SBE)
@@ -539,7 +539,7 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 
 * Is there a stable solution?
 
-<sup>[http://www.worldatlas.com/webimage/countrys/eunewneb.gif](http://www.worldatlas.com/webimage/countrys/eunewneb.gif)</sup> 
+<sup>http://www.worldatlas.com/webimage/countrys/eunewneb.gif](http://www.worldatlas.com/webimage/countrys/eunewneb.gif)</sup> 
 
 ---
 ## The pollution game
@@ -627,7 +627,7 @@ Define players' payoff:
 *   How much do we lose by selfish behaviour?
 
 *   How inefficient are equilibria reached by selfish rational agents?
-    _"in comparison to an idealized situation in which the agents would strive to collaborate selflessly with the common goal of minimizing total cost"?_ <sup>(Nisan et al, 2007, p. xiv)</sup>
+    _"in comparison to an idealized situation in which the agents would strive to collaborate selflessly with the common goal of minimizing total cost"?_ <sup>Nisan et al, 2007, p. xiv</sup>
 
 *   The price of anarchy depends on the design of the game
 
@@ -635,7 +635,7 @@ Define players' payoff:
 
 *   Note that the contrary of anarchy is _**dictatorial behaviour**_!
 
-*   It is often found that the price of anarchy is not nearly as expensive as one may think (e.g. max. 33% to optimal solution for some routing games) <sup>[Roughgarden]</sup>
+*   It is often found that the price of anarchy is not nearly as expensive as one may think (e.g. max. 33% to optimal solution for some routing games) <sup>Roughgarden</sup>
 
 
 ---
@@ -655,7 +655,7 @@ Define players' payoff:
 
 
 ---
-## Mixed strategy (Wooldridge 2009, 260f)
+## Mixed strategy <sup>Wooldridge 2009, 260f</sup>
 
 * Mixed strategy: Choice of actions based on probabilities
 
@@ -696,14 +696,14 @@ Theorem (w/o. proof):
 *   Broad spectrum of different game types and variants
 
 *   Algorithms for finding Nash equilibria
-	*   <sup>(Lemke and Howson, 1964)</sup> for two player games
-    *   Search-based algorithm <sup>(Porter et al., 2004)</sup> for n-player games
+	*   for two player games <sup>Lemke and Howson, 1964</sup>
+    *   Search-based algorithm for n-player games  <sup>Porter et al., 2004</sup>
 
 *   Computational complexity
 	*   Finding a Nash equilibrium is a combinatorial problem
-    *   The Nash Problem is PPAD-complete <sup>(Papadimitriou, 1994)</sup>
+    *   The Nash Problem is PPAD-complete <sup>Papadimitriou, 1994</sup>
 
-*   Recently, specific classes of games have been successfully used to engineer e.g. surveillance schedules <sup>(Yang et al., AAMAS 2014)</sup>
+*   Recently, specific classes of games have been successfully used to engineer e.g. surveillance schedules <sup>Yang et al., AAMAS 2014</sup>
 
 
 ---

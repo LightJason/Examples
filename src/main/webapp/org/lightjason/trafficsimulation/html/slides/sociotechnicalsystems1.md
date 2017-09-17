@@ -165,12 +165,7 @@ Traditional pedestrian models:
 *   pedestrians = homogeneous entities (molecules)
 *   physical (fluid) dynamics models to describe flows
 
-
-Social behaviour: repelling forces between molecules e.g. Social forces model <sup>(Helbing and Molnar,1995)</sup>
-
-
----
-## Example: Pedestrian Modelling
+Social behaviour: repelling forces between molecules e.g. Social forces model <sup>Helbing and Molnar,1995</sup>
 
 * Highly simplified model – can model large problems!
 * More complex individual goals and motivations?
@@ -180,7 +175,7 @@ Social behaviour: repelling forces between molecules e.g. Social forces model <s
 
  
 ---
-## Example: Nagel-Schreckenberg Car Following Model (Nagel and Schreckenberg, 1992)
+## Example: Nagel-Schreckenberg Car Following Model <sup>Nagel and Schreckenberg, 1992</sup>
 
 ![image](slides/sociotechnicalsystems1/image_016.gif#floatright)
 
@@ -203,7 +198,7 @@ Social behaviour: repelling forces between molecules e.g. Social forces model <s
 ![image](slides/sociotechnicalsystems1/image_018.png#floatright)
 
 *   Heterogeneous actors, different capabilities, preferences, goals
-*   Groups … <sup>(Vizzari et al., 2015)</sup>
+*   Groups <sup>Vizzari et al., 2015</sup>
 *   Interaction of human and automated actors
 *   Flexible, changing regulatory regimes (rules, norms)
 
@@ -213,10 +208,10 @@ Social behaviour: repelling forces between molecules e.g. Social forces model <s
 ---
 ## (Multi-)agent-based modelling and simulation
 
-> _is a (computational) modelling and simulation paradigm that uses the concept of a  multiagent system as the basic metaphor of the simulation model_ <sup>[Klügl, 2013]</sup>
+> _is a (computational) modelling and simulation paradigm that uses the concept of a  multiagent system as the basic metaphor of the simulation model_ <sup>Klügl, 2013</sup>
 
 * Microscopic paradigm
-* Abstraction: <u>Agent</u> - fine-granular description of (autonomous) system entities <sup><sup>(Jennings et al., 1998)
+* Abstraction: <u>Agent</u> - fine-granular description of (autonomous) system entities <sup>Jennings et al., 1998</sup>
 * Granularity: From cellular to cognitive
 
 ![image](slides/sociotechnicalsystems1/image_021.png#centering)
@@ -228,7 +223,7 @@ Social behaviour: repelling forces between molecules e.g. Social forces model <s
 ![image](slides/sociotechnicalsystems1/image_022.png#floatright)
 
 *   Abstraction: _Multiagent system_
-    > _a (computer) system that is designed and implemented as several interacting agents ... types of interactions including:  cooperation...; coordination...; and negotiation_ <sup>[Jennings et al, 1998]</sup>
+    > _a (computer) system that is designed and implemented as several interacting agents ... types of interactions including:  cooperation...; coordination...; and negotiation_ <sup>Jennings et al, 1998</sup>
 
 
 
@@ -246,7 +241,7 @@ Social behaviour: repelling forces between molecules e.g. Social forces model <s
 <span>![image](slides/sociotechnicalsystems1/image_026.png)</span> <span>![image](slides/sociotechnicalsystems1/image_027.png)</span> <span>![image](slides/sociotechnicalsystems1/image_028.png)</span>
 
 ---
-## Key challenges in agent’s research (Wooldridge, 2009) 
+## Key challenges in agent’s research <sup>Wooldridge, 2009</sup>
 
 *   Construct intelligent agents that can carry out actions autonomously on behalf of their users/owners
 	* Represent knowledge & semantics of knowledge and action
@@ -427,7 +422,7 @@ But: useful as a basic mathematical model
 ![image](slides/sociotechnicalsystems1/image_035.png#centering)
 
 ---
-## Example: Ant-based routing <sup>(Dorigo et al., 2000)</sup>
+## Example: Ant-based routing <sup>Dorigo et al., 2000</sup>
 
 *   Ants = simple agents that can traverse a graph
 *   Ants look for food
@@ -446,7 +441,7 @@ But: useful as a basic mathematical model
     *   Worst case co-NP-complete for propositional logic
     
 *   Alternative approach: Practical reasoning
-    *   ”Practical reasoning is a matter of weighing conflicting ”considerations for and against competing options, where the relevant considerations are provided by what the agent <span style=" color: #808089;">desires/values/cares about</span> and what the agent <span style=" color: #808089;">believes”</span> <sup>(Bratman, 1990)</sup>
+    *   ”Practical reasoning is a matter of weighing conflicting ”considerations for and against competing options, where the relevant considerations are provided by what the agent <span style=" color: #808089;">desires/values/cares about</span> and what the agent <span style=" color: #808089;">believes”</span> <sup>Bratman, 1990</sup>
 
 *   Combines
     * *Deliberation*: What goals to achieve?
@@ -484,7 +479,7 @@ Underlying theory: Daniel Dennett’s model of intentionality <sup><sup>(Dennett
 *   Why would you want to ascribe human-like properties such as beliefs, goals, or intentions to a technical system? (McCarthy)
 
 You always can!
-*   ’It is perfectly coherent to treat a light switch as a (very cooperative) agent with the capability of transmitting current at will, who invariably transmits current when it believes that we want it transmitted and not otherwise; flicking the switch is simply our way of communicating our desires’. <sup>(Yoav Shoham, 1993)</sup>
+*   ’It is perfectly coherent to treat a light switch as a (very cooperative) agent with the capability of transmitting current at will, who invariably transmits current when it believes that we want it transmitted and not otherwise; flicking the switch is simply our way of communicating our desires’. <sup>Yoav Shoham, 1993</sup>
 
 Yet - Why do we find this absurd?
 
@@ -524,13 +519,13 @@ Yet - Why do we find this absurd?
 
 
 ---
-## The mother of BDI architectures: IRMA (Bratman et al, 1987)
+## The mother of BDI architectures: IRMA <sup>Bratman et al, 1987</sup>
 
 ![image](slides/sociotechnicalsystems1/image_039.gif#centering)
 
 
 ---
-## Abstract BDI Agent interpreter (Rao and Georgeff, 1991)
+## Abstract BDI Agent interpreter <sup>Rao and Georgeff, 1991</sup>
 
 ```
 initialize-state();
@@ -552,7 +547,7 @@ end repeat
     *   Runtime execution platforms
     *   Modelling and development tools
     
-*   First practically usable implemented BDI system: Procedural Reasoning System PRS <sup>(Georgeff and Lansky, 1987)</sup>
+*   First practically usable implemented BDI system: Procedural Reasoning System PRS <sup>Georgeff and Lansky, 1987</sup>
 
 *   Since then: numerous extensions and re-implementations
 
@@ -616,8 +611,8 @@ end repeat
 
 ---
 ## Intelligent agents and multiagent systems: Literature
-**Y. Shoham (1993).** Agent-oriented programming. Artificial Intelligence, 60:51-92, 1993
 
+**Y. Shoham (1993).** Agent-oriented programming. Artificial Intelligence, 60:51-92, 1993
 
 **H. A. Simon (1981).** The Sciences of the Artiﬁcial (second edition). The MIT Press: Cambridge, MA.
 

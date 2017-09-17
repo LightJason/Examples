@@ -25,6 +25,10 @@ body {
     font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
 }
 
+sup {
+    font-size: 10px;
+}
+
 textarea {
     display: none;
 }
