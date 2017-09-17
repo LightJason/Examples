@@ -26,7 +26,9 @@
 ## Objectives of this course
 
 *   Traffic systems are complex socio-technical systems (STS)
+
 *   Multiagent systems: Important microscopic approach to modelling and simulating these kinds of systems
+
 *   We want you to
     *   understand the challenges in analysing, modelling, designing STS
     *   gain some understanding of the core concepts of intelligent agents and multiagent systems as a modelling paradigm for STS
@@ -48,9 +50,13 @@ While doing all this, keep at a level which can be understood and mastered by no
 _INTELLIGENT AGENTS AND MULTIAGENT SYSTEMS: AN INTRODUCTION_
 
 *   Motivation and basic definitions
+
 *   Socio-technical systems
+
 *   Example: vehicle agent
+
 *   Agent-based modelling and simulation
+
 *   Agent architectures
     *   Reactive
     *   Ant-based
@@ -82,8 +88,11 @@ But
 
 Combine (information) technology with real-life societal considerations
 System characteristics
+
 *   Longevity and openness
+
 *   Societal requirements, often characterized by norms
+
 *   Indirect ”control” mechanisms (sanctions, incentives, markets, …)
 
 
@@ -92,18 +101,22 @@ System characteristics
 
 Member characteristics
 *   Longevity and identity
+
 *   Human or automated (humans not as users, but as part of a system)
+
 *   Autonomy (goals, capabilities) and heterogeneity
 
 Realization
 *   Top-down: Members fit into existing systems
 	*   Adopt suitable goals given system norms
+
 *   Bottom up: Members design new systems
 	*   Negotiate suitable norms given individual goals
 
 
 ---
 ## The ”3M” approach to modelling socio-technical systems
+
 ![image](slides/sociotechnicalsystems1/image_004.png#centering)
 
 
@@ -111,10 +124,15 @@ Realization
 ## Traffic/Smart City Systems are STS!
 
 *   Longlived infrastructure
+
 *   Self-interested, autonomous traffic participants
+
 *   Highly heterogeneous
+
 *   Societal issues: Efficiency, safety, comfort, environmental friendliness, fairness, sustainability
+
 *   Decentral decisions vs. centralized (?) regulation
+
 *   New technologies (automated driving, social networks, digitalization)
     *   influence behaviour of traffic participants
     *   enable new services, business models
@@ -143,17 +161,15 @@ Realization
 ## Example: Pedestrian Modelling
 
 Traditional pedestrian models:
+
 *   pedestrians = homogeneous entities (molecules)
 *   physical (fluid) dynamics models to describe flows
 
-Social behaviour: repelling forces between molecules
 
-E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
+Social behaviour: repelling forces between molecules e.g. Social forces model <sup>(Helbing and Molnar,1995)</sup>
 
 
 ---
-
-
 ## Example: Pedestrian Modelling
 
 * Highly simplified model – can model large problems!
@@ -171,11 +187,13 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 * Microscopic, discrete model
 	* based on cellular automata
 	* car behaviour determined by state of preceding car
+	
 * Use four rules in each step
-	1. Increase v by 1 if possible
-	2. Reduce v by 1 if not enough free cells in front 
-	3. Reduce v by 1 with probability _p_
-	4. Drive with new v (all vehicles)
+	1. Increase $v$ by $1$ if possible
+	2. Reduce $v$ by $1$ if not enough free cells in front 
+	3. Reduce $v$ by $1$ with probability $p$
+	4. Drive with new $v$ (all vehicles)
+
 * Simple, homogeneous, not very realistic (but useful)
 
 
@@ -185,7 +203,7 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 ![image](slides/sociotechnicalsystems1/image_018.png#floatright)
 
 *   Heterogeneous actors, different capabilities, preferences, goals
-*   Groups … <sup><sup>(Vizzari et al., 2015)
+*   Groups … <sup>(Vizzari et al., 2015)</sup>
 *   Interaction of human and automated actors
 *   Flexible, changing regulatory regimes (rules, norms)
 
@@ -195,27 +213,22 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 ---
 ## (Multi-)agent-based modelling and simulation
 
-
-![image](slides/sociotechnicalsystems1/image_021.png#floatright)
-
-> is a (computational) modelling and simulation paradigm that uses the concept of a  multiagent system as the basic metaphor of the simulation model [Klügl, 2013]
+> _is a (computational) modelling and simulation paradigm that uses the concept of a  multiagent system as the basic metaphor of the simulation model_ <sup>[Klügl, 2013]</sup>
 
 * Microscopic paradigm
 * Abstraction: <u>Agent</u> - fine-granular description of (autonomous) system entities <sup><sup>(Jennings et al., 1998)
 * Granularity: From cellular to cognitive
 
+![image](slides/sociotechnicalsystems1/image_021.png#centering)
+
+
 ---
-
 ## (Multi-)agent-based modelling and simulation
-<img alt="" height="280" src="slides/sociotechnicalsystems1/image_022.png" width="516">
 
-*   Abstraction: <u>Multiagent system</u>
+![image](slides/sociotechnicalsystems1/image_022.png#floatright)
 
-		… a (computer) system that is designed and implemented 
-        as several interacting agents
-		… types of interactions including: 
-        cooperation …; coordination …; and negotiation 
-     <sup><sup><sup>[Jennings et al, 1998]</sup></sup></sup>
+*   Abstraction: _Multiagent system_
+    > _a (computer) system that is designed and implemented as several interacting agents ... types of interactions including:  cooperation...; coordination...; and negotiation_ <sup>[Jennings et al, 1998]</sup>
 
 
 
@@ -236,64 +249,61 @@ E.g. Social forces model <sup><sup>(Helbing and Molnar,1995)
 ## Key challenges in agent’s research (Wooldridge, 2009) 
 
 *   Construct intelligent agents that can carry out actions autonomously on behalf of their users/owners
-	* -> Represent knowledge & semantics of knowledge and action
-	* -> Behave flexibly and adaptively
-	* -> Embedded in environment (sensing & acting)
+	* Represent knowledge & semantics of knowledge and action
+	* Behave flexibly and adaptively
+	* Embedded in environment (sensing & acting)
+	
 *   Construct multiagent systems, i.e., systems consisting of agents that can interact with other agents to perform the tasks we delegate to them, and to resolve emerging goal conflicts
-	* -> User/agent modelling, personalization</span>
-	* -> Communication, coordination, cooperation, and negotiation</span>
-	* -> Representing and dealing with semantic interoperability</span>
+	* User/agent modelling, personalization</span>
+	* Communication, coordination, cooperation, and negotiation</span>
+	* Representing and dealing with semantic interoperability</span>
 
 
 ---
 ## Micro- and macro perspective of Agents/MAS
 
-<img alt="" height="480" src="slides/sociotechnicalsystems1/image_029.png" >
+![image](slides/sociotechnicalsystems1/image_029.png#centering)
 
     
  
 ---
 ## History of intelligent agents
+
 *   1930ies: Cybernetics - mathematical model for analogue control
+
 *   1950ies: Physical symbol systems hypothesis (Simon and Newell)
     The ability to symbolically represent aspects of the world is a prerequisite for intelligent behaviour (use explicit logical reasoning in order to decide what to do) 
-    
-    -> <u>deliberative agents</u>
+    $\rightarrow$ _deliberative agents_
   
 *   Since mid 1980s: Problems with symbolic reasoning lead to <u>reactive agents/</u>emergent behaviour (since 1985)
+
 *   Since 1990ies
     *   hybrid/layered architectures reconciling deliberation and reactivity
     *   Focus on social-aware agents, cooperation & negotiation
 
 
 ---
-## Agents and dynamic systems (1)
+## Agents and dynamic systems
+
 Dynamic systems (control theory) consists of
    *   System (Controller)
    *   Environment
 
 Let
-   *   _T_ points in time
-   *   _S_ possible environmental states
-   *   _P_ possible inputs (perception) to system
-   *   _A_ possible output (actions) of system
-
----
-## Agents and dynamic systems (2)
+   *   $T$ points in time
+   
+   *   $S$ possible environmental states
+   
+   *   $P$ possible inputs (perception) to system
+   
+   *   $A$ possible output (actions) of system
 
 Let
-   *   _s(t)_ state of environment at time
+   * $s(t)$ state of environment at time $t \in T$
    
-   $$t \in T$$
+   * $p(t)$ input to system at time $t \in T$
    
-   *   _p(t)_ input to system at time
-   
-   $$t \in T$$
-   
-   *   _a(t)_ output of system at time
-   
-   $$t \in T$$
-
+   * $a(t)$ output of system at time $t \in T$
 
 ---
 ## Components of a dynamic system
@@ -305,20 +315,25 @@ Let
 ## Describing the environment
 
 *   The behaviour of the environment in dynamic systems is described by two functions
-*   Actions performed by the system modify the state of the environment: _s(t+1) = f(s(t), a(t))_
-*   Outputs of the environment (signals) are considered as inputs and result directly from the current state of the environment _s(t): p(t) = g(s(t))_
+
+*   Actions performed by the system modify the state of the environment: $s(t+1) = f(s(t), a(t))$
+
+*   Outputs of the environment (signals) are considered as inputs and result directly from the current state of the environment $s(t): p(t) = g(s(t))$
 
  
 ---
 ## System behaviour: The control problem
 
 *   Task of the system; solving the control problem = Find a sequence of actions to achieve or maintain a desired state of the environment
+
 *   The control problem is often described by two sub-problems:
-*   The _state estimation problem_ determines the current state of the environment from the current input into the system
-*   The _regulation problem_ determines an appropriate system response (action) given a recognized state of the environment
-*   Functions:
-    *   State recognition:  est: _P -> S_
-    *   Regulator: 		    reg: _S -> A_
+    *   The _state estimation problem_ determines the current state of the environment from the current input into the system
+    
+    *   The _regulation problem_ determines an appropriate system response (action) given a recognized state of the environment
+    
+    *   Functions:
+        *   State recognition:  est: $P \rightarrow S$
+        *   Regulator: 		    reg: $S \rightarrow A$
 
 
 ---
@@ -327,8 +342,11 @@ Let
 One perspective of agents is that they solve control problems and they can be regarded dynamic systems
 
 But:
+
 * Functions for state estimation and regulation are often incomplete, incorrect, or complex to describe in practical applications
+
 * Functions need to process symbolic knowledge and generate complex, non-numeric output description
+
 * We are looking at distributed systems of loosely coupled agents; control theory does not provide instruments to solve this problem
 
 
@@ -337,8 +355,11 @@ But:
 
 Pure control theory models are rarely applicable
 *   Failure-prone sensors and actuators (input to est, output of reg)
+
 *   Incomplete, erroneous state model (output of est)
+
 *   System/agent may be in a different state from the one it believes to be in
+
 *   Failure-prone model of effects of actions to environment
 
 But: useful as a basic mathematical model
@@ -361,10 +382,14 @@ But: useful as a basic mathematical model
 ## Deliberative agents
 
 *   Based on principles of symbolic Artificial Intelligence
+
 *   Knowledge based systems with internal and symbolic representation of environment (”mental state”)
+
 *   Decision-making as symbolic reasoning over mental state
+
 *   Idea: Decision-making as theorem proving
-*   Not detailed here …
+
+*   Not detailed here...
 
 
 ---
@@ -374,9 +399,13 @@ But: useful as a basic mathematical model
   *   Simple internal world representation
   *   Tight coupling of perception and action
   *   Simple decision rules
+  
 *   Simon (1981): The complexity of agent behaviour can be a reflection of the complexity of the agent’s environment rather than of the agent’s complex internal design
+
 *   Often: communication via the environment (stigmergy)
+
 *   Model: ant colonies, bee-hives (swarm intelligence)
+
 *   Control architectures: e.g. subsumption architecture by Rodney Brooks
 
 
@@ -389,13 +418,16 @@ But: useful as a basic mathematical model
 ---
 ## Control: suppression and inhibition
 
-*  _S_: signal from module (layer_k_) suppresses (and replaces) input into module (layer _k-1_) for some pre-determined time
-*  _I_: signal from layer _k_ inhibits output from module (at layer _k-1_) for some pre-determined time
-*   This control is hard-wired
-![image](slides/sociotechnicalsystems1/image_035.png#floatright)
+* $S$: signal from module ($\text{layer}\_k$) suppresses (and replaces) input into module ($\text{layer}\_{k-1}) for some pre-determined time
+
+* $I$: signal from layer _k_ inhibits output from module (at $\text{layer}\_{k-1}$) for some pre-determined time
+
+* This control is hard-wired
+
+![image](slides/sociotechnicalsystems1/image_035.png#centering)
 
 ---
-## Example: Ant-based routing <sup><sup>(Dorigo et al., 2000)
+## Example: Ant-based routing <sup>(Dorigo et al., 2000)</sup>
 
 *   Ants = simple agents that can traverse a graph
 *   Ants look for food
@@ -403,7 +435,7 @@ But: useful as a basic mathematical model
 *   Decision algorithm: Choose the edge with the highest pheromone concentration 
 *   Ant-based algorithms have been successfully used to solve routing and scheduling problems
    
-![image](slides/sociotechnicalsystems1/image_038.png)    
+![image](slides/sociotechnicalsystems1/image_038.png#centering)    
     
 ---
 ## Practical reasoning
@@ -412,11 +444,14 @@ But: useful as a basic mathematical model
     *   Transforming subsymbolic data in symbolic form is difficult
     *   Decision algorithms undecidable for first-order language
     *   Worst case co-NP-complete for propositional logic
+    
 *   Alternative approach: Practical reasoning
-    *   ”Practical reasoning is a matter of weighing conflicting ”considerations for and against competing options, where the relevant considerations are provided by what the agent <span style=" color: #808089;">desires/values/cares about</span> and what the agent <span style=" color: #808089;">believes”</span> <sup><sup>(Bratman, 1990)
+    *   ”Practical reasoning is a matter of weighing conflicting ”considerations for and against competing options, where the relevant considerations are provided by what the agent <span style=" color: #808089;">desires/values/cares about</span> and what the agent <span style=" color: #808089;">believes”</span> <sup>(Bratman, 1990)</sup>
+
 *   Combines
     * *Deliberation*: What goals to achieve?
     * *Means-Ends Reasoning*: How to achieve goals?
+
 *   Result of deliberation: *Intentions*
 
 
@@ -426,15 +461,19 @@ But: useful as a basic mathematical model
 *   Belief:
     *   information about the current world state
     *   subjective
+    
 *   Desire:
     *   preferences over future world states
     *   can be inconsistent (in contrast to goals)
+    
 *   Intentions:
     *   set of goals the agent is committed to achieve
     *   the agent’s ”runtime stack”
+    
 *   Formal models:
     *   mostly modal logics with possible-worlds semantics
     *   more pragmatic implementations
+    
 Underlying theory: Daniel Dennett’s model of intentionality <sup><sup>(Dennett, 1987)
 
 
@@ -445,7 +484,7 @@ Underlying theory: Daniel Dennett’s model of intentionality <sup><sup>(Dennett
 *   Why would you want to ascribe human-like properties such as beliefs, goals, or intentions to a technical system? (McCarthy)
 
 You always can!
-*   ’It is perfectly coherent to treat a light switch as a (very cooperative) agent with the capability of transmitting current at will, who invariably transmits current when it believes that we want it transmitted and not otherwise; flicking the switch is simply our way of communicating our desires’. <sup><sup>(Yoav Shoham, 1993)
+*   ’It is perfectly coherent to treat a light switch as a (very cooperative) agent with the capability of transmitting current at will, who invariably transmits current when it believes that we want it transmitted and not otherwise; flicking the switch is simply our way of communicating our desires’. <sup>(Yoav Shoham, 1993)</sup>
 
 Yet - Why do we find this absurd?
 
@@ -454,8 +493,11 @@ Yet - Why do we find this absurd?
 ## It’s all about being useful
 
 *   ... because it is not useful for us: we understand the underlying mechanism sufficiently to have a simpler explanation of system behaviour
+
 *   The more we know about a system, the less intentional concepts can help us in describing it
+
 *   The more complex computer systems get, the more we have to rely on abstractions and metaphors to explain their behaviour
+
 *   Considering/modelling a system as an intentional system is such as abstraction and hence a tool to explaining, understanding and (ultimately) programming complex computer systems
 
 
@@ -466,12 +508,16 @@ Yet - Why do we find this absurd?
 *   Means-Ends: ”from means to ends”
     *   Means = ”What can the agent do”
     *   Ends = Goals
+    
 *   Agent has:
     *   Representation of task to be achieved (intention)
     *   Representation of actions it can perform
     *   Representation of environment
+
 *   Based on this knowledge it attempts to generate/select a plan to achieve the task/satisfy the intention
+
 *   Planning = automated programming: the design of a course of action that will achieve some desired goal
+
 *   Mechanisms for plan generation/selection
     *   Planning from first principles: Automated (AI) planning
     *   Planning from second principles: Select a suitable plan from library
@@ -505,8 +551,11 @@ end repeat
     *   Programming/modelling languages
     *   Runtime execution platforms
     *   Modelling and development tools
-*   First practically usable implemented BDI system: Procedural Reasoning System PRS <sup><sup>(Georgeff and Lansky, 1987)</sup></sup>
+    
+*   First practically usable implemented BDI system: Procedural Reasoning System PRS <sup>(Georgeff and Lansky, 1987)</sup>
+
 *   Since then: numerous extensions and re-implementations
+
 *   In this course, we shall investigate as an example:
     *   Programming/modelling language: AgentSpeak
     *   Interpreter/Platform: LightJason
@@ -523,10 +572,13 @@ end repeat
 ## AgentSpeak and LightJason
 
 *   AgentSpeak is a language for defining executable PRS-style BDI agents
+
 *   Paradigm: Logic Programming
     *   Facts are represented by logical formulae
-    *   Solve problem/achieve goal -> Prove formulae via logical inference
+    *   Solve problem/achieve goal $\rightarrow$ Prove formulae via (fuzzy) logical inference
+
 *   LightJason is a scalable implementation of an AgentSpeak interpreter with many useful features and extensions
+
 *   In the simulation lab part of this course, you will get an introduction into LightJason and have a chance to play around with the system by analysing and extending a small traffic scenario model
 
 

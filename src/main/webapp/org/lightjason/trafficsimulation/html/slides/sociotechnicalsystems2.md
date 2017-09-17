@@ -28,8 +28,11 @@
 _MULTIAGENT COORDINATION: RATIONAL INTERACTION_
 
 *   Basic concepts: Communication, Interaction, Coordination, Cooperation
+
 *   Speech act theory
+
 *   Agent types: Benevolent vs. self-interested
+
 *   Game-theoretic model of rational interaction
     *   Routing and other games
     *   Models
@@ -55,11 +58,13 @@ A system, in which a number of agents ...
 ## MAS Context
 
 *   Multiagent systems (MAS) = Metaphor for describing, analysing, and engineering decentral organized systems
+
 *   In multiagent systems, we address questions such as:
     *   How can cooperation emerge in societies of self-interested agents?
     *   What kinds of languages can agents use to communicate?
     *   How can self-interested agents recognize a conflict, and how can they (nevertheless) reach an agreement?
     *   How can autonomous agents coordinate their activities so as to cooperatively achieve goals?
+
 *   What distinguishes the multiagent systems field is that it emphasizes that the agents in question are **_computational, information processing_** entities.
 
 
@@ -70,9 +75,11 @@ A system, in which a number of agents ...
     *   recomputing is often faster than requesting information over a communication channel
     *   communication can lead to prolonged negotiation
     *   chains of belief and goal updates caused by communication may not terminate
+    
 *   Communication in most cases achieves better quality
     *   information cannot always be reconstructed locally
     *   communication can be avoided only when the agents are set up to share all necessary knowledge. This is a very limiting assumption which cannot be practically achieved in most interesting cases
+
 *   Deciding whether and what to communicate is often crucial and involves trade-offs...
 
 
@@ -84,7 +91,9 @@ A system, in which a number of agents ...
     *   avoid livelock
     *   avoid deadlock
     *   maintain safety conditions
+    
 *   **Cooperation** is coordination among non-antagonistic agents
+
 *   **Collaboration** is cooperative work on a joint goal, task, or object
 
 
@@ -92,27 +101,33 @@ A system, in which a number of agents ...
 ## Coordination, cooperation, collaboration?
 
 ![image](slides/sociotechnicalsystems2/image_012.png#centering)
-<sup>[Source: Picture 1.-3\. http://www.utdallas.edu/~mspong/Presentations/Montreal06.ppt](http://www.utdallas.edu/%7Emspong/Presentations/Montreal06.ppt), Picture 4. JP Müller, 1996</sup>
+
+.center[[Source: Picture 1.-3\. http://www.utdallas.edu/~mspong/Presentations/Montreal06.ppt](http://www.utdallas.edu/%7Emspong/Presentations/Montreal06.ppt), Picture 4. JP Müller, 1996]
 
 ---
 ## Interaction often involves communication
 
 *   The primary reason for communication among agents is to coordinate activities
+
 *   Agents may coordinate without communication, provided that they have models of the others' behaviour, social norms, or other common knowledge
+
 *   Communication involves the dimensions of
     *   who
     *   what
     *   when
     *   how (resources and protocol)
     *   why
+
 *   To facilitate cooperation, agents often need to communicate their intentions (plans), goals, results, and state
 
 
 ---
-## Theoretical approach: Speech act theory <sup><sup>(Austin 61, Searle 69)</sup></sup>
+## Theoretical approach: Speech act theory <sup>(Austin 61, Searle 69)</sup>
 
 *   Basic assumption: communication = action
+
 *   Initially meant for natural language
+
 *   Three aspects of a message:
     *   locution:
         *   how is the message phrased?
@@ -143,27 +158,32 @@ Sender of a message is always saved by the recipient as an annotation to the con
 
 
 ---
-## IEEE FIPA Standards Body (www.fipa.org)
+## IEEE FIPA Standards Body ([www.fipa.org](http://www.fipa.org/))
 
 *   FIPA = Foundation of Intelligent Physical Agents
+
 *   Founded in 1996 aiming at standardizing of agent-based Software
+
 *   Scope of standardization
     *   Agent Management<span class="s7">: runtime architecture of multiagent systems</span> (MAS) including components and services
     *   Agent communication<span class="s7">: Interaction protocols, speech acts, content</span> languages
     *   Agent Message Transport<span class="s7">: Low-level message transport</span>
-? FIPA Agent Communication Language (ACL),influenced by KQML <sup><sup>[(http://www.fipa.org/repository/aclspecs.html)](http://www.fipa.org/repository/aclspecs.html))
+? FIPA Agent Communication Language (ACL),influenced by KQML <sup>[(http://www.fipa.org/repository/aclspecs.html)](http://www.fipa.org/repository/aclspecs.html))</sup>
         
 
 ---
 ## MAS (interaction) protocols
 
 *   A MAS protocol describes and restricts admissible courses of interaction processes (typically, message sequences)
+
 *   A MAS protocol is defined at the knowledge level
     *   above the ISO/OSI transport layer 
     *   involves high-level concepts, such as
         *   commitments, beliefs, intentions
         *   permissions, responsibilities, requests
+
 *   Idea: Standardize the meaning of message types to solve problem of the message semantics
+
 *   Standards body IEEE FIPA has standardized a number of message types and interaction protocols
 
 
@@ -175,15 +195,21 @@ Sender of a message is always saved by the recipient as an annotation to the con
 
 ---
 ## Multiagent system types
+
 The literature often distinguishes two types of systems in the area of MAS **Self-interested agents**
 *   Existence of a global goal/problem is not required
+
 *   Agents co-exist and pursue local goals in a self-interested fashion, independent from each other
+
 *   Often: assumption of _(bounded) individual rationality_
+
 *   Interaction/coordination occurs through a shared environment: Avoid/resolve resource conflicts; exploit synergies
 
 Benevolent agents: Distributed Problem Solving
 *   A global, shared problem; often: global utility function
+
 *   Agents differ by capabilities or knowledge ?  no single agent can solve the problem on its own
+
 *   Goal: Find a good or optimal solution to the problem by a group (or "team") of agents
 
 
@@ -194,8 +220,11 @@ The benevolence assumption simplifies system design
 
 However...
 *   If agents represent individuals or organizations, we cannot make the benevolence assumption
+
 *   Agents will be assumed to act further to their own interests, possibly at expense of others
+
 *   Potential for _**conflict**_
+
 *   May complicate the design task enormously
 
 
@@ -203,15 +232,17 @@ However...
 ## Two decision problems (1)
 
 *   Routing: Navigation system announces a congestion ahead and suggests a deviation
-![image](slides/sociotechnicalsystems2/image_025.png)
 
 *   What should you do; stay on the road or take the deviation?
+
 *   What is better depends on your fellow drivers' decisions...
+
+![image](slides/sociotechnicalsystems2/image_025.png#centering)
 
 ---
 ## Two decision problems (2)
-*   Traffic planners: Should we build a new clearway to reduce overall travel times from S to E?
 
+*   Traffic planners: Should we build a new clearway to reduce overall travel times from $S$ to $E$?
 
 ![image](slides/sociotechnicalsystems2/image_026.png#centering)
 
@@ -220,16 +251,13 @@ However...
 ## Braess Paradox: New roads not always help ...
 
 *   Adding a new road with high capacity
-
-![image](slides/sociotechnicalsystems2/image_029.png)
-
-
 *   Consider optimal "equal split" solution (SAE/SBE)
 *   There is a route with shorter travel time: SABE
-*   Drivers that have information about travel times change to route SABE ?  destroy optimal flow
+*   Drivers that have information about travel times change to route SABE? Destroy optimal flow
 
 _**By adding a road, travel time increases!!!**_
 
+![image](slides/sociotechnicalsystems2/image_029.png#centering)
 
 ---
 ## Couldn't agents coordinate with each other to resolve this?
@@ -238,55 +266,56 @@ _**By adding a road, travel time increases!!!**_
 *   We did already show that faster route exists (travel time 70 instead of 83)
     * $\rightarrow$ There is a huge incentive for agents to defect
     * $\rightarrow$ This solution is unstable for egoistic agents
+    
 *   What can be done?
 
 
 ---
 ## Example: Traffic routing (1)
 
-Public transport companies TC1,  TC2
-of neighbouring countries Clausland and Zellerreich have agreed to route passengers "seamlessly"
+![image](slides/sociotechnicalsystems2/image_032.png#floatright)
 
-<img src="slides/sociotechnicalsystems2/image_032.png#centering"/>
+* Public transport companies $TC_1$, $TC_2$ of neighbouring countries Clausland and Zellerreich have agreed to route passengers "seamlessly"
+
+* Both own/operate their local networks
+
+* In routing traffic originating in one network with destination in the other, routing choice is made by originating network's $TC$
+
+* Routing choices made by one TC may affect load and cost of the other! 
 
 
 ---
 ## Example: Traffic routing (2)
 
-*   Both own/operate their local networks
-*   In routing traffic originating in one network with destination in the other, routing choice is made by originating network's TC
-*   Routing choices made by one TC may affect load and cost of the other! 
-
-
----
-## Example: Traffic routing (3)
-
 ![image](slides/sociotechnicalsystems2/image_032.png#floatright)
 
-*   _C, S_ are boundary nodes through which traffic must go
-*   Traffic streams to be routed: 
-	
-$$o_1 \rightarrow d_1$$ 
+* $C$, $S$ are boundary nodes through which traffic must go
 
-$$o_2 \rightarrow d_2$$
+* Traffic streams to be routed: 
+    * $o_1 \rightarrow d_1$
+    * $o_2 \rightarrow d_2$
 
----
-## Example: Traffic routing (4)
+* Assume each edge has cost 1 associated
 
-*   Assume each edge has cost 1 associated
-*   Each TC pays for cost occurring on its own network
-*   Cost from _C_ to  _d1_ and _d2_ is assumed to be 0
+* Each $TC$ pays for cost occurring on its own network
 
-* How should TC1 and TC2 route their traffic streams?
+* Cost from $C$ to $d_1$ and $d_2$ is assumed to be 0
+
+* How should $TC_1$ and $TC_2$ route their traffic streams?
 
 ---
 ## Game theory
 
 *   The examples describe scenarios of interaction between self-interested players ("agents")
-*   Game theory "aims to model situations in which multiple participants interact or affect each other's outcomes" <sup><sup>(Nisan et al., 2007, p.3)
+
+*   Game theory "aims to model situations in which multiple participants interact or affect each other's outcomes" <sup>(Nisan et al., 2007, p.3)</sup>
+
 *   In particular, game theory deals with the formulation of optimal strategies for solving conflicts
+
 *   Seminal work on game theory J.  von Neumann und O. Morgenstern. The Theory of Games and Economic Behaviour. Princeton University Press, Princeton, NJ (1944).</sup>
+
 *   All the examples described above can be modelled as one-shot simultaneous move games
+
 *   Before we show that, we introduce the basic concepts
  
 
@@ -294,33 +323,27 @@ $$o_2 \rightarrow d_2$$
 ---
 ## Game-theoretic model of rational multiagent interaction
 
-*   Simple case: two agents only 
-
-$$|Ag| = 2, Ag = (  i, j )$$
+*   Simple case: two agents only $|Ag| = 2, Ag = (  i, j )$
 
 *   Interaction of agents produce results
-*   The environment in our MAS is described through a set of result states
 
-$$\Omega = (  \omega_1, \omega_2, ... ) $$
+*   The environment in our MAS is described through a set of result states $\Omega = (  \omega_1, \omega_2, ... )$
 
 *   Assumption: Agents are self-interested, i.e., they have (individual) preferences over result states
+
 *   Preferences can be represented by assigning utility (payoff) values to states
 
 ---
-## Utility and preferences (1)
+## Utility and preferences
 
 
 *   We represent preferences through utility functions:
-$$u_i: \Omega  \rightarrow  \mathfrak{R}$$
-$$u_j: \Omega  \rightarrow  \mathfrak{R}$$
-
-Utility functions induce preference orderings over the result states of interactions
+    * $u_i: \Omega  \rightarrow  \mathfrak{R}$
+    * $u_j: \Omega  \rightarrow  \mathfrak{R}$
     
----
-## Utility and preferences (2)
-
-$\Omega \ge_i \Omega'$ means $u_i(\omega) \ge u_i(\Omega')$
-and $\Omega >_i \Omega'$ means $u_i(\Omega) > u_i(\Omega')$
+* Utility functions induce preference orderings over the result states of interactions 
+    * $\Omega \ge_i \Omega'$ means $u_i(\omega) \ge u_i(\Omega')$
+    * and $\Omega >_i \Omega'$ means $u_i(\Omega) > u_i(\Omega')$
 
 *   Interpretation of utility
 	*   Not the same as money
@@ -331,106 +354,111 @@ and $\Omega >_i \Omega'$ means $u_i(\Omega) > u_i(\Omega')$
 
 
 We need a model of the environment in which these agents will act...
-*   agents simultaneously choose an action to perform, and as a result of the actions they select, an outcome in W will result
-*   the actual outcome depends on the combination of actions
-*   assume each agent has just two possible actions that it can perform, C ("cooperate") and D ("defect") Environment behaviour given by state transformer function:
+* agents simultaneously choose an action to perform, and as a result of the actions they select, an outcome in W will result
 
-$$\tau: Ac_i  \times  Ac_j \rightarrow \Omega  $$
+* the actual outcome depends on the combination of actions
 
-Ac $\rightarrow$ Agent's action
-   
+* assume each agent has just two possible actions that it can perform, $C$ ("cooperate") and $D$ ("defect") Environment behaviour given by state transformer function:
+
+* $Ac \rightarrow$ Agent's action
+
+$$\tau: Ac_i  \times  Ac_j \rightarrow \Omega$$
 
 
 ---
 ## State transformer functions - Some examples
 
-![image](slides/sociotechnicalsystems2/image_030.png#centering)
+* This environment is sensitive to actions of both agents
 
+* In this environment, neigher agent has any influcence
+
+* This environment is controlled by agent $j$
+
+| $\tau(D,D) = \omega_1$ | $\tau(C,D) = \omega_2$ | $\tau(D,C) = \omega_3$ | $\tau(C,C) = \omega_4$ |
+|:----------------------:|:----------------------:|:----------------------:|:----------------------:|
 
 ---
 ## Rational choice (1)
 
-*   Relevant: Environments that can be influenced by both agents consider following utility functions
-    $$u_i(\omega_1) = 1;$$
-    
-	$$u_i(\omega_2) = 1;$$    
- 
-    $$u_i(\omega_3) = 4;$$
-    
-    $$u_i(\omega_4) = 4;$$
-	
-    $$u_j(\omega_1) = 1;$$
-    
-    $$u_j(\omega_2) = 4;$$
-    
-    $$u_j(\omega_3) = 1;$$
-    
-    $$u_j(\omega_4) = 4;$$ 
+Relevant: Environments that can be influenced by both agents consider following utility functions
 
+| $i$     | $u_x(\omega_1)$ | $u_x(\omega_2)$ | $u_x(\omega_3)$ | $u_x(\omega_4)$ |
+|:-------:|:---------------:|:---------------:|:---------------:|:---------------:|
+| $x = i$ | $1$             | $1$             | $4$             | $4$             |
+| $x = j$ | $1$             | $4$             | $1$             | $4$             |
 
+<br/>
 
+Simplified notation
+
+| $i$ | $D$             | $C$             |
+|:---:|:---------------:|:---------------:|
+| $D$ | $u_i(D, D) = 1$ | $u_i(D, C) = 1$ |
+| $C$ | $u_i(C, D) = 4$ | $u_i(C, C) = 4$ |
+
+<br/>
+
+| $j$ | $D$             | $C$             |
+|:---:|:---------------:|:---------------:|
+| $D$ | $u_j(D, D) = 1$ | $u_j(D, C) = 4$ |
+| $C$ | $u_j(C, D) = 1$ | $u_j(C, C) = 1$ |
+
+    
 ---
 ## Rational choice (2)
 
-*   Simplified notation
-	$$u_i(D, D) = 1;$$
-    $$u_i(D, C) = 1;$$
-    $$u_i(C, D) = 4;$$
-    $$u_i(C, C) = 4;$$
-    $$u_j(D, D) = 1;$$
-    $$u_j(D, C) = 4;$$ 
-    $$u_j(C, D) = 1;$$
-    $$u_j(C, C) = 1;$$
-    
----
-## Rational choice (3)
-    
-   
-*   Then agent _i_'s preferences are:   
+*   Then agent $i$'s preferences are:   
 $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 
-
-*   "_C_" is the individual _rational choice_ for _i_. (Because _i_ prefers all outcomes that arise through _C_ over all outcomes that arise through _D_.)
+*   $C$ is the individual _rational choice_ for $i$. Because $i$ prefers all outcomes that arise through $C$ over all outcomes that arise through $D$.
 
 
 ---
 ## Representation as payoff matrix
 
-*   We can characterize the previous scenario in a payoff matrix <span>![image](slides/sociotechnicalsystems2/image_045.png)</span>
+![image](slides/sociotechnicalsystems2/image_045.png#floatright)
+
+*   We can characterize the previous scenario in a payoff matrix 
+
 *   We call _i column_ player, and _j row_ player
-*   We call D and C **_strategies_** that the players may choose
+
+*   We call $D$ and $C$ **_strategies_** that the players may choose
 
 
 ---
-## Dominant strategies (1)
+## Dominant strategies
 
-*   Given any particular strategy (either _C_ or _D_) of agent _i_, there will be a number of possible outcomes
-*   We say s1 _**dominates**_ s2 if every outcome possible by _i_ playing s1 is preferred over every outcome possible by _i_ playing s2
+*   Given any particular strategy (either $C$ or $D$) of agent $i$, there will be a number of possible outcomes
+
+*   We say $s_1$ _**dominates**_ $s_2$ if every outcome possible by $i$ playing $s_1$ is preferred over every outcome possible by $i$ playing $s_2$
+
 *   A rational agent will never play a dominated strategy
+
 *   So, in deciding what to do, we can **_delete dominated strategies_**
+
 *   Unfortunately, there isn't always a unique undominated strategy
 
 
 ---
-## Routing games (Example 1 reconsidered)
+## Routing games - Example 1 reconsidered
 
-*   Players: TC1 and TC2 simultaneously route one unit of traffic
-*   Strategies: Route via S _or_ Route via C
+*   Players: $TC_1$ and $TC_2$ simultaneously route one unit of traffic
+*   Strategies: Route via $S$ _or_ Route via $C$
 *   Dilemma: one is better from a selfish perspective, but will hurt the other player
-*   Payoff matrix (figures are cost, so less is better!) <span>![image](slides/sociotechnicalsystems2/image_044.png)</span>
+*   Payoff matrix (figures are cost, so less is better!)
+
+![image](slides/sociotechnicalsystems2/image_044.png#centering)
 
 
 ---
 ## Analysis of the routing game
-
-![image](slides/sociotechnicalsystems2/image_055.png)
 
 *   Are there dominant strategies for any player?
 *   Is there a (collectively) optimal strategy pair?
 *   What strategy would a rational player choose?
 *   Is there a stable setting, where no player has an incentive to change their strategies? 
 
-
+![image](slides/sociotechnicalsystems2/image_055.png#centering)
 
 ---
 ## Nash Equilibrium
@@ -438,8 +466,11 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 * In general, we will say that two strategies $s_1$ and $s_2$ are in Nash equilibrium if
     1. under the assumption that agent $i$ plays $s_1$, agent $j$ can do no better than play $s_2$; 
     2. under the assumption that agent $j$ plays $s_2$, agent $i$ can do no better than play $s_1$.
+
 *   _Neither agent has any incentive to deviate from a Nash equilibrium_
+
 *   This is desirable as modifying strategies requires effort (cost!) and can endanger system stability
+
 *   Unfortunately:
     1. _Not every interaction scenario has a Nash equilibrium_
     2. _Some interaction scenarios have more than one Nash equilibrium_
@@ -454,13 +485,12 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 ---
 ## Analysis of the routing game
 
-![image](slides/sociotechnicalsystems2/image_055.png#floatright)
-
 *   Note: The routing game is equivalent to the famous prisoner's dilemma!
 *   Intuitively, cooperation is the best choice; But it is rational for the agents not to cooperate
 *   Does this imply that cooperation is sometimes unreachable in societies of self-interested agents? Humans??
 *   Can we recover cooperation?
 
+![image](slides/sociotechnicalsystems2/image_055.png#centering)
 
 ---
 ## Counter-arguments
@@ -482,13 +512,18 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 ## Iterated Routing Game (aka Prisoner's Dilemma)
 
 *   One answer: play the game more than once
+
 *   If you know you will be meeting your opponent again, then the incentive to defect (=not to cooperate) appears to evaporate
+
 *   Cooperation is the rational choice in the infinitely repeated prisoner's dilemma :-)
+
 *   For the prisoner's dilemma with n rounds, _n = 1_ finite, pre-determined, commonly known, defection is the best strategy :-(
 
 
 ---
-## N-player game: Investment in pollution reduction (1)
+## N-player game: Investment in pollution reduction
+
+![image](slides/sociotechnicalsystems2/image_059.gif#floatright)
 
 * N countries need to decide on whether or not to take extra efforts by passing a legislation to reduce pollution
 
@@ -496,27 +531,29 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 
 * Not doing so will cause cost of 1 billion € to each country (because of pollution)
 
----
-## N-player game: Investment in pollution reduction (2)
+* What should the governments of the countries do?
 
-*   What should the governments of the countries do?
+* Is there a rational solution?
 
-![image](slides/sociotechnicalsystems2/image_059.gif)
-<sup><sup>    [http://www.worldatlas.com/webimage/countrys/eunewneb.gif](http://www.worldatlas.com/webimage/countrys/eunewneb.gif)</sup></sup>
-*   Is there a rational solution?
-*   Is there an optimal solution?
-*   Is there a stable solution?
- 
+* Is there an optimal solution?
+
+* Is there a stable solution?
+
+<sup>[http://www.worldatlas.com/webimage/countrys/eunewneb.gif](http://www.worldatlas.com/webimage/countrys/eunewneb.gif)</sup> 
 
 ---
 ## The pollution game
   
 *   Players: the n countries simultaneously decide on whether to pass policy to reduce pollution
+
 *   Strategies: YES = Cooperate, NO = Defect
+
 *   Assume k out of n countries choose not to control pollution
     * $\rightarrow$ The cost incurred by each of the defecting countries is k
     * $\rightarrow$ The cost incurred by each of the n-k cooperating countries is k+3
+
 *   _Does the game have Nash equilibria?_
+
 *   _(How) does this game relate to any of the games we have previously seem?_
 
 
@@ -531,93 +568,74 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 ![image](slides/sociotechnicalsystems2/image_065.png)
 
 ---
-## Tragedy of the commons: formulation as a game (1)
+## Tragedy of the commons: formulation as a game
 
 *   Each players' optimal selfish strategy depends on what other players do
 *   Infinite number of strategies for each player: 
 
-**_Use_** $x_i$
-
-_**fragment of road capacity,**_ $x_i \in [0,1]$
-    
----
-## Tragedy of the commons: formulation as a game (2)    
+**_Use_** $x\_i$ _**fragment of road capacity,**_ $x_i \in [0,1]$
     
 Define players' payoff:
 
 * If (total traffic exceeds capacity): $\sum_j x_j \geq 1$
+
 * payoff for all players $j$ is $0$ $\sum_j \ x_j < 1$
+
 * payoff for player $i$ is $x_i \cdot (1-\sum_j x_j)$
+
 *   This definition reflects the intended trade-off
     *  Players want to use as much of the resource as possible
     *  Over-usage is bad for everyone
+
 *   Now what should self-interested players do?
 
 
 ---
-## Tragedy of the commons game: stable strategies (1)
+## Tragedy of the commons game: stable strategies
 
-*   We consider player $i$
-*   Assume: other players $j$ use $t=\sum_{j \neq i}  x_j < 1$
-*   Optimization problem for player i: $x \cdot (1-t-x)\rightarrow max)$
-*   Solving it reveals (see next slide for some high school maths) $x=\frac{1-t}{2}$
+* We consider player $i$
 
+* Assume: other players $j$ use $t=\sum_{j \neq i}  x_j < 1$
 
----
-## Tragedy of the commons game: stable strategies (2)
+* Optimization problem for player i: $x \cdot (1-t-x)\rightarrow max)$
+
+* Solving it reveals (see next slide for some high school maths) $x=\frac{1-t}{2}$
 
 * A set of strategies is stable if all players are playing their optimal - selfish strategy, given the strategies of all other players
 
-* For our case, that means: $x_i = \frac{1 - \sum_{j \neq i} x_j}{2}$
+* For our case, that means: $x\_i = \frac{1 - \sum\_{j \neq i} x_j}{2}$
 
 * which has as unique solution: $x_i = \frac{1}{n+1}$ $\forall i$
 
 ---
-## But why is it called _tragedy_? (1)
+## But why is it called _tragedy_?
 
-*   It is a tragedy, because the resulting total payoff is extremely low
-*   With $x_i = \frac{1}{n+1}$ 
-   
-we can calculate each player's payoff as 
+* It is a tragedy, because the resulting total payoff is extremely low
+* with $x_i = \frac{1}{n+1}$ 
+* we can calculate each player's payoff as $x\_i \cdot (1 - \sum\_{j \neq i} x_j) = \frac{1}{(n+1)^2}$
+* This means that the sum of all players' payoffs is $\frac{1}{(n+1)^2} \approx \frac{1}{n}$  
+* Compare if the overall used fraction of the resource capacity was $\sum_j x_j = \frac{1}{2}$
+* the sum of all players' payoffs were $\frac{1}{4}$
 
-$$x_i \cdot (1 - \sum_(j \neq i) x_j = \frac{1}{(n+1)^2}$$
+... and hence approximately $\frac{n}{4}$ times bigger
 
----
-## But why is it called _tragedy_? (2)
-
-*	This means that the sum of all players' payoffs is 
-	
-	$$\frac{1}{(n+1)^2} \approx \frac{1}{n}$$
-    
-Compare if the overall used fraction of the resource capacity was 
-
-$$\sum_j x_j = \frac{1}{2}$$ 
-
-the sum of all players' payoffs were 
-
-$$\frac{1}{4}$$ 
-
----
-## But why is it called _tragedy_? (2)
-
-... and hence approximately  
-
-$$\frac{n}{4}$$ 
-
-times bigger
-
-*	In this game, the n users sharing the common resource _overuse it so that the total value of the shared resource decreases quite dramatically_  
+> _In this game, the $n$ users sharing the common resource _overuse it so that the total value of the shared resource decreases quite dramatically_
 
 ---
 ## The "price of anarchy"
 
 *   How much do we lose by selfish behaviour?
+
 *   How inefficient are equilibria reached by selfish rational agents?
-    _"in comparison to an idealized situation in which the agents would strive to collaborate selflessly with the common goal of minimizing total cost"?_ <sup><sup> (Nisan et al, 2007, p. xiv)</sup></sup>
+    _"in comparison to an idealized situation in which the agents would strive to collaborate selflessly with the common goal of minimizing total cost"?_ <sup>(Nisan et al, 2007, p. xiv)</sup>
+
 *   The price of anarchy depends on the design of the game
+
 *   Examples: Tragedy of Commons, prisoner's dilemma
+
 *   Note that the contrary of anarchy is _**dictatorial behaviour**_!
-*   It is often found that the price of anarchy is not nearly as expensive as one may think (e.g. max. 33% to optimal solution for some routing games) <sup><sup>[Roughgarden]</sup></sup>
+
+*   It is often found that the price of anarchy is not nearly as expensive as one may think (e.g. max. 33% to optimal solution for some routing games) <sup>[Roughgarden]</sup>
 
 
 ---
@@ -626,49 +644,45 @@ times bigger
 ![image](slides/sociotechnicalsystems2/image_089.png#floatright)
 
 *   Up to know, we have seen "pure" strategies, i.e. a strategy was always to pick one alternative deterministically
+
 *   Now look at the game theory version of Rock, Paper, Scissors
+
 *   Analysis
     *   Dominant strategy?
     *   Nash equilibrium?
+
 *   What strategy should a player play in this game?
 
 
 ---
-## Mixed strategy (Wooldridge 2009, 260f) (1)
+## Mixed strategy (Wooldridge 2009, 260f)
 
-*   Mixed strategy
-    *   Choice of actions based on probabilities
-*   Formally:
-   
-Let 
+* Mixed strategy: Choice of actions based on probabilities
 
-$$S = \{ s_1, s_2, ... , s_k \}$$
+* Formally: Let $S = \{ s_1, s_2, ... , s_k \}$ be possible actions
 
-be possible actions
+* A mixed strategy for player $i$ is a probability distribution $P\_i=\left[  p\_{i\_1}, p\_{i\_2}, ..., p\_{i\_k} \right]  \text{ over S}$
 
----
-## Mixed strategy (Wooldridge 2009, 260f) (2)
 
-A mixed strategy for player i is a probability distribution 
-
-$$P_i=\left [  p_{i1}, p_{i2}, ..., p_{ik}\right ]  \ over \ S$$
-
-Meaning: i plays s1 with probability p11, s2 with probability p12 etc.
+Meaning: $i$ plays $s\_1$ with probability $p\_{1\_1}$, $s\_2$ with probability $p\_{1\_2}$ etc.
  
 *   Apply to rock, stone, scissors
-    *   "Choose randomly between rock, stone, scissors, where each alternative is chosen with equal probability"
-    *   Note: This mixed strategy is in a Nash Equilibrium with itself
+
+*   "Choose randomly between rock, stone, scissors, where each alternative is chosen with equal probability"
+
+*   Note: This mixed strategy is in a Nash Equilibrium with itself
 
 
 ---
 ## Nash equilibria for mixed strategies
 
+![image](slides/sociotechnicalsystems2/image_091.jpg#floatright)
+
 Theorem (w/o. proof):
+
 *   Each game, in which each player has a finite set of possible strategies, has a mixed-strategy Nash equilibrium
+
 *   For this insight, John Forbes Nash Jr. won the Nobel prize in economic sciences in 1994 (with Reinhard Selten and John Harsanyi)
-
-
-<img alt="" height="280" src="slides/sociotechnicalsystems2/image_091.jpg" >
 
 <sup>Peter Badge/Typos 1</sup> 
 
@@ -676,14 +690,19 @@ Theorem (w/o. proof):
 ## Game theory - possibilities and limitations
 
 *   Powerful analytic instrument
+
 *   Algorithmic game theory provides means to compute (if existent) strategies and equilibria
+
 *   Broad spectrum of different game types and variants
+
 *   Algorithms for finding Nash equilibria
 	*   <sup>(Lemke and Howson, 1964)</sup> for two player games
     *   Search-based algorithm <sup>(Porter et al., 2004)</sup> for n-player games
+
 *   Computational complexity
 	*   Finding a Nash equilibrium is a combinatorial problem
     *   The Nash Problem is PPAD-complete <sup>(Papadimitriou, 1994)</sup>
+
 *   Recently, specific classes of games have been successfully used to engineer e.g. surveillance schedules <sup>(Yang et al., AAMAS 2014)</sup>
 
 
