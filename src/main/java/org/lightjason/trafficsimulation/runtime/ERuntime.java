@@ -173,7 +173,8 @@ public enum ERuntime implements IRuntime
         }
         catch ( final IOException l_exception )
         {
-            throw new UncheckedIOException( l_exception );
+            System.err.println( CCommon.languagestring( this, "initializeerror" ) );
+            System.exit( -1 );
         }
 
         // check nessessary agents
@@ -182,7 +183,8 @@ public enum ERuntime implements IRuntime
               .findAny()
               .ifPresent( i ->
               {
-                  throw new RuntimeException( CCommon.languagestring( this, "agentnotfound", i ) );
+                  System.err.println( CCommon.languagestring( this, "agentnotfound", i ) );
+                  System.exit( -1 );
               } );
     }
 
