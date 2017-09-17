@@ -129,4 +129,14 @@ img[src$='#floatright'] {
         opacity: 1;
     }
 
+    .remark-slide-scaler {
+        width: 95% !important;
+        height: 95% !important;
+        left: 5mm !important;
+        top: 5mm !important;
+    }
+
+    .remark-preview-area, .remark-notes-area, .remark-slide-notes {
+        display: none;
+    }
 }
