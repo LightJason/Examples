@@ -2,7 +2,7 @@
 <!-- $size: 16:9 -->
 
 # Course & Simulation Lab 
-## _Modelling and simulation of socio-technical systems_
+#### Modelling and simulation of socio-technical systems
 
 * Jörg P. Müller, Philipp Kraus 
 * TU Clausthal
@@ -377,6 +377,7 @@ $$\tau: Ac_i  \times  Ac_j \rightarrow \Omega$$
 | $\tau(D,D) = \omega_1$ | $\tau(C,D) = \omega_2$ | $\tau(D,C) = \omega_3$ | $\tau(C,C) = \omega_4$ |
 |:----------------------:|:----------------------:|:----------------------:|:----------------------:|
 
+
 ---
 ## Rational choice (1)
 
@@ -430,7 +431,7 @@ $$(C,C) \ge_i (C,D) >_i (D,C) \ge_i (D,D)$$
 
 *   Given any particular strategy (either $C$ or $D$) of agent $i$, there will be a number of possible outcomes
 
-*   We say $s_1$ _**dominates**_ $s_2$ if every outcome possible by $i$ playing $s_1$ is preferred over every outcome possible by $i$ playing $s_2$
+*   We say $s\_1$ **dominates** $s_2$ if every outcome possible by $i$ playing $s_1$ is preferred over every outcome possible by $i$ playing $s_2$
 
 *   A rational agent will never play a dominated strategy
 
@@ -674,7 +675,7 @@ Meaning: $i$ plays $s\_1$ with probability $p\_{1\_1}$, $s\_2$ with probability 
 
 
 ---
-## Nash equilibria for mixed strategies
+## Nash equilibria for mixed strategies <sup>Peter Badge</sup>
 
 ![image](slides/sociotechnicalsystems2/image_091.jpg#floatright)
 
@@ -683,8 +684,7 @@ Theorem (w/o. proof):
 *   Each game, in which each player has a finite set of possible strategies, has a mixed-strategy Nash equilibrium
 
 *   For this insight, John Forbes Nash Jr. won the Nobel prize in economic sciences in 1994 (with Reinhard Selten and John Harsanyi)
-
-<sup>Peter Badge/Typos 1</sup> 
+ 
 
 ---
 ## Game theory - possibilities and limitations

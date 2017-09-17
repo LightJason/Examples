@@ -2,7 +2,7 @@
 <!-- $size: 16:9 -->
 
 ## Course & Simulation Lab 
-## _Modelling and simulation of socio-technical systems_
+#### Modelling and simulation of socio-technical systems
 
 * Jörg P. Müller, Philipp Kraus 
 * TU Clausthal
@@ -29,7 +29,7 @@ _MECHANISMS FOR COLLECTIVE DECISION-MAKING_
 
 * Collective decision-making
 
-* Voting mechanisms**
+* Voting mechanisms
 
 
 ---
@@ -435,18 +435,15 @@ For $\vert \Omega \vert \geq 3$, there exists no social choice function $G$ that
 
 
 ---
-## A (Near?) Future Scenario: Ridesharing with PATs I
+## A (Near?) Future Scenario: Ridesharing with PATs
 
 ![image](slides/sociotechnicalsystems3/image_013.jpg#floatright)
 
 *   2030: _Personalized Autonomous Transportation_ Cells (PATs)
+
 *   Modular 1-PATs can connect automatically to form N-PATs
+
 *   Travellers provide preference information to PAT via App
-
-<sup>[Source: NEXT Transportation Systems, https://www.youtube.com/watch?v=IDgh29SqZzE](http://www.youtube.com/watch?v=IDgh29SqZzE)<sup>
-
----
-## A (Near?) Future Scenario: Ridesharing with PATs II
 
 *   CITY X pilots N-PAT based system replace CITY X pilots public transport in city centre:
     *   1-PATs are provided for hire
@@ -455,6 +452,8 @@ For $\vert \Omega \vert \geq 3$, there exists no social choice function $G$ that
 *   CITY X traffic authority
     *   forbids 1-PATs to enter the town centre
     *   allows entry for 4-PATs or larger platoons
+
+<sup>[Source: NEXT Transportation Systems, https://www.youtube.com/watch?v=IDgh29SqZzE](http://www.youtube.com/watch?v=IDgh29SqZzE)<sup>
 
 
 ---

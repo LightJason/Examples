@@ -2,7 +2,7 @@
 <!-- $size: 16:9 -->
 
 ## Course & Simulation Lab 
-## _Modelling and simulation of socio-technical systems_
+#### Modelling and simulation of socio-technical systems
 
 * Jörg P. Müller, Philipp Kraus 
 * TU Clausthal
@@ -84,7 +84,7 @@ But
 
 
 ---
-## Socio-technical systems (STS) (Singh, 2014)
+## Socio-technical systems (STS) <sup>Singh, 2014</sup>
 
 Combine (information) technology with real-life societal considerations
 System characteristics
@@ -97,7 +97,7 @@ System characteristics
 
 
 ---
-## Socio-technical systems (STS) (Singh, 2014)
+## Socio-technical systems (STS) <sup>Singh, 2014</sup>
 
 Member characteristics
 *   Longevity and identity
@@ -363,14 +363,21 @@ But: useful as a basic mathematical model
 ---
 ## Minimal abstract agent model (cycle)
 
+<br/><br/>
+
 ![image](slides/sociotechnicalsystems1/image_031.png#floatright)
 
-1.  Start in initial state s
+1.  Start in initial state $s$
+
 2.  Observe state of environment and create a perception
+
 3.  Update internal state based on perception
+
 4.  Select next action based on internal state
+
 5.  Execute selected action
-6.  Goto step 2
+
+6.  Goto step $2$
 
 
 ---
@@ -395,7 +402,7 @@ But: useful as a basic mathematical model
   *   Tight coupling of perception and action
   *   Simple decision rules
   
-*   Simon (1981): The complexity of agent behaviour can be a reflection of the complexity of the agent’s environment rather than of the agent’s complex internal design
+*   The complexity of agent behaviour can be a reflection of the complexity of the agent’s environment rather than of the agent’s complex internal design <sup>Simon (1981)</sup>
 
 *   Often: communication via the environment (stigmergy)
 
@@ -405,7 +412,8 @@ But: useful as a basic mathematical model
 
 
 ---
-## Subsumption architecture (Brooks): Generate intelligent behaviour without explicit representation
+## Subsumption architecture <sup>Brooks</sup>
+#### Generate intelligent behaviour without explicit representation
 
 ![image](slides/sociotechnicalsystems1/image_032.png#centering)
     
@@ -413,10 +421,8 @@ But: useful as a basic mathematical model
 ---
 ## Control: suppression and inhibition
 
-* $S$: signal from module ($\text{layer}\_k$) suppresses (and replaces) input into module ($\text{layer}\_{k-1}) for some pre-determined time
-
+* $S$: signal from module ($\text{layer}\_k$) suppresses (and replaces) input into module ($\text{layer}\_{k-1}$) for some pre-determined time
 * $I$: signal from layer _k_ inhibits output from module (at $\text{layer}\_{k-1}$) for some pre-determined time
-
 * This control is hard-wired
 
 ![image](slides/sociotechnicalsystems1/image_035.png#centering)
