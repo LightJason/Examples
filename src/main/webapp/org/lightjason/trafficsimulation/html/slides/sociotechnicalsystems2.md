@@ -4,7 +4,7 @@
 # Course & Simulation Lab 
 #### Modelling and simulation of socio-technical systems
 
-* Jörg P. Müller, Philipp Kraus 
+* Jörg P. Müller, Philipp Kraus, Malte Aschermann 
 * TU Clausthal
 * September 19-20, 2017
 
