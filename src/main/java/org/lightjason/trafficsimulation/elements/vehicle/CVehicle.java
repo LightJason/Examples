@@ -216,12 +216,6 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
         return m_position;
     }
 
-    @Override
-    public final String toString()
-    {
-        return MessageFormat.format( "{0} {1}", super.toString(), m_type );
-    }
-
     @Nonnull
     @Override
     public final DoubleMatrix1D nextposition()
