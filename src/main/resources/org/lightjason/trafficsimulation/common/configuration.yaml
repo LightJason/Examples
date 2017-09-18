@@ -35,6 +35,8 @@ agent:
       visible: false
     defaultvehicle:
       visible: false
+    uservehicle_baseline:
+      visible: false
     uservehicle_example:
       visible: false
 

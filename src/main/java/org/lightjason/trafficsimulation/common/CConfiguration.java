@@ -212,7 +212,7 @@ public final class CConfiguration extends ITree.CTree
      */
     public static Stream<String> activatableagents()
     {
-        return Stream.of( "uservehicle_baseline", "uservehicle_example" );
+        return Stream.of( "baseline", "uservehicle_baseline", "uservehicle_example" );
     }
 
     /**
