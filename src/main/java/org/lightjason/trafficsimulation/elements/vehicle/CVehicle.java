@@ -85,6 +85,14 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
      */
     private static final long serialVersionUID = 3822143462033345857L;
     /**
+     * fixed view distance forward in meter
+     */
+    private static final double FORWARDDISTANCE = 450;
+    /**
+     * fixed view distance backward in meter
+     */
+    private static final double BACKWARDDISTANCE = 150;
+    /**
      * literal functor
      */
     private static final String FUNCTOR = "vehicle";
@@ -181,15 +189,15 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
 
         m_backwardview = new CEnvironmentView(
             Collections.unmodifiableSet(
-                CMath.cellangle( EUnit.INSTANCE.metertocell( 150 + ( Math.random() - 0.5 ) * 50 ), 135, 225 ).collect( Collectors.toSet() )
+                CMath.cellangle( EUnit.INSTANCE.metertocell( BACKWARDDISTANCE ), 135, 225 ).collect( Collectors.toSet() )
             )
         );
 
         m_forwardview = new CEnvironmentView(
             Collections.unmodifiableSet(
                 Stream.concat(
-                    CMath.cellangle( EUnit.INSTANCE.metertocell( 450 + ( Math.random() - 0.5 ) * 75 ), 0, 60 ),
-                    CMath.cellangle( EUnit.INSTANCE.metertocell( 450 + ( Math.random() - 0.5 ) * 75 ), 300, 359.99 )
+                    CMath.cellangle( EUnit.INSTANCE.metertocell( FORWARDDISTANCE ), 0, 60 ),
+                    CMath.cellangle( EUnit.INSTANCE.metertocell( FORWARDDISTANCE ), 300, 359.99 )
                 ).collect( Collectors.toSet() )
             )
         );
@@ -206,6 +214,12 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
     public final synchronized DoubleMatrix1D position()
     {
         return m_position;
+    }
+
+    @Override
+    public final String toString()
+    {
+        return MessageFormat.format( "{0} {1}", super.toString(), m_type );
     }
 
     @Nonnull
@@ -274,33 +288,8 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
         return Stream.of(
             CLiteral.from( "lane", CRawTerm.from( this.position().get( 0 ) + 1 ) ),
             CLiteral.from( "speed", CRawTerm.from( m_speed.get() ) ),
-            CLiteral.from( "distance", CRawTerm.from( distancevariation( this, p_object ) ) )
+            CLiteral.from( "distance", CRawTerm.from( EUnit.INSTANCE.celltometer( CMath.distance( this.position(), p_object.position() ) ) ) )
         );
-    }
-
-    /**
-     * change distance perceiving on fuzzyness
-     *
-     * @param p_first first object which should use the distance
-     * @param p_second second object
-     * @return distance in meter
-     */
-    private static Number distancevariation( @Nonnull final IVehicle p_first, @Nonnull final IObject<?> p_second )
-    {
-        final Number l_distance = EUnit.INSTANCE.celltometer( CMath.distance( p_first.position(), p_second.position() ) );
-        if ( !( p_second instanceof IVehicle ) )
-            return l_distance;
-
-        return (
-                   // scale distance difference on a sigmoid function
-                   1 / ( 1 + Math.exp(  -p_second.<IVehicle>raw().speed() / Math.max( p_first.speed(), 0.0001 ) ) )
-                   // normalize the result in [-0.5, 0.5]
-                   - 0.5
-                 )
-                 // scale it with a random value and the real distance
-                 * Math.random() * l_distance.doubleValue()
-                 // change real distance
-                + l_distance.doubleValue();
     }
 
     @Override
@@ -616,7 +605,7 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
             )
                  .parallel()
                  .filter( i -> !i.equals( CVehicle.this ) )
-                 .map( i -> new ImmutablePair<>( distancevariation( CVehicle.this, i ), i ) )
+                 .map( i -> new ImmutablePair<>( EUnit.INSTANCE.celltometer( CMath.distance( CVehicle.this.position(), i.position() ) ),  i ) )
                  .sorted( Comparator.comparingDouble( i -> i.getLeft().doubleValue() ) )
                  .map( ImmutablePair::getRight )
                  .map( i -> i.literal( CVehicle.this ) )
