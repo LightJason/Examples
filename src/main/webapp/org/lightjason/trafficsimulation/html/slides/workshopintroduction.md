@@ -1,7 +1,7 @@
 # The LightJason Speeding game
 
 
-### Philipp Kraus, Malte Aschermann, Ehsan Tatasadi
+### Fatema Tuj Johora & Sînziana-Maria Sebe
 -----
 # Lecture recap
 
