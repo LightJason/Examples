@@ -6,8 +6,6 @@ jobs:
         docker:
             - image: lightjason/examples:latest
 
-        shell: /bin/bash
-
         branches:
             ignore:
                 - master
