@@ -22,7 +22,7 @@ jobs:
                     cd /tmp/rest
                     mvn install
             - run:
-                name Installation Node.JS
+                name: Installation Node.JS
                 command: apk --no-cache add nodejs        
             - checkout
             - run: 
