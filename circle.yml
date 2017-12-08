@@ -15,13 +15,22 @@ jobs:
             TZ: "/usr/share/zoneinfo/Europe/Berlin"
 
         steps:
+            - run:
+                name: LightJason REST
+                command: |
+                    git clone https://github.com/LightJason/REST.git /tmp/rest
+                    cd /tmp/rest
+                    mvn install
+            - run:
+                name Installation Node.JS
+                command: apk --no-cache add nodejs        
             - checkout
             - run: 
                 name: Git Clean
-                command: git clean -xdf && git fetch -p && git gc --prune=now
+                command: git clean -xdf && git fetch -p && git gc --prune=now    
             - run:
                 name: Maven Clean
-                command: mvn clean dependency:purge-local-repository -Dexclude="org.lightjason:agentspeak" -DreResolve=false -DactTransitively=true
+                command: mvn clean dependency:purge-local-repository -Dexclude="org.lightjason:agentspeak,org.lightjason:rest" -DreResolve=false -DactTransitively=true
             - run:
                 name: Build
                 command: mvn package -Dbuild.number=${CIRCLE_BUILD_NUM} -Dbuild.commit=${CIRCLE_SHA1}
