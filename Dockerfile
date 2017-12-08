@@ -5,4 +5,6 @@ RUN apk --no-cache update &&\
     apk --no-cache add go musl-dev openssh-client
 
 RUN go get -u github.com/tcnksm/ghr
+ENV PATH /root/go/bin:$PATH
+
 RUN rm -rf /tmp/*
