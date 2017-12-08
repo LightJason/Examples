@@ -10,7 +10,6 @@ jobs:
             ignore:
                 - master
                 - /dev-.*/
-                - /jar-.*/
 
         environment:
             TZ: "/usr/share/zoneinfo/Europe/Berlin"
