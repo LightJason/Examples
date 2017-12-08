@@ -22,8 +22,10 @@ jobs:
                     cd /tmp/rest
                     mvn install -DskipTests 
             - run:
-                name: Installation Node.JS
-                command: apk --no-cache add nodejs        
+                name: Installation Node.JS Environment
+                command: |
+                    apk --no-cache add nodejs
+                    npm install gulp-cli -g
             - checkout
             - run: 
                 name: Git Clean
