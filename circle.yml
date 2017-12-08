@@ -20,7 +20,7 @@ jobs:
                 command: |
                     git clone https://github.com/LightJason/REST.git /tmp/rest
                     cd /tmp/rest
-                    mvn install
+                    mvn install -DskipTests 
             - run:
                 name: Installation Node.JS
                 command: apk --no-cache add nodejs        
