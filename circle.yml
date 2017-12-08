@@ -1,57 +1,31 @@
-general:
-    branches:
-        ignore:
-            - master
-            - /dev-.*/
-            - /jar-.*/
+version: 2
 
-machine:
-    timezone:
-        Europe/Berlin
+jobs:
+    build:
+        working_directory: ~/example
+        docker:
+            - image: lightjason/examples:latest
 
-    environment:
-        GIT_AUTHOR_NAME: CircleCI
-        GIT_AUTHOR_EMAIL: info@lightjason.org
-        GIT_COMMITTER_NAME: CircleCI
-        GIT_COMMITTER_EMAIL: info@lightjason.org
-        DOCUMENT: myagentapp-1.0-SNAPSHOT
+        shell: /bin/bash
 
-    java:
-        version: oraclejdk8
-        
-dependencies:
-    pre:
-        - git clone https://github.com/LightJason/AgentSpeak.git && cd AgentSpeak && mvn install -DskipTests
+        branches:
+            ignore:
+                - master
+                - /dev-.*/
+                - /jar-.*/
 
+        environment:
+            TZ: "/usr/share/zoneinfo/Europe/Berlin"
 
-checkout:
-    post:
-        - git clean -xdf
-        - git fetch -p
-        - git gc --prune=now
-        - mvn clean dependency:purge-local-repository -DreResolve=false -DactTransitively=true
+        steps:
+            - checkout
+            - run: 
+                name: Git Clean
+                command: git clean -xdf && git fetch -p && git gc --prune=now
+            - run:
+                name: Maven Clean
+                command: mvn clean dependency:purge-local-repository -DreResolve=false -DactTransitively=true
+            - run:
+                name: Build
+                command: mvn package -Dbuild.number=${CIRCLE_BUILD_NUM} -Dbuild.commit=${CIRCLE_SHA1}
 
-
-test:
-    override:
-        - mvn package -Dbuild.number=${CIRCLE_BUILD_NUM} -Dbuild.commit=${CIRCLE_SHA1}
-    post:
-        - mkdir -p $CIRCLE_TEST_REPORTS/junit/
-        - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
-        - mv -f target/$DOCUMENT.jar /tmp
-
-deployment:
-    production:
-        branch: /^(?!(master$|jar-.*$|dev-.*$)).*$/
-        commands:
-            - git push origin :jar-$CIRCLE_BRANCH || true
-            - git brach -D jar-$CIRCLE_BRANCH || true 
-            - git checkout --orphan jar-$CIRCLE_BRANCH
-            - rm -Rf *
-            - mv -f /tmp/$DOCUMENT.jar .
-            - echo -e 'general:\n    branches:\n        ignore:\n            - /.*/\n' > circle.yml 
-            - echo -e '*.*\n!.gitignore\n!circle.yml\n!*.jar\n' > .gitignore   
-            - git add --all .
-            - git commit -m "Jar"          
-            - git push origin jar-$CIRCLE_BRANCH
-            
