@@ -1,10 +1,7 @@
 *.*
 !.gitignore
-!Dockerfile
 !circle.yml
-!pom.xml
 !*.md
-!*.java
-!*.asl
 
 target/**
+node_modules/**
