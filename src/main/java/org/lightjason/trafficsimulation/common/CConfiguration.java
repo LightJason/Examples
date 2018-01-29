@@ -169,7 +169,7 @@ public final class CConfiguration extends ITree.CTree
                     "\n"
                 )
             ),
-            CCommon.actionsFromPackage()
+            CCommon.actionsFromPackage().peek( i -> System.out.println( i ) )
         ).forEach( m_actions::add );
     }
 
