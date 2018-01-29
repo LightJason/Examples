@@ -32,7 +32,6 @@ import org.lightjason.trafficsimulation.common.CConfiguration;
 import org.lightjason.trafficsimulation.ui.EHTTPServer;
 
 import java.io.IOException;
-import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 
@@ -46,10 +45,8 @@ public final class CMain
      */
     private static final Logger LOGGER = CCommon.logger( CMain.class );
 
-    static
-    {
-        LogManager.getLogManager().reset();
-    }
+    //LogManager.getLogManager().reset();
+
 
     /**
      * ctor

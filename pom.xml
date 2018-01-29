@@ -41,7 +41,7 @@
         <build.commit></build.commit>
         <coverall.token></coverall.token>
 
-        <jetty.version>9.4.7.RC0</jetty.version>
+        <jetty.version>9.4.8.v20171121</jetty.version>
 
         <npm.executable>npm</npm.executable>
         <gulp.executable>gulp</gulp.executable>
@@ -106,6 +106,12 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
             <version>2.9.0.pr4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.activation</groupId>
+            <artifactId>javax.activation</artifactId>
+            <version>1.2.0</version>
         </dependency>
 
 
@@ -359,6 +365,8 @@
                         <arg>-Xlint:all</arg>
                         <arg>--add-modules</arg>
                         <arg>java.xml.bind</arg>
+                        <arg>--add-modules</arg>
+                        <arg>javax.activation</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
