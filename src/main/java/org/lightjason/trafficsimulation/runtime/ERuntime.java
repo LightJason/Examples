@@ -119,7 +119,7 @@ public enum ERuntime implements IRuntime
         @Override
         public final boolean valuesexist()
         {
-            return new Long( m_values.getN() ).intValue() != 0;
+            return m_values.getN() != 0L;
         }
 
         @Override

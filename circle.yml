@@ -4,7 +4,7 @@ jobs:
     build:
         working_directory: ~/example
         docker:
-            - image: lightjason/examples:latest
+            - image: lightjason/rest:latest
 
         branches:
             ignore:
@@ -16,15 +16,10 @@ jobs:
 
         steps:
             - run:
-                name: LightJason REST
-                command: |
-                    git clone https://github.com/LightJason/REST.git /tmp/rest
-                    cd /tmp/rest
-                    mvn install -DskipTests 
-            - run:
                 name: Installation Node.JS Environment
                 command: |
-                    apk --no-cache add nodejs
+                    curl -sL https://deb.nodesource.com/setup_9.x | bash -
+                    apt-get --assume-yes install nodejs
                     npm install gulp-cli -g
             - checkout
             - run: 
