@@ -61,6 +61,7 @@ public final class CMain
      */
     public static void main( final String[] p_args ) throws IOException
     {
+
         // --- define CLI options ------------------------------------------------------------------------------------------------------------------------------
 
         final Options l_clioptions = new Options();
@@ -93,7 +94,7 @@ public final class CMain
         // --- execution ---------------------------------------------------------------------------------------------------------------------------------------
 
         // load configuration and generate default if not exists
-        CConfiguration.INSTANCE.loadfile( CConfiguration.createdefault( l_cli.getOptionValue( "config", CConfiguration.DEFAULTPATH ) ) );
+        CConfiguration.INSTANCE.loadfile( CConfiguration.createdefault( l_cli.getOptionValue(  "config", CConfiguration.DEFAULTPATH ) ) );
 
         // start http server if possible
         EHTTPServer.execute();

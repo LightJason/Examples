@@ -99,13 +99,13 @@
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
-            <version>2.26-b03</version>
+            <version>2.26</version>
         </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>2.9.0.pr4</version>
+            <version>2.9.4</version>
         </dependency>
 
         <dependency>
@@ -129,21 +129,15 @@
         </dependency>
 
         <dependency>
+            <groupId>org.glassfish.jersey.bundles.repackaged</groupId>
+            <artifactId>jersey-guava</artifactId>
+            <version>2.26-b03</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.6</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>23.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.codepoetics</groupId>
-            <artifactId>protonpack</artifactId>
-            <version>1.15</version>
+            <version>3.7</version>
         </dependency>
 
         <dependency>
@@ -365,8 +359,6 @@
                         <arg>-Xlint:all</arg>
                         <arg>--add-modules</arg>
                         <arg>java.xml.bind</arg>
-                        <arg>--add-modules</arg>
-                        <arg>javax.activation</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
