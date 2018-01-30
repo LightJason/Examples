@@ -4,7 +4,7 @@ jobs:
     build:
         working_directory: ~/example
         docker:
-            - image: lightjason/rest:latest
+            - image: lightjason/agentspeak:latest
 
         branches:
             ignore:
