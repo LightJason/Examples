@@ -26,9 +26,9 @@ package org.lightjason.trafficsimulation.ui.api;
 import org.lightjason.trafficsimulation.common.CCommon;
 import org.lightjason.trafficsimulation.common.CConfiguration;
 import org.lightjason.trafficsimulation.elements.IObject;
-import org.lightjason.trafficsimulation.runtime.IStatistic;
-import org.lightjason.trafficsimulation.runtime.ERuntime;
 import org.lightjason.trafficsimulation.runtime.CTask;
+import org.lightjason.trafficsimulation.runtime.ERuntime;
+import org.lightjason.trafficsimulation.runtime.IStatistic;
 import org.lightjason.trafficsimulation.ui.EHTTPServer;
 
 import javax.ws.rs.Consumes;

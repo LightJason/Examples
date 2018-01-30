@@ -23,13 +23,13 @@
 
 package org.lightjason.trafficsimulation.common;
 
-import cern.colt.matrix.DoubleMatrix1D;
-import cern.colt.matrix.DoubleMatrix2D;
-import cern.colt.matrix.doublealgo.Formatter;
-import cern.colt.matrix.impl.DenseDoubleMatrix1D;
-import cern.colt.matrix.impl.DenseDoubleMatrix2D;
-import cern.colt.matrix.linalg.Algebra;
-import cern.jet.math.Functions;
+import cern.colt.matrix.tdouble.DoubleMatrix1D;
+import cern.colt.matrix.tdouble.DoubleMatrix2D;
+import cern.colt.matrix.tdouble.algo.DenseDoubleAlgebra;
+import cern.colt.matrix.tdouble.algo.DoubleFormatter;
+import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix1D;
+import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix2D;
+import cern.jet.math.tdouble.DoubleFunctions;
 
 import javax.annotation.Nonnull;
 import java.util.stream.IntStream;
@@ -44,11 +44,11 @@ public final class CMath
     /**
      * reference to global algebra instance
      */
-    public static final Algebra ALGEBRA = Algebra.DEFAULT;
+    public static final DenseDoubleAlgebra ALGEBRA = DenseDoubleAlgebra.DEFAULT;
     /**
      * matrix formatter
      */
-    public static final Formatter MATRIXFORMAT = new Formatter();
+    public static final DoubleFormatter MATRIXFORMAT = new DoubleFormatter();
 
     static
     {
@@ -108,7 +108,7 @@ public final class CMath
     {
         return Math.sqrt( ALGEBRA.norm2(
             new DenseDoubleMatrix1D( p_second.toArray() )
-                .assign( p_first, Functions.minus )
+                .assign( p_first, DoubleFunctions.minus )
         ) );
     }
 

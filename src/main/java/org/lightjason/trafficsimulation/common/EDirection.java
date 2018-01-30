@@ -23,11 +23,10 @@
 
 package org.lightjason.trafficsimulation.common;
 
-import cern.colt.matrix.DoubleMatrix1D;
-import cern.colt.matrix.DoubleMatrix2D;
-import cern.colt.matrix.impl.DenseDoubleMatrix1D;
-import cern.colt.matrix.linalg.Algebra;
-import cern.jet.math.Functions;
+import cern.colt.matrix.tdouble.DoubleMatrix1D;
+import cern.colt.matrix.tdouble.DoubleMatrix2D;
+import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix1D;
+import cern.jet.math.tdouble.DoubleFunctions;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
@@ -81,11 +80,11 @@ public enum EDirection
         return CMath.ALGEBRA.mult(
             m_rotation,
             l_view
-                .assign( p_position, Functions.minus )
-                .assign( Functions.div( Math.sqrt( Algebra.DEFAULT.norm2( l_view ) ) ) )
+                .assign( p_position, DoubleFunctions.minus )
+                .assign( DoubleFunctions.div( Math.sqrt( CMath.ALGEBRA.norm2( l_view ) ) ) )
         )
-                            .assign( Functions.mult( p_speed ) )
-                            .assign( p_position, Functions.plus )
+                            .assign( DoubleFunctions.mult( p_speed ) )
+                            .assign( p_position, DoubleFunctions.plus )
                             .assign( Math::round );
     }
 

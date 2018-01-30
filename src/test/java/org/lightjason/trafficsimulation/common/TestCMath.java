@@ -23,7 +23,7 @@
 
 package org.lightjason.trafficsimulation.common;
 
-import cern.colt.matrix.impl.DenseDoubleMatrix1D;
+import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix1D;
 import org.junit.Assert;
 import org.junit.Test;
 import org.lightjason.trafficsimulation.IBaseTest;

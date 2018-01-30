@@ -24,7 +24,7 @@
 package org.lightjason.trafficsimulation.elements;
 
 
-import cern.colt.matrix.DoubleMatrix1D;
+import cern.colt.matrix.tdouble.DoubleMatrix1D;
 import org.lightjason.agentspeak.agent.IAgent;
 import org.lightjason.agentspeak.generator.IAgentGenerator;
 import org.lightjason.trafficsimulation.ui.IMap;

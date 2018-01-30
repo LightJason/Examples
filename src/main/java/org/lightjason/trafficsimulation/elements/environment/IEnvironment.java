@@ -23,7 +23,7 @@
 
 package org.lightjason.trafficsimulation.elements.environment;
 
-import cern.colt.matrix.DoubleMatrix1D;
+import cern.colt.matrix.tdouble.DoubleMatrix1D;
 import org.lightjason.trafficsimulation.elements.IObject;
 import org.lightjason.trafficsimulation.elements.vehicle.IVehicle;
 

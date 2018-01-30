@@ -23,10 +23,10 @@
 
 package org.lightjason.trafficsimulation.elements.environment;
 
-import cern.colt.matrix.DoubleMatrix1D;
-import cern.colt.matrix.ObjectMatrix2D;
-import cern.colt.matrix.impl.DenseDoubleMatrix1D;
-import cern.colt.matrix.impl.SparseObjectMatrix2D;
+import cern.colt.matrix.tdouble.DoubleMatrix1D;
+import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix1D;
+import cern.colt.matrix.tobject.ObjectMatrix2D;
+import cern.colt.matrix.tobject.impl.SparseObjectMatrix2D;
 import com.codepoetics.protonpack.StreamUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
@@ -210,10 +210,7 @@ public final class CEnvironment extends IBaseObject<IEnvironment> implements IEn
                 this.trigger( CTrigger.from( ITrigger.EType.ADDGOAL, CLiteral.from( "finish", CRawTerm.from( p_vehicle ) ) ), true );
 
             m_elements.remove( p_vehicle.release().id() );
-            synchronized ( this )
-            {
-                m_grid.setQuick( l_ypos.intValue(), l_xposstart.intValue(), null );
-            }
+            m_grid.setQuick( l_ypos.intValue(), l_xposstart.intValue(), null );
             return true;
         }
 
@@ -269,7 +266,7 @@ public final class CEnvironment extends IBaseObject<IEnvironment> implements IEn
     @Nonnull
     @Override
     @SuppressWarnings( "unchecked" )
-    public final synchronized Stream<? extends IObject<?>> get( @Nonnull final Stream<DoubleMatrix1D> p_position )
+    public final Stream<? extends IObject<?>> get( @Nonnull final Stream<DoubleMatrix1D> p_position )
     {
         return p_position.sequential()
                          .map( i -> (IObject<?>) m_grid.getQuick( (int) i.getQuick( 0 ), (int) i.getQuick( 1 ) ) )

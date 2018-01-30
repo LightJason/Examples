@@ -40,8 +40,8 @@ import org.lightjason.trafficsimulation.elements.IObject;
 import org.lightjason.trafficsimulation.runtime.ERuntime;
 import org.lightjason.trafficsimulation.ui.api.CAPI;
 import org.lightjason.trafficsimulation.ui.api.CAnimation;
-import org.lightjason.trafficsimulation.ui.api.CStatistic;
 import org.lightjason.trafficsimulation.ui.api.CMessage;
+import org.lightjason.trafficsimulation.ui.api.CStatistic;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

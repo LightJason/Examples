@@ -23,8 +23,8 @@
 
 package org.lightjason.trafficsimulation.elements.area;
 
-import cern.colt.matrix.DoubleMatrix1D;
-import cern.colt.matrix.impl.DenseDoubleMatrix1D;
+import cern.colt.matrix.tdouble.DoubleMatrix1D;
+import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix1D;
 import org.apache.commons.lang3.tuple.ImmutableTriple;
 import org.apache.commons.lang3.tuple.Triple;
 import org.lightjason.agentspeak.action.binding.IAgentAction;

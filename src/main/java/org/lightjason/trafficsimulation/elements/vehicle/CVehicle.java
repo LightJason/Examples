@@ -23,9 +23,9 @@
 
 package org.lightjason.trafficsimulation.elements.vehicle;
 
-import cern.colt.matrix.DoubleMatrix1D;
-import cern.colt.matrix.impl.DenseDoubleMatrix1D;
-import cern.jet.math.Functions;
+import cern.colt.matrix.tdouble.DoubleMatrix1D;
+import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix1D;
+import cern.jet.math.tdouble.DoubleFunctions;
 import com.codepoetics.protonpack.StreamUtils;
 import com.google.common.util.concurrent.AtomicDouble;
 import org.apache.commons.lang3.tuple.ImmutablePair;
@@ -211,7 +211,7 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
 
     @Nonnull
     @Override
-    public final synchronized DoubleMatrix1D position()
+    public final DoubleMatrix1D position()
     {
         return m_position;
     }
@@ -594,7 +594,7 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
             m_cache.clear();
             m_environment.get(
                 m_position.parallelStream()
-                          .map( i -> new DenseDoubleMatrix1D( CVehicle.this.m_position.toArray() ).assign( i, Functions.plus ) )
+                          .map( i -> new DenseDoubleMatrix1D( CVehicle.this.m_position.toArray() ).assign( i, DoubleFunctions.plus ) )
                           .filter( m_environment::isinside )
             )
                  .parallel()
