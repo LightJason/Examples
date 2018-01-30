@@ -135,14 +135,4 @@ public final class TestCMath extends IBaseTest
         );
     }
 
-    /**
-     * main
-     *
-     * @param p_args arguments
-     */
-    public static void main( final String[] p_args )
-    {
-        new TestCMath().invoketest();
-    }
-
 }
