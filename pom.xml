@@ -30,7 +30,7 @@
     </dependencies>
 
     <build>
-        <!-- create default goal to run "mvn package" everytime -->
+        <!-- make "package" the default goal to run "mvn package" every time -->
         <defaultGoal>package versions:display-dependency-updates versions:display-plugin-updates versions:display-property-updates</defaultGoal>
 
         <!-- using build plugins -->
@@ -95,7 +95,7 @@
                 </configuration>
             </plugin>
 
-            <!-- on the command "mvn clean" we clean-up some additional files -->
+            <!-- let "mvn clean" clean up additional files -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
@@ -112,7 +112,7 @@
                 </configuration>
             </plugin>
 
-            <!-- create a executable jar file -->
+            <!-- create an executable jar file -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -159,7 +159,7 @@
                 </executions>
             </plugin>
 
-            <!-- checkstyle is perform at compile phase
+            <!-- checkstyle is performed during the compile phase
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
