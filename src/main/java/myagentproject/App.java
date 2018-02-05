@@ -76,7 +76,7 @@ final class App
                 final FileInputStream l_stream = new FileInputStream( p_args[0] );
             )
         {
-            // agent factory with generating an unmodifyable set
+            // agent factory for generating an unmodifyable set
             l_agents = Collections.unmodifiableSet(
                 new MyAgentGenerator( l_stream )
                     .generatemultiple( Integer.parseInt( p_args[1] ) )
@@ -104,8 +104,8 @@ final class App
                                        {
                                            i.call();
 
-                                           // call the add-goal-trigger by random with
-                                           // 50% probability and put a random value
+                                           // call the add-goal trigger with 50% chance
+                                           // and put a random value [0, 100] into the literal
                                            if ( Math.random() < 0.5 )
                                                i.trigger(
                                                    CTrigger.from(

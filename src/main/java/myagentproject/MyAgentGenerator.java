@@ -46,7 +46,7 @@ final class MyAgentGenerator extends IBaseAgentGenerator<MyAgent>
             // input ASL stream
             p_stream,
 
-            // we use all build-in actions of LightJason
+            // we use all built-in actions of LightJason
             CCommon.actionsFromPackage().collect( Collectors.toSet() ),
 
             // variable builder for agent name
