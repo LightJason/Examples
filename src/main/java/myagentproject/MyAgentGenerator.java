@@ -66,7 +66,7 @@ final class MyAgentGenerator extends IBaseAgentGenerator<MyCommunicationAgent>
 
             // a set with all possible actions for the agent
             Stream.concat(
-                // we use all build-in actions of LightJason
+                // we use all built-in actions of LightJason
                 CCommon.actionsFromPackage(),
                 // add VotingAgent related external action
                 Stream.of( p_send )
