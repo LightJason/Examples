@@ -53,10 +53,10 @@ final class MyAgentGenerator extends IBaseAgentGenerator<MyAgent>
 
             Stream.concat(
 
-                // we use all build-in actions of LightJason
+                // we use all built-in actions of LightJason
                  CCommon.actionsFromPackage(),
 
-                // own defined actions
+                // our custom defined actions
                 Stream.concat(
 
                     // read object actions

@@ -63,12 +63,12 @@ final class App
         if ( p_args.length < 2 )
             throw new RuntimeException( "arguments are not set: ASL script, number of agents" );
 
-        // global set with agents
+        // global set of agents
         final Set<IAgent<?>> l_agents;
 
         try
             (
-                // stream woth ASL code
+                // stream of ASL code
                 final FileInputStream l_stream = new FileInputStream( p_args[0] );
             )
         {

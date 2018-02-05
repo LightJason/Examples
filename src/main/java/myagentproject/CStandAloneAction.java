@@ -65,7 +65,7 @@ final class CStandAloneAction extends IBaseAction
                                                @Nonnull final List<ITerm> p_argument, @Nonnull final List<ITerm> p_return
     )
     {
-        // output of the calling agent and get parameter with correct typing
+        // print calling agent and correctly formatted parameter
         System.out.println(
             MessageFormat.format(
                 "agent {0} calls standalone-action with parameter {1}",
@@ -74,14 +74,14 @@ final class CStandAloneAction extends IBaseAction
             )
         );
 
-        // create return value with encapsuling Java native type
+        // create return value with encapsulated Java native type
         p_return.add(
             CRawTerm.from(
                 p_argument.get( 0 ).<String>raw().length()
             )
         );
 
-        // return argument for checking is the action successful or failed terminated
+        // return for checking whether the action terminated successful or failed
         return CFuzzyValue.from( true );
     }
 
