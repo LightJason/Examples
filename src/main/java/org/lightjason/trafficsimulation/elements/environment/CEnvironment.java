@@ -27,6 +27,7 @@ import cern.colt.matrix.tdouble.DoubleMatrix1D;
 import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix1D;
 import cern.colt.matrix.tobject.ObjectMatrix2D;
 import cern.colt.matrix.tobject.impl.SparseObjectMatrix2D;
+import cern.jet.math.tdouble.DoubleFunctions;
 import com.codepoetics.protonpack.StreamUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
@@ -159,6 +160,15 @@ public final class CEnvironment extends IBaseObject<IEnvironment> implements IEn
     public final DoubleMatrix1D nextposition()
     {
         return this.position();
+    }
+
+    @Nonnull
+    @Override
+    public final DoubleMatrix1D worldposition()
+    {
+        return this.position()
+            .copy()
+            .assign( DoubleFunctions.mult( EUnit.INSTANCE.cellsize().doubleValue() / 2 ) );
     }
 
     @Nonnull

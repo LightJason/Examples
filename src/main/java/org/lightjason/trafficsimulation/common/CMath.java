@@ -93,7 +93,7 @@ public final class CMath
 
         return ( l_first == 0 ) || ( l_second == 0 )
                ? Double.NaN
-               : Math.toDegrees( Math.acos( ALGEBRA.mult( p_first, p_second ) / ( Math.sqrt( l_first ) * Math.sqrt( l_second ) ) ) );
+               : Math.toDegrees( Math.acos( ALGEBRA.mult( p_first, p_second ) / ( l_first * l_second ) ) );
     }
 
 
@@ -110,6 +110,25 @@ public final class CMath
             new DenseDoubleMatrix1D( p_second.toArray() )
                 .assign( p_first, DoubleFunctions.minus )
         ) );
+    }
+
+    /**
+     * returns a stream all coordinates
+     * within a circle
+     *
+     * @param p_radius radius
+     * @return stream with relative position
+     */
+    public static Stream<DoubleMatrix1D> cellcircle( @Nonnull final Number p_radius )
+    {
+        return IntStream.rangeClosed( -p_radius.intValue(), p_radius.intValue() )
+                        .parallel()
+                        .boxed()
+                        .flatMap( y -> IntStream.rangeClosed( -p_radius.intValue(), p_radius.intValue() )
+                                                .boxed()
+                                                .map( x -> new DenseDoubleMatrix1D( new double[]{y, x} ) )
+                                                .filter( i -> Math.sqrt( Math.pow( i.get( 0 ), 2 ) + Math.pow( i.get( 1 ), 2 ) ) <= p_radius.doubleValue() )
+                        );
     }
 
     /**

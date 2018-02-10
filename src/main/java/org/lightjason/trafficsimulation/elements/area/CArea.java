@@ -25,6 +25,7 @@ package org.lightjason.trafficsimulation.elements.area;
 
 import cern.colt.matrix.tdouble.DoubleMatrix1D;
 import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix1D;
+import cern.jet.math.tdouble.DoubleFunctions;
 import org.apache.commons.lang3.tuple.ImmutableTriple;
 import org.apache.commons.lang3.tuple.Triple;
 import org.lightjason.agentspeak.action.binding.IAgentAction;
@@ -163,6 +164,16 @@ public final class CArea extends IBaseObject<IArea> implements IArea
     public final DoubleMatrix1D nextposition()
     {
         return this.position();
+    }
+
+    @Nonnull
+    @Override
+    public final DoubleMatrix1D worldposition()
+    {
+        return this.position()
+                   .copy()
+                   .assign( DoubleFunctions.mult( EUnit.INSTANCE.cellsize().doubleValue() / 2 ) );
+
     }
 
     @Nonnull

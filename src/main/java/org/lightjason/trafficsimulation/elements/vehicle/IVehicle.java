@@ -23,6 +23,7 @@
 
 package org.lightjason.trafficsimulation.elements.vehicle;
 
+import cern.colt.matrix.tdouble.DoubleMatrix1D;
 import org.lightjason.trafficsimulation.elements.IObject;
 
 import javax.annotation.Nonnegative;
@@ -35,6 +36,12 @@ import java.util.Locale;
  */
 public interface IVehicle extends IObject<IVehicle>
 {
+    /**
+     * calculates the direction vector
+     * in real world coordinates
+     * @return movement vector
+     */
+    DoubleMatrix1D worldmovement();
 
     /**
      * get current speed in km/h

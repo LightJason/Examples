@@ -65,6 +65,13 @@ public interface IObject<T extends IAgent<?>> extends IMap<IObject.EStatus>, IPe
     DoubleMatrix1D nextposition();
 
     /**
+     * position in real coordinates
+     * @return real world position
+     */
+    @Nonnull
+    DoubleMatrix1D worldposition();
+
+    /**
      * is called for object destroying
      *
      * @return self reference
