@@ -95,15 +95,17 @@ public enum EDirection
      * @param p_angle angle in degree
      * @return direction
      */
-    public static EDirection byAngle( final double p_angle )
+    public static EDirection byAngle( final Number p_angle )
     {
+        final double l_angle = p_angle.doubleValue() % 360;
         return EDirection.values()[
             (int) (
-                p_angle < 0
-                ? 360 + p_angle
-                : p_angle
-            ) / 45
-            ];
+                l_angle < 0
+                ? 360 + l_angle
+                : l_angle
+            )
+            / 45
+        ];
     }
 
     /**

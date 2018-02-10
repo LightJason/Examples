@@ -65,6 +65,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.ConcurrentModificationException;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
@@ -85,13 +86,9 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
      */
     private static final long serialVersionUID = 3822143462033345857L;
     /**
-     * fixed view distance forward in meter
+     * viewrange in meter
      */
-    private static final double FORWARDDISTANCE = 450;
-    /**
-     * fixed view distance backward in meter
-     */
-    private static final double BACKWARDDISTANCE = 150;
+    private static final double VIEWRANGE = 150;
     /**
      * literal functor
      */
@@ -109,12 +106,12 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
      * @warning must be in (0, infinity)
      */
     @Nonnegative
-    private final double m_accelerate;
+    private final double m_acceleration;
     /**
      * decelerate speed in m/sec^2
      * @warning must be in (0, infinity)
      */
-    private final double m_decelerate;
+    private final double m_deceleration;
     /**
      * maximum speed
      */
@@ -142,11 +139,11 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
     /**
      * backward view
      */
-    private final CEnvironmentView m_backwardview;
+    private final CEnvironmentView m_viewrange;
     /**
-     * forward view
+     * view range size in meter
      */
-    private final CEnvironmentView m_forwardview;
+    private final double m_viewrangesize;
 
     /**
      * ctor
@@ -166,45 +163,29 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
     {
         super( p_configuration, FUNCTOR, p_id );
 
-        if ( p_maximumspeed < 120 )
-            throw new RuntimeException( "maximum speed to low" );
-
-        if ( ( p_acceleration < 2 ) || ( p_deceleration < 2 ) )
-            throw new RuntimeException( "acceleration or deceleration is to low" );
-
-        if ( p_deceleration <= p_acceleration )
-            throw new RuntimeException( "deceleration should be greater or equal than acceleration" );
-
-
         m_type = p_type;
+        m_goal = p_goal;
+        m_position = p_start;
+        m_viewrangesize = VIEWRANGE;
         m_environment = p_environment;
+        m_maximumspeed = p_maximumspeed;
+        m_acceleration = p_acceleration;
+        m_deceleration = p_deceleration;
 
         m_lane.set( p_start.getQuick( 0 ) );
-        m_position = p_start;
-        m_goal = p_goal;
-
-        m_maximumspeed = p_maximumspeed;
-        m_accelerate = p_acceleration;
-        m_decelerate = p_deceleration;
-
-        m_backwardview = new CEnvironmentView(
+        m_viewrange = new CEnvironmentView(
             Collections.unmodifiableSet(
-                CMath.cellangle( EUnit.INSTANCE.metertocell( BACKWARDDISTANCE ), 135, 225 ).collect( Collectors.toSet() )
+                CMath.cellcircle( EUnit.INSTANCE.metertocell( m_viewrangesize ) ).collect( Collectors.toSet() )
             )
         );
+        m_beliefbase.add( m_viewrange.create( "view", m_beliefbase ) );
 
-        m_forwardview = new CEnvironmentView(
-            Collections.unmodifiableSet(
-                Stream.concat(
-                    CMath.cellangle( EUnit.INSTANCE.metertocell( FORWARDDISTANCE ), 0, 60 ),
-                    CMath.cellangle( EUnit.INSTANCE.metertocell( FORWARDDISTANCE ), 300, 359.99 )
-                ).collect( Collectors.toSet() )
-            )
-        );
-
-        // beliefbase
-        m_beliefbase.add( m_backwardview.create( "backward", m_beliefbase ) );
-        m_beliefbase.add( m_forwardview.create( "forward", m_beliefbase ) );
+        if ( EUnit.INSTANCE.accelerationtospeed( m_acceleration ).doubleValue() > m_maximumspeed )
+            throw new RuntimeException( "maximum acceleration is higher than maximum speed" );
+        if ( ( m_acceleration < 2 ) || ( m_deceleration < 2 ) )
+            throw new RuntimeException( "acceleration or deceleration is to low" );
+        if ( m_deceleration <= m_acceleration )
+            throw new RuntimeException( "deceleration should be greater or equal than acceleration" );
 
         CAnimation.EInstance.INSTANCE.send( EStatus.INITIALIZE, this );
     }
@@ -267,13 +248,22 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
                        m_goal,
                        m_speed.get(),
                        m_maximumspeed,
-                       m_accelerate,
-                       m_decelerate,
+                       m_acceleration,
+                       m_deceleration,
                        EUnit.INSTANCE.celltokilometer( l_position.getQuick( 1 ) ).doubleValue(),
                        l_beliefs
             ),
             ImmutablePair::new
         ).collect( Collectors.toMap( ImmutablePair::getLeft, ImmutablePair::getRight ) );
+    }
+
+    @Nonnull
+    @Override
+    public final DoubleMatrix1D worldposition()
+    {
+        return m_position.copy()
+                         .assign( DoubleFunctions.plus( 1 ) )
+                         .assign( DoubleFunctions.mult( EUnit.INSTANCE.cellsize().doubleValue() / 2 ) );
     }
 
     @Override
@@ -282,7 +272,17 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
         return Stream.of(
             CLiteral.from( "lane", CRawTerm.from( this.position().get( 0 ) + 1 ) ),
             CLiteral.from( "speed", CRawTerm.from( m_speed.get() ) ),
-            CLiteral.from( "distance", CRawTerm.from( EUnit.INSTANCE.celltometer( CMath.distance( this.position(), p_object.position() ) ) ) )
+            CLiteral.from( "distance", CRawTerm.from( EUnit.INSTANCE.celltometer( CMath.distance( this.position(), p_object.position() ) ) ) ),
+            CLiteral.from( "direction",
+                           CLiteral.from(
+                               EDirection.byAngle(
+                                   CMath.angle(
+                                       this.worldmovement(),
+                                       this.worldposition().assign( p_object.worldposition(), DoubleFunctions.minus )
+                                   ).doubleValue() + 22.5D
+                               ).toString().toLowerCase( Locale.ROOT )
+                           )
+            )
         );
     }
 
@@ -297,14 +297,14 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
     @Nonnegative
     public final double acceleration()
     {
-        return m_accelerate;
+        return m_acceleration;
     }
 
     @Override
     @Nonnegative
     public final double deceleration()
     {
-        return m_decelerate;
+        return m_deceleration;
     }
 
     @Override
@@ -317,6 +317,16 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
     public final Number lane()
     {
         return m_lane.get();
+    }
+
+    @Override
+    public final DoubleMatrix1D worldmovement()
+    {
+        final DoubleMatrix1D l_position = this.worldposition();
+        final DoubleMatrix1D l_direction = l_position.copy();
+        l_direction.setQuick( 1, l_direction.getQuick( 1 ) + m_viewrangesize );
+
+        return l_direction.assign( l_position, DoubleFunctions.minus );
     }
 
     @Override
@@ -343,11 +353,9 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
     public final IVehicle call() throws Exception
     {
         // update beliefbase
-        m_backwardview.run();
-        m_forwardview.run();
+        m_viewrange.run();
 
         super.call();
-
         // give environment the data if it is a user car
         if ( !m_environment.move( this ) )
             this.oncollision();
@@ -378,7 +386,7 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
     private void accelerate( final Number p_strength )
     {
         final double l_value = m_speed.get() + EUnit.INSTANCE.accelerationtospeed(
-            m_accelerate * Math.max( 0, Math.min( 1, p_strength.doubleValue() ) )
+            m_acceleration * Math.max( 0, Math.min( 1, p_strength.doubleValue() ) )
         ).doubleValue();
 
         if (  l_value > m_maximumspeed )
@@ -395,7 +403,7 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
     private void decelerate( final Number p_strength )
     {
         final double l_value = m_speed.get() - EUnit.INSTANCE.accelerationtospeed(
-            m_decelerate * Math.max( 0, Math.min( 1, p_strength.doubleValue() ) )
+            m_deceleration * Math.max( 0, Math.min( 1, p_strength.doubleValue() ) )
         ).doubleValue();
 
         if (  l_value < 0 )
