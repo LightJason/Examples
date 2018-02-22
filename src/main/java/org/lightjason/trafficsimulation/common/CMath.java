@@ -32,6 +32,7 @@ import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix2D;
 import cern.jet.math.tdouble.DoubleFunctions;
 
 import javax.annotation.Nonnull;
+import java.util.function.BiFunction;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -84,16 +85,19 @@ public final class CMath
      *
      * @param p_first first vector
      * @param p_second second vector
+     * @param p_multiply multiply function for clipping structure of acos
      * @return pair of angel in degree or NaN on error
      */
-    public static Number angle( final DoubleMatrix1D p_first, final DoubleMatrix1D p_second )
+    public static Number angle( final DoubleMatrix1D p_first, final DoubleMatrix1D p_second, final BiFunction<DoubleMatrix1D, DoubleMatrix1D, Number> p_multiply )
     {
         final double l_first = ALGEBRA.norm2( p_first );
         final double l_second = ALGEBRA.norm2( p_second );
 
         return ( l_first == 0 ) || ( l_second == 0 )
                ? Double.NaN
-               : Math.toDegrees( Math.acos( ALGEBRA.mult( p_first, p_second ) / ( l_first * l_second ) ) );
+               : Math.toDegrees(
+                   Math.acos( ALGEBRA.mult( p_first, p_second ) / ( l_first * l_second ) ) * p_multiply.apply( p_first, p_second ).doubleValue()
+               );
     }
 
 

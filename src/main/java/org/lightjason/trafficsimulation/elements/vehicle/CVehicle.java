@@ -278,8 +278,9 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
                                EDirection.byAngle(
                                    CMath.angle(
                                        this.worldmovement(),
-                                       this.worldposition().assign( p_object.worldposition(), DoubleFunctions.minus )
-                                   ).doubleValue() + 22.5D
+                                       this.worldposition().assign( p_object.worldposition(), DoubleFunctions.minus ),
+                                       ( i, j ) -> i.getQuick( 0 ) < j.getQuick( 0 ) ? 1 : -1
+                                   ).doubleValue() + 45.0D
                                ).toString().toLowerCase( Locale.ROOT )
                            )
             )
