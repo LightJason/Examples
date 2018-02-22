@@ -130,7 +130,11 @@ public final class TestCMath extends IBaseTest
     public final void angle()
     {
         Assert.assertEquals(
-            CMath.angle( new DenseDoubleMatrix1D( new double[]{0, 1} ), new DenseDoubleMatrix1D( new double[]{1, 0} ) ),
+            CMath.angle(
+                new DenseDoubleMatrix1D( new double[]{0, 1} ),
+                new DenseDoubleMatrix1D( new double[]{1, 0} ),
+                ( i, j ) -> i.getQuick( 0 ) < j.getQuick( 0 ) ? 1 : -1
+            ),
             90.0
         );
     }
