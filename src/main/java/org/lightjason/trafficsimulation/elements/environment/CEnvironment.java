@@ -323,8 +323,6 @@ public final class CEnvironment extends IBaseObject<IEnvironment> implements IEn
     {
         super.call();
 
-        System.out.println( m_beliefbase );
-
         // add all cached elements to the grid if possible
         m_vehiclecache.removeAll(
             m_vehiclecache.parallelStream()
