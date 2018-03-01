@@ -74,11 +74,12 @@ public interface IEnvironment extends IObject<IEnvironment>
     Stream<? extends IObject<?>> get( @Nonnull final Stream<DoubleMatrix1D> p_position );
 
     /**
-     * checks if a position is within the grid
+     * clips the diven position to the environment structure
      *
      * @param p_position position
-     * @return position is inside
+     * @return new vector with clipped position
      */
-    boolean isinside( @Nonnull final DoubleMatrix1D p_position );
+    @Nonnull
+    DoubleMatrix1D clip( @Nonnull final DoubleMatrix1D p_position );
 
 }

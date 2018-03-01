@@ -283,13 +283,15 @@ public final class CEnvironment extends IBaseObject<IEnvironment> implements IEn
                          .filter( Objects::nonNull );
     }
 
+    @Nonnull
     @Override
-    public final boolean isinside( @Nonnull final DoubleMatrix1D p_position )
+    public final DoubleMatrix1D clip( @Nonnull final DoubleMatrix1D p_position )
     {
-        return ( p_position.getQuick( 0 ) >= 0 )
-               && ( p_position.getQuick( 1 ) >= 0 )
-               && ( p_position.getQuick( 0 ) < m_grid.rows() )
-               && ( p_position.getQuick( 1 ) < m_grid.columns() );
+        final DoubleMatrix1D l_position = p_position.copy();
+        l_position.set( 0, Math.max( 0, Math.min( l_position.get( 0 ), m_grid.rows() - 1 ) ) );
+        l_position.set( 1, Math.max( 0, Math.min( l_position.get( 1 ), m_grid.columns() - 1 ) ) );
+
+        return l_position;
     }
 
     @Override

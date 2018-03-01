@@ -27,9 +27,13 @@ import cern.colt.matrix.tdouble.DoubleMatrix1D;
 import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix1D;
 import cern.jet.math.tdouble.DoubleFunctions;
 import com.codepoetics.protonpack.StreamUtils;
+import com.google.common.collect.Multimaps;
+import com.google.common.collect.SortedSetMultimap;
+import com.google.common.collect.TreeMultimap;
 import com.google.common.util.concurrent.AtomicDouble;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.ImmutableTriple;
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 import org.lightjason.agentspeak.action.binding.IAgentAction;
 import org.lightjason.agentspeak.action.binding.IAgentActionFilter;
@@ -60,16 +64,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.io.InputStream;
 import java.text.MessageFormat;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.ConcurrentModificationException;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.Callable;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -551,9 +547,11 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
          */
         private final Set<DoubleMatrix1D> m_position;
         /**
-         * object cache with distance and literal
+         * tree map for cache
          */
-        private final List<ILiteral> m_cache = new CopyOnWriteArrayList<>();
+        private final SortedSetMultimap<Double, Pair<ILiteral, IObject<?>>> m_cache = Multimaps.synchronizedSortedSetMultimap(
+                TreeMultimap.create( Comparator.comparingDouble( i -> i ), Comparator.comparing( i -> i.getRight().id() ) )
+        );
 
         /**
          * ctor
@@ -581,7 +579,7 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
         @Override
         public final Stream<ILiteral> streamLiteral()
         {
-            return m_cache.stream();
+            return m_cache.values().stream().map( Pair::getLeft );
         }
 
         @Override
@@ -594,7 +592,7 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
         @Override
         public final Collection<ILiteral> literal( @Nonnull final String p_key )
         {
-            return m_cache;
+            return m_cache.values().stream().map( Pair::getLeft ).collect( Collectors.toSet() );
         }
 
         @Override
@@ -602,17 +600,19 @@ public final class CVehicle extends IBaseObject<IVehicle> implements IVehicle
         {
             m_cache.clear();
             m_environment.get(
-                m_position.parallelStream()
-                          .map( i -> new DenseDoubleMatrix1D( CVehicle.this.m_position.toArray() ).assign( i, DoubleFunctions.plus ) )
-                          .filter( m_environment::isinside )
+                    m_position.parallelStream()
+                            .map( i -> new DenseDoubleMatrix1D( CVehicle.this.m_position.toArray() ).assign( i, DoubleFunctions.plus ) )
+                            .map( m_environment::clip )
             )
-                 .parallel()
-                 .filter( i -> !i.equals( CVehicle.this ) )
-                 .map( i -> new ImmutablePair<>( EUnit.INSTANCE.celltometer( CMath.distance( CVehicle.this.position(), i.position() ) ),  i ) )
-                 .sorted( Comparator.comparingDouble( i -> i.getLeft().doubleValue() ) )
-                 .map( ImmutablePair::getRight )
-                 .map( i -> i.literal( CVehicle.this ) )
-                 .forEachOrdered( m_cache::add );
+                    .parallel()
+                    .filter( i -> !i.equals( CVehicle.this ) )
+                    .forEach( i -> m_cache.put(
+                            CMath.distance(
+                                    CVehicle.this.worldposition(),
+                                    i.worldposition()
+                            ).doubleValue(),
+                            new ImmutablePair<>( i.literal( CVehicle.this ), i )
+                    ) );
 
         }
     }
