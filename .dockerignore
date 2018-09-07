@@ -1,0 +1,6 @@
+*.*
+.git
+!*.js
+!*.json
+!*.xml
+!src

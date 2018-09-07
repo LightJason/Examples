@@ -33,6 +33,9 @@
 !src/analysis/**/*.txt
 !src/analysis/**/*.md
 
+!.dockerignore
+!Dockerfile
+
 target/**
 node_modules/**
 src/main/webapp/org/lightjason/trafficsimulation/html/js/package.js
